@@ -380,11 +380,11 @@
                 <artifactId>cobertura-maven-plugin</artifactId>
                 <version>2.4</version>
             </plugin>
-            <!-- TODO enable if hq is involved - plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-changelog-plugin</artifactId>
                 <version>2.2</version>
-            </plugin-->
+            </plugin>
             <!-- catch code tags -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
