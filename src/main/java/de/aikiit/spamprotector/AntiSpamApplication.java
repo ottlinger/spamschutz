@@ -26,7 +26,7 @@ public final class AntiSpamApplication {
         JFrame frame = new JFrame();
 
         GUI g = new GUI(false);
-        frame.setTitle("AntiSpamApplication - der einfachste Schutz for "
+        frame.setTitle("AntiSpamApplication - der einfachste Schutz gegen "
                 + "Spider-Spam");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(800, 300);
