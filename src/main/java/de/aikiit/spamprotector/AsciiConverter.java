@@ -36,6 +36,10 @@ public class AsciiConverter implements Converter {
      * @param input (Einzelzeichen)
      * @return ASCI-String
      */
+    // REVIEW 2011-05-05 check whether this can be replaced by conversion from
+    // int/char to get the ascii code of a given character,
+    // add testing first to
+    // ensure proper functionality
     private static String replaceChar(final char input) {
         switch (input) {
             case '!':

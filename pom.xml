@@ -4,9 +4,9 @@
   <groupId>de.aikiit</groupId>
   <artifactId>spamschutz</artifactId>
   <packaging>jar</packaging>
-  <version>0.1-SNAPSHOT</version>
-  <name>SpamProtector - simple way to protect your mail adresses from naiive spammers</name>
-  <description>This spamschutz (=spam protector) can be launched as an applet or a standalone application. It converts all given characters to their ASCII representation, thus making it hard for regular expressions to find mail adresses.</description>
+  <version>0.1.1-SNAPSHOT</version>
+  <name>SpamSchutz - simple way to protect your mail adresses from naiive spammers</name>
+  <description>This spamschutz (=spam protector in German) can be launched as an applet or a standalone application. It converts all given characters to their ASCII representation, thus making it hard for regular expressions to find mail adresses.</description>
   <url>http://code.google.com/p/spamschutz/</url>
   <organization>
     <name>Aiki IT</name>

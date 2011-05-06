@@ -10,10 +10,13 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Calendar;
 
 /**
- * Created by IntelliJ IDEA. User: hirsch Date: Apr 10, 2003 Time: 3:12:32 PM To
- * change this template use Options | File Templates.
+ * This class contains the main UI of this application (both input windows
+ * and all command buttons).
+ *
+ * Created by IntelliJ IDEA. User: hirsch Date: Apr 10, 2003 Time: 3:12:32 PM
  */
 public class GUI extends JPanel {
 
@@ -21,6 +24,11 @@ public class GUI extends JPanel {
      * Constant to define the dimension of a text box.
      */
     private static final Dimension BOX_DIMENSION = new Dimension(300, 200);
+
+    /**
+     * Preferred size of the complete application window.
+     */
+    public static final Dimension APP_DIMENSION = new Dimension(800, 300);
 
     /**
      * Launches and configures the main UI component, while taking care whether
@@ -52,6 +60,7 @@ public class GUI extends JPanel {
         JLabel eing;
         JLabel ausg;
 
+        final Calendar calendar = Calendar.getInstance();
 
         // command help
         knoepfe = new JPanel();
@@ -63,7 +72,8 @@ public class GUI extends JPanel {
                         + "HTML-Code einfügen!\nDann konvertieren "
                         + "und schon sind weniger SpamAttacken "
                         + "wahrscheinlich"
-                        + "\n(C) AIKI IT 2003"
+                        + "\n(C) AIKI IT 2003-"
+                        + calendar.get(Calendar.YEAR)
                         + ", Version: "
                         + de.aikiit.spamprotector.util.Version.VERSION,
                         "Spam-Schutz - Hilfe",
@@ -104,14 +114,12 @@ public class GUI extends JPanel {
         ioBereich = new JPanel(new FlowLayout());
 
         eing = new JLabel("1: Eingabe:");
-        // TODO Label so anlegen, dass sie auf ALT+1 reagieren!
         eing.setDisplayedMnemonic('1');
         eing.setLabelFor(eingabe);
         ioBereich.add(eing);
         ioBereich.add(eingabe);
 
         ausg = new JLabel("2: Ausgabe:");
-        // TODO Label so anlegen, dass sie auf ALT+2 reagieren!
         ausg.setDisplayedMnemonic('2');
         ausg.setLabelFor(ausgabe);
         ioBereich.add(ausg);
