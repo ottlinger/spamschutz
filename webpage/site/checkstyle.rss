@@ -2,9 +2,11 @@
 
 <rss version="0.91">
   <channel>
-    <title>SpamSchutz - simple way to protect your mail adresses from naiive spammers - Checkstyle report</title>
+    <title>SpamSchutz - simple way to protect your mail adresses from naiive
+        spammers - Checkstyle report</title>
     <link>http://code.google.com/p/spamschutz/</link>
-    <description>SpamSchutz - simple way to protect your mail adresses from naiive spammers - Checkstyle report</description>
+    <description>SpamSchutz - simple way to protect your mail adresses from naiive
+        spammers - Checkstyle report</description>
     <language>en-us</language>
     <copyright>&#169;2011 Aiki IT</copyright>
     <item>

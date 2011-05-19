@@ -13,7 +13,6 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
-  <component name="CoverageDataManager" choice="3" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
     <option name="REVERSE_PATCH" value="false" />
@@ -65,7 +64,7 @@
       <file leaf-file-name="Converter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/Converter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="29" selection-start="178" selection-end="178" vertical-scroll-proportion="-4.8">
+            <state line="17" column="0" selection-start="736" selection-end="736" vertical-scroll-proportion="-10.2">
               <folding />
             </state>
           </provider>
@@ -74,7 +73,54 @@
       <file leaf-file-name="GUI.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="28" selection-start="472" selection-end="472" vertical-scroll-proportion="62.6">
+            <state line="17" column="0" selection-start="736" selection-end="736" vertical-scroll-proportion="-10.2">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="applet.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/applet.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="0" selection-start="128" selection-end="128" vertical-scroll-proportion="0.09072581">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="appletxhtml.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/appletxhtml.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="0" selection-start="899" selection-end="899" vertical-scroll-proportion="-6.122449">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Version.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/filtered/Version.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AsciiConverterTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/de/aikiit/spamprotector/AsciiConverterTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="0" selection-start="812" selection-end="812" vertical-scroll-proportion="-10.8">
               <folding />
             </state>
           </provider>
@@ -83,7 +129,7 @@
       <file leaf-file-name="AntiSpamApplet.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/AntiSpamApplet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="33" selection-start="380" selection-end="380" vertical-scroll-proportion="-9.0">
+            <state line="9" column="44" selection-start="399" selection-end="399" vertical-scroll-proportion="-5.4">
               <folding />
             </state>
           </provider>
@@ -92,18 +138,16 @@
       <file leaf-file-name="AntiSpamApplication.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/AntiSpamApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="97" selection-end="97" vertical-scroll-proportion="-2.4">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="17" column="0" selection-start="736" selection-end="736" vertical-scroll-proportion="-10.2">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AsciiConverter.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AsciiConverter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/AsciiConverter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="16" selection-start="1267" selection-end="1267" vertical-scroll-proportion="0.3233645">
+            <state line="17" column="0" selection-start="736" selection-end="736" vertical-scroll-proportion="-10.2">
               <folding />
             </state>
           </provider>
@@ -126,19 +170,19 @@
         <option value="$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/AntiSpam.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/Konverter.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/TestKonverter.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/filtered/Version.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/Converter.java" />
-        <option value="$PROJECT_DIR$/src/test/java/de/aikiit/spamprotector/AsciiConverterTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/Spamschutz.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/target/generated-sources/de/aikiit/spamprotector/util/Version.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/applet.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/appletxhtml.html" />
-        <option value="$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/AsciiConverter.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/package-info.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/AntiSpamApplet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/GUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/AntiSpamApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/AsciiConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/Converter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/GUI.java" />
+        <option value="$PROJECT_DIR$/src/test/java/de/aikiit/spamprotector/AsciiConverterTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/filtered/Version.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/appletxhtml.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/applet.html" />
       </list>
     </option>
   </component>
@@ -158,22 +202,8 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="SpamSchutz - simple way to protect your mail adresses from naiive spammers" />
+          <option name="myItemId" value="SpamSchutz - simple way to protect your mail adresses from naiive&#10;        spammers" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="SpamSchutz - simple way to protect your mail adresses from naiive spammers" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Lifecycle" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
         </PATH_ELEMENT>
       </PATH>
       <PATH>
@@ -217,9 +247,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Favorites" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -249,6 +276,18 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spamprotector" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -292,6 +331,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="filtered" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spamschutz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spamschutz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -302,6 +367,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -363,14 +431,14 @@
           <MavenGeneralSettings>
             <option name="checksumPolicy" value="FAIL" />
             <option name="failureBehavior" value="FAST" />
+            <option name="localRepository" value="" />
             <option name="mavenHome" value="" />
-            <option name="mavenSettingsFile" value="" />
             <option name="nonRecursive" value="false" />
-            <option name="overriddenLocalRepository" value="" />
             <option name="pluginUpdatePolicy" value="DO_NOT_UPDATE" />
             <option name="printErrorStackTraces" value="false" />
             <option name="snapshotUpdatePolicy" value="ALWAYS_UPDATE" />
             <option name="usePluginRegistry" value="false" />
+            <option name="userSettingsFile" value="" />
             <option name="workOffline" value="false" />
           </MavenGeneralSettings>
         </option>
@@ -402,6 +470,7 @@
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
       </method>
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -414,6 +483,7 @@
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
       </method>
     </configuration>
     <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" adl_options="" air_descriptor_path="" air_program_params="" air_publisher_id="" air_root_dir_path="" air_run_mode="AppDescriptor" browser_family="FIREFOX" class_name="" debugger_sdk="Module SDK" html_or_swf_file_path="" launcher_type="OSDefault" main_class_name="" method_name="" module_name="" output_log_level="" package_name="" player_path="/usr/bin/flashplayer" port="0" run_mode="HtmlOrSwfFile" run_trusted="false" scope="Class" socket_policy_port="0" url_to_launch="http://">
@@ -422,6 +492,7 @@
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
       </method>
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -440,6 +511,7 @@
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -460,6 +532,19 @@
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
       </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -486,17 +571,7 @@
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
       </method>
     </configuration>
     <configuration default="false" name="AsciiConverterTest" type="JUnit" factoryName="JUnit">
@@ -541,6 +616,8 @@
   <component name="SvnConfiguration" maxAnnotateRevisions="500">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
     <option name="LAST_MERGED_REVISION" />
     <option name="MERGE_DRY_RUN" value="false" />
     <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
@@ -584,12 +661,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1920" height="1032" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32990867" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32990867" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3257403" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hudson Information" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32990867" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -600,23 +678,32 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32990867" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14499733" sideWeight="0.6712329" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14125201" sideWeight="0.67425966" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hudson Jobs" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994652" sideWeight="0.67009133" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22685929" sideWeight="0.6712329" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22311397" sideWeight="0.67425966" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32990867" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Pomodoro" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32990867" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32990867" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32990867" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32990867" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
     <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
     <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
@@ -628,6 +715,7 @@
     <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="LAST_COMMIT_MESSAGE" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
@@ -656,87 +744,84 @@
         <state line="1544" column="16" selection-start="52948" selection-end="52948" vertical-scroll-proportion="0.33214286" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/generated-sources/de/aikiit/spamprotector/util/Version.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="7" selection-start="170" selection-end="170" vertical-scroll-proportion="0.22222222" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/filtered/Version.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="36" selection-start="8" selection-end="36" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/jdk/src.zip!/javax/swing/JFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="357" column="69" selection-start="13786" selection-end="13815" vertical-scroll-proportion="0.027472528" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/de/aikiit/spamprotector/AsciiConverterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="11" selection-start="1127" selection-end="1127" vertical-scroll-proportion="0.7316637" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/applet.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="13" selection-start="1975" selection-end="1975" vertical-scroll-proportion="1.4677104">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/appletxhtml.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="9" selection-start="1171" selection-end="1171" vertical-scroll-proportion="0.24266145">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/package-info.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.0872093">
-          <folding />
-        </state>
+        <state line="3" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.0872093" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/AsciiConverter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="386" column="20" selection-start="13854" selection-end="13854" vertical-scroll-proportion="0.5666004">
+        <state line="17" column="0" selection-start="736" selection-end="736" vertical-scroll-proportion="-10.2">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/Converter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="29" selection-start="178" selection-end="178" vertical-scroll-proportion="-4.8">
+        <state line="17" column="0" selection-start="736" selection-end="736" vertical-scroll-proportion="-10.2">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="28" selection-start="472" selection-end="472" vertical-scroll-proportion="62.6">
+        <state line="17" column="0" selection-start="736" selection-end="736" vertical-scroll-proportion="-10.2">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/AntiSpamApplet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="33" selection-start="380" selection-end="380" vertical-scroll-proportion="-9.0">
+        <state line="9" column="44" selection-start="399" selection-end="399" vertical-scroll-proportion="-5.4">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/AntiSpamApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="97" selection-end="97" vertical-scroll-proportion="-2.4">
+        <state line="17" column="0" selection-start="736" selection-end="736" vertical-scroll-proportion="-10.2">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/de/aikiit/spamprotector/AsciiConverterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/AsciiConverter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/filtered/Version.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="16" selection-start="1267" selection-end="1267" vertical-scroll-proportion="0.3233645">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="812" selection-end="812" vertical-scroll-proportion="-10.8">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/appletxhtml.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="899" selection-end="899" vertical-scroll-proportion="-6.122449">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/applet.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="128" selection-end="128" vertical-scroll-proportion="0.09072581">
           <folding />
         </state>
       </provider>
