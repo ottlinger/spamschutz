@@ -17,8 +17,9 @@
 */
 package de.aikiit.spamprotector;
 
+import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 /**
  * Created by IntelliJ IDEA.
@@ -28,7 +29,7 @@ import static org.junit.Assert.assertNotNull;
  */
 
 public class AsciiConverterTest {
-    @org.junit.Test
+    @Test
     public void testConversionOnString() {
         AsciiConverter converter = new AsciiConverter();
         String in = "mailto:woo@suck.er";
@@ -39,7 +40,7 @@ public class AsciiConverterTest {
         // System.out.println("Umwandlg: "+ k.replaceChar(c));
     }   // end of main
 
-    @org.junit.Test
+    @Test
     public void testConversionOnSingleCharacter() {
         AsciiConverter converter = new AsciiConverter();
         assertEquals("&#42;", converter.replaceString("*"));
