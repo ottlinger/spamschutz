@@ -64,6 +64,7 @@
         <logger.version>1.2.16</logger.version>
         <junit.version>4.10</junit.version>
         <mockito.version>1.9.0-rc1</mockito.version>
+        <rat.version>0.9A-SNAPSHOT</rat.version>
     </properties>
     <dependencies>
         <dependency>
@@ -129,33 +130,42 @@
                 </excludes>
             </resource>
         </resources>
-        <pluginManagement/>
+                <pluginManagement>
+                    <plugins>
+                        <!-- Licence compliance for GPL -->
+                        <plugin>
+                            <groupId>org.apache.rat</groupId>
+                            <artifactId>apache-rat-plugin</artifactId>
+                            <version>${rat.version}</version>
+                            <executions>
+                                <execution>
+                                    <phase>verify</phase>
+                                    <goals>
+                                        <goal>check</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                            <configuration>
+                                <excludes>
+                                    <exclude>src/main/resources/**</exclude>
+                                    <exclude>src/test/resources/**</exclude>
+                                    <exclude>webpage*/**</exclude>
+                                    <exclude>target*/**</exclude>
+                                    <exclude>out*/**</exclude>
+                                    <exclude>site*/**</exclude>
+                                    <exclude>*.log</exclude>
+                                    <exclude>.checkstyle</exclude>
+                                    <exclude>.hg*/**</exclude>
+                                </excludes>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
         <plugins>
             <!-- Licence compliance for GPL -->
             <plugin>
                 <groupId>org.apache.rat</groupId>
                 <artifactId>apache-rat-plugin</artifactId>
-                <version>0.7</version>
-                <executions>
-                    <execution>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <excludes>
-                        <exclude>src/main/resources/**</exclude>
-                        <exclude>src/test/resources/**</exclude>
-                        <exclude>webpage*/**</exclude>
-                        <exclude>target*/**</exclude>
-                        <exclude>out*/**</exclude>
-                        <exclude>*.log</exclude>
-                        <exclude>.checkstyle</exclude>
-                        <exclude>.hg*/**</exclude>
-                    </excludes>
-                </configuration>
             </plugin>
             <!-- add test configuration to prevent tests from failing if no AWT can be opened -->
             <plugin>
@@ -374,7 +384,7 @@
             <plugin>
                 <groupId>org.apache.rat</groupId>
                 <artifactId>apache-rat-plugin</artifactId>
-                <version>0.7</version>
+                <version>${rat.version}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
