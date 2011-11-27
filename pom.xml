@@ -146,16 +146,27 @@
                                 </execution>
                             </executions>
                             <configuration>
+                                <licenseFamilies>
+                                    <licenseFamily>org.apache.rat.license.GPL3LicenseFamily</licenseFamily>
+                                </licenseFamilies>
+                                <licenses>
+                                    <license>org.apache.rat.analysis.license.GPL3License</license>
+                                </licenses>
+                                <useDefaultExcludes>true</useDefaultExcludes>
+                                <useEclipseDefaultExcludes>true</useEclipseDefaultExcludes>
+                                <useMavenDefaultExcludes>true</useMavenDefaultExcludes>
+                                <useIdeaDefaultExcludes>true</useIdeaDefaultExcludes>
                                 <excludes>
-                                    <exclude>src/main/resources/**</exclude>
-                                    <exclude>src/test/resources/**</exclude>
-                                    <exclude>webpage*/**</exclude>
-                                    <exclude>target*/**</exclude>
-                                    <exclude>out*/**</exclude>
-                                    <exclude>site*/**</exclude>
-                                    <exclude>*.log</exclude>
-                                    <exclude>.checkstyle</exclude>
-                                    <exclude>.hg*/**</exclude>
+                                    <exclude>src/main/resources/**/*</exclude>
+                                    <exclude>src/test/resources/**/*</exclude>
+                                    <exclude>**/webpage/**/*</exclude>
+                                    <exclude>**/out*/**</exclude>
+                                    <exclude>**/site*/**</exclude>
+                                    <exclude>**/*.log</exclude>
+                                    <exclude>**/.checkstyle/**/*</exclude>
+                                    <exclude>**/.hg/**/*</exclude>
+                                    <exclude>**/.hg*/**</exclude>
+                                    <exclude>.hg/**/*</exclude>
                                 </excludes>
                             </configuration>
                         </plugin>
