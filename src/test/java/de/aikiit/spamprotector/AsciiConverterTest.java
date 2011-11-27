@@ -1,4 +1,3 @@
-package de.aikiit.spamprotector;
 /**
  SpamSchutz - simple way to protect your mail adresses from naiive spammers
  Copyright (C) 2011, Aiki IT
@@ -16,6 +15,7 @@ package de.aikiit.spamprotector;
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+package de.aikiit.spamprotector;
 
 import org.junit.Test;
 

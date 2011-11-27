@@ -130,54 +130,23 @@
                 </excludes>
             </resource>
         </resources>
-                <pluginManagement>
-                    <plugins>
-                        <!-- Licence compliance for GPL -->
-                        <plugin>
-                            <groupId>org.apache.rat</groupId>
-                            <artifactId>apache-rat-plugin</artifactId>
-                            <version>${rat.version}</version>
-                            <executions>
-                                <execution>
-                                    <phase>verify</phase>
-                                    <goals>
-                                        <goal>check</goal>
-                                    </goals>
-                                </execution>
-                            </executions>
-                            <configuration>
-                                <licenseFamilies>
-                                    <licenseFamily>org.apache.rat.license.GPL3LicenseFamily</licenseFamily>
-                                </licenseFamilies>
-                                <licenses>
-                                    <license>org.apache.rat.analysis.license.GPL3License</license>
-                                </licenses>
-                                <useDefaultExcludes>true</useDefaultExcludes>
-                                <useEclipseDefaultExcludes>true</useEclipseDefaultExcludes>
-                                <useMavenDefaultExcludes>true</useMavenDefaultExcludes>
-                                <useIdeaDefaultExcludes>true</useIdeaDefaultExcludes>
-                                <excludes>
-                                    <exclude>src/main/resources/**/*</exclude>
-                                    <exclude>src/test/resources/**/*</exclude>
-                                    <exclude>**/webpage/**/*</exclude>
-                                    <exclude>**/out*/**</exclude>
-                                    <exclude>**/site*/**</exclude>
-                                    <exclude>**/*.log</exclude>
-                                    <exclude>**/.checkstyle/**/*</exclude>
-                                    <exclude>**/.hg/**/*</exclude>
-                                    <exclude>**/.hg*/**</exclude>
-                                    <exclude>.hg/**/*</exclude>
-                                </excludes>
-                            </configuration>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
+                <pluginManagement />
         <plugins>
-            <!-- Licence compliance for GPL -->
+            <!-- Licence compliance for GPL, configuration is performed in reporting section  -->
             <plugin>
                 <groupId>org.apache.rat</groupId>
                 <artifactId>apache-rat-plugin</artifactId>
+                <version>${rat.version}</version>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
+
             <!-- add test configuration to prevent tests from failing if no AWT can be opened -->
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -392,10 +361,34 @@
     </profiles>
     <reporting>
         <plugins>
+            <!-- Licence compliance for GPL -->
             <plugin>
                 <groupId>org.apache.rat</groupId>
                 <artifactId>apache-rat-plugin</artifactId>
                 <version>${rat.version}</version>
+                <configuration>
+                    <useDefaultExcludes>true</useDefaultExcludes>
+                    <useEclipseDefaultExcludes>true</useEclipseDefaultExcludes>
+                    <useMavenDefaultExcludes>true</useMavenDefaultExcludes>
+                    <useIdeaDefaultExcludes>true</useIdeaDefaultExcludes>
+                    <excludes>
+                        <exclude>src/main/resources/**/*</exclude>
+                        <exclude>src/test/resources/**/*</exclude>
+                        <exclude>**/webpage/**/*</exclude>
+                        <exclude>**/webpage/**</exclude>
+                        <exclude>**/webpage/*</exclude>
+                        <exclude>webpage/**</exclude>
+                        <exclude>webpage/**/*</exclude>
+                        <exclude>webpage/*</exclude>
+                        <exclude>**/out*/**</exclude>
+                        <exclude>**/site*/**</exclude>
+                        <exclude>**/*.log</exclude>
+                        <exclude>**/.checkstyle/**/*</exclude>
+                        <exclude>**/.hg/**/*</exclude>
+                        <exclude>**/.hg*/**</exclude>
+                        <exclude>.hg/**/*</exclude>
+                    </excludes>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
