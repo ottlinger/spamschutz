@@ -59,28 +59,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AsciiConverterTest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="AsciiConverterTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/de/aikiit/spamprotector/AsciiConverterTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="735" selection-end="735" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VersionTest.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/de/aikiit/spamprotector/util/VersionTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="355" selection-end="355" vertical-scroll-proportion="0.25714287">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="134" column="93" selection-start="5179" selection-end="5179" vertical-scroll-proportion="-6.0">
+            <state line="17" column="0" selection-start="735" selection-end="735" vertical-scroll-proportion="0.48022598">
               <folding />
             </state>
           </provider>
@@ -772,13 +754,6 @@
         <state line="17" column="0" selection-start="736" selection-end="736" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="93" selection-start="5179" selection-end="5179" vertical-scroll-proportion="-6.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/aikiit/spamprotector/AsciiConverter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="735" vertical-scroll-proportion="0.0">
@@ -786,16 +761,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/de/aikiit/spamprotector/AsciiConverterTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/de/aikiit/spamprotector/util/VersionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="735" selection-end="735" vertical-scroll-proportion="0.0">
+        <state line="9" column="0" selection-start="355" selection-end="355" vertical-scroll-proportion="0.25714287">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/de/aikiit/spamprotector/util/VersionTest.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="355" selection-end="355" vertical-scroll-proportion="0.25714287">
+        <state line="134" column="93" selection-start="5179" selection-end="5179" vertical-scroll-proportion="0.2964427">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/de/aikiit/spamprotector/AsciiConverterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="735" selection-end="735" vertical-scroll-proportion="0.48022598">
           <folding />
         </state>
       </provider>

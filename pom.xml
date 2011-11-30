@@ -145,6 +145,30 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+		    <defaultLicenseName>1234woo</defaultLicenseName>
+                    <useDefaultExcludes>true</useDefaultExcludes>
+                    <useEclipseDefaultExcludes>true</useEclipseDefaultExcludes>
+                    <useMavenDefaultExcludes>true</useMavenDefaultExcludes>
+                    <useIdeaDefaultExcludes>true</useIdeaDefaultExcludes>
+                    <excludes>
+                        <exclude>src/main/resources/**/*</exclude>
+                        <exclude>src/test/resources/**/*</exclude>
+                        <exclude>**/webpage/**/*</exclude>
+                        <exclude>**/webpage/**</exclude>
+                        <exclude>**/webpage/*</exclude>
+                        <exclude>webpage/**</exclude>
+                        <exclude>webpage/**/*</exclude>
+                        <exclude>webpage/*</exclude>
+                        <exclude>**/out*/**</exclude>
+                        <exclude>**/site*/**</exclude>
+                        <exclude>**/*.log</exclude>
+                        <exclude>**/.checkstyle/**/*</exclude>
+                        <exclude>**/.hg/**/*</exclude>
+                        <exclude>**/.hg*/**</exclude>
+                        <exclude>.hg/**/*</exclude>
+                    </excludes>
+                </configuration>
             </plugin>
 
             <!-- add test configuration to prevent tests from failing if no AWT can be opened -->
@@ -367,6 +391,7 @@
                 <artifactId>apache-rat-plugin</artifactId>
                 <version>${rat.version}</version>
                 <configuration>
+		    <defaultLicenseName>1234woo</defaultLicenseName>
                     <useDefaultExcludes>true</useDefaultExcludes>
                     <useEclipseDefaultExcludes>true</useEclipseDefaultExcludes>
                     <useMavenDefaultExcludes>true</useMavenDefaultExcludes>
