@@ -18,6 +18,9 @@
 
 package de.aikiit.spamprotector;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
@@ -27,13 +30,8 @@ import javax.swing.WindowConstants;
  * @author hirsch
  * @version 2011-04-29, 01:51
  */
+@NoArgsConstructor ( access = AccessLevel.PRIVATE )
 public final class AntiSpamApplication {
-    /**
-     * Avoid instantiation of this class.
-     */
-    private AntiSpamApplication() {
-        // empty default
-    }
 
     /**
      * Main method that loads the application in a proper size.

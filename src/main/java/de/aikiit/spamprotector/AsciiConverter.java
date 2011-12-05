@@ -17,18 +17,15 @@
  */
 package de.aikiit.spamprotector;
 
+import lombok.NoArgsConstructor;
+
 import java.awt.Toolkit;
 
 /**
  * Created by IntelliJ IDEA. User: hirsch Date: Apr 10, 2003 Time: 1:16:44 PM
  */
+@NoArgsConstructor
 public class AsciiConverter implements Converter {
-    /**
-     * Empty default constructor.
-     */
-    public AsciiConverter() {
-        // nothing
-    }   // end of Standardkonstruktor
 
     /**
      * Replaces each character with its ASCII-code representation or does
