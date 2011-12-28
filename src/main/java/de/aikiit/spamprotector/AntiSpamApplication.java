@@ -25,13 +25,30 @@ import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
 /**
- * Application starter class to perform local testing.
+ * Application starter class.
  *
  * @author hirsch
  * @version 2011-04-29, 01:51
  */
-@NoArgsConstructor ( access = AccessLevel.PRIVATE )
+@NoArgsConstructor(access = AccessLevel.NONE)
 public final class AntiSpamApplication {
+
+    /** Application title to use in Swing window. */
+    private static final String APP_TITLE = "spamschutz - "
+            + "der einfachste Schutz gegen Spider-Spam";
+
+    /**
+     * Helper that starts and initializes the application itself.
+     */
+    static void initApplication() {
+        JFrame frame = new JFrame();
+        GUI g = new GUI(false);
+        frame.setTitle(APP_TITLE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setSize(GUI.APP_DIMENSION);
+        frame.add(g);
+        frame.setVisible(true);
+    }
 
     /**
      * Main method that loads the application in a proper size.
@@ -39,14 +56,6 @@ public final class AntiSpamApplication {
      * @param args Arguments from console.
      */
     public static void main(final String[] args) {
-        JFrame frame = new JFrame();
-
-        GUI g = new GUI(false);
-        frame.setTitle("spamschutz - der einfachste "
-                + "Schutz gegen Spider-Spam");
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setSize(GUI.APP_DIMENSION);
-        frame.add(g);
-        frame.setVisible(true);
+        initApplication();
     } // end of main
 }

@@ -36,10 +36,11 @@ public class AsciiConverter implements Converter {
      */
     public final String replaceString(final String input) {
         StringBuilder codedResult = new StringBuilder();
-        for (int i = 0; i < input.length(); i++) {
+
+        for (Character character : input.toCharArray()) {
             // zeichenweise kodieren
-            codedResult.append(replaceChar(input.charAt(i)));
-        } // end of for
+            codedResult.append(replaceChar(character));
+        }
         Toolkit.getDefaultToolkit().beep();
         return codedResult.toString();
     }     // end of replaceString
