@@ -21,7 +21,6 @@ import java.applet.Applet;
 
 /**
  * Main class that starts an applet with the main UI component.
- * <p/>
  * User: hirsch Date: Apr 10, 2003 Time: 1:24:52 PM
  */
 public class AntiSpamApplet extends Applet {

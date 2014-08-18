@@ -111,7 +111,7 @@ public class GUI extends JPanel {
         start.addActionListener(new ActionListener() {
             public void actionPerformed(final ActionEvent e) {
                 // Eingabefeld auslesen
-                ausgabe.setText((new AsciiConverter()).
+                ausgabe.setText(new AsciiConverter().
                         replaceString(eingabe.getText()));
             }
         });

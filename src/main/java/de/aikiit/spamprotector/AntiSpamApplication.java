@@ -30,7 +30,7 @@ import javax.swing.WindowConstants;
  * @author hirsch
  * @version 2011-04-29, 01:51
  */
-@NoArgsConstructor(access = AccessLevel.NONE)
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class AntiSpamApplication {
 
     /** Application title to use in Swing window. */
