@@ -62,7 +62,7 @@
     <cobertura.version>2.6</cobertura.version>
     <javadoc.version>2.9.1</javadoc.version>
     <surefire.version>2.17</surefire.version>
-    <rat.version>0.12-SNAPSHOT</rat.version>
+    <rat.version>0.11</rat.version>
     <encoding.utf8>UTF-8</encoding.utf8>
     <project.reporting.outputEncoding>${encoding.utf8}</project.reporting.outputEncoding>
   </properties>
