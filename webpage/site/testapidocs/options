@@ -1,0 +1,26 @@
+-classpath
+'/home/hirsch/Documents/workspace/spamschutz/target/classes:/home/hirsch/Documents/workspace/spamschutz/target/test-classes:/home/hirsch/.m2/repository/org/mockito/mockito-all/1.9.5/mockito-all-1.9.5.jar:/home/hirsch/.m2/repository/org/projectlombok/lombok/1.14.4/lombok-1.14.4.jar:/home/hirsch/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/home/hirsch/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/hirsch/.m2/repository/junit/junit/4.11/junit-4.11.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/home/hirsch/Documents/workspace/spamschutz/src/test/java'
+-author
+-bottom
+'Copyright &#169; 2014 <a href="http://www.aiki-it.de">Aiki IT</a>. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/hirsch/Documents/workspace/spamschutz/target/site/testapidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'SpamSchutz - simple way to protect your mail adresses from naiive spammers 0.1.3-SNAPSHOT Test API'
+-link
+'../apidocs'
+-linkoffline
+'http://docs.oracle.com/javase/7/docs/api' '/home/hirsch/Documents/workspace/spamschutz/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'SpamSchutz - simple way to protect your mail adresses from naiive spammers 0.1.3-SNAPSHOT Test API'
