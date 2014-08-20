@@ -65,6 +65,7 @@
     <rat.version>0.11</rat.version>
     <encoding.utf8>UTF-8</encoding.utf8>
     <project.reporting.outputEncoding>${encoding.utf8}</project.reporting.outputEncoding>
+    <project.build.sourceEncoding>${encoding.utf8}</project.build.sourceEncoding>
   </properties>
   <dependencies>
     <dependency>
