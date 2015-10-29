@@ -5,6 +5,9 @@ addons:
   apt:
     packages:
     - xvfb
+    - vnc-java
+    - vnc-server
+    - x11vnc
     - tightvncserver
 env:
   - DSPLAY=:0
