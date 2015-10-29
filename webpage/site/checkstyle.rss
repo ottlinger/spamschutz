@@ -20,19 +20,19 @@ under the License.
 <rss version="0.91">
   <channel>
     <title>SpamSchutz - simple way to protect your mail adresses from naiive spammers - Checkstyle report</title>
-    <link>http://code.google.com/p/spamschutz/</link>
+    <link>https://github.com/ottlinger/spamschutz/</link>
     <description>SpamSchutz - simple way to protect your mail adresses from naiive spammers - Checkstyle report</description>
     <language>en-us</language>
-    <copyright>&#169;2014 Aiki IT</copyright>
+    <copyright>&#169;2015 Aiki IT</copyright>
     <item>
       <title>File: 6,
              Errors: 2,
              Warnings: 0,
              Infos: 0
       </title>
-            <link>http://code.google.com/p/spamschutz//checkstyle.html</link>
+            <link>https://github.com/ottlinger/spamschutz//checkstyle.html</link>
       <description>
-        <p>Click <a href="http://code.google.com/p/spamschutz//checkstyle.html">here</a> for the full Checkstyle report.</p>
+        <p>Click <a href="https://github.com/ottlinger/spamschutz//checkstyle.html">here</a> for the full Checkstyle report.</p>
 
         <table summary="Files" boder="1">
           <thead>
@@ -46,7 +46,7 @@ under the License.
           <tbody>
                           <tr>
                 <td>
-                  <a href="http://code.google.com/p/spamschutz//checkstyle.html#de.aikiit.spamprotector.package-info.java">de/aikiit/spamprotector/package-info.java</a>
+                  <a href="https://github.com/ottlinger/spamschutz//checkstyle.html#de.aikiit.spamprotector.package-info.java">de/aikiit/spamprotector/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -60,7 +60,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://code.google.com/p/spamschutz//checkstyle.html#de.aikiit.spamprotector.AntiSpamApplication.java">de/aikiit/spamprotector/AntiSpamApplication.java</a>
+                  <a href="https://github.com/ottlinger/spamschutz//checkstyle.html#de.aikiit.spamprotector.AntiSpamApplication.java">de/aikiit/spamprotector/AntiSpamApplication.java</a>
                 </td>
                 <td>
                   0
@@ -74,7 +74,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://code.google.com/p/spamschutz//checkstyle.html#de.aikiit.spamprotector.GUI.java">de/aikiit/spamprotector/GUI.java</a>
+                  <a href="https://github.com/ottlinger/spamschutz//checkstyle.html#de.aikiit.spamprotector.GUI.java">de/aikiit/spamprotector/GUI.java</a>
                 </td>
                 <td>
                   0
@@ -88,7 +88,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://code.google.com/p/spamschutz//checkstyle.html#de.aikiit.spamprotector.AsciiConverter.java">de/aikiit/spamprotector/AsciiConverter.java</a>
+                  <a href="https://github.com/ottlinger/spamschutz//checkstyle.html#de.aikiit.spamprotector.AsciiConverter.java">de/aikiit/spamprotector/AsciiConverter.java</a>
                 </td>
                 <td>
                   0
@@ -102,7 +102,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://code.google.com/p/spamschutz//checkstyle.html#de.aikiit.spamprotector.AntiSpamApplet.java">de/aikiit/spamprotector/AntiSpamApplet.java</a>
+                  <a href="https://github.com/ottlinger/spamschutz//checkstyle.html#de.aikiit.spamprotector.AntiSpamApplet.java">de/aikiit/spamprotector/AntiSpamApplet.java</a>
                 </td>
                 <td>
                   0
@@ -116,7 +116,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://code.google.com/p/spamschutz//checkstyle.html#de.aikiit.spamprotector.Converter.java">de/aikiit/spamprotector/Converter.java</a>
+                  <a href="https://github.com/ottlinger/spamschutz//checkstyle.html#de.aikiit.spamprotector.Converter.java">de/aikiit/spamprotector/Converter.java</a>
                 </td>
                 <td>
                   0
