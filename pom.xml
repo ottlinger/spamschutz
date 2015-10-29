@@ -21,14 +21,14 @@
   <groupId>de.aikiit</groupId>
   <artifactId>spamschutz</artifactId>
   <packaging>jar</packaging>
-  <version>0.1.3-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
   <name>SpamSchutz - simple way to protect your mail adresses from naiive spammers</name>
   <description>This spamschutz (=spam protector in German) can be launched as
         an applet or a standalone application. It converts all given characters
         to their ASCII representation, thus making it hard for regular
         expressions to find mail adresses.
     </description>
-  <url>http://code.google.com/p/spamschutz/</url>
+  <url>https://github.com/ottlinger/spamschutz/</url>
   <organization>
     <name>Aiki IT</name>
     <url>http://www.aiki-it.de</url>
@@ -40,8 +40,8 @@
     </license>
   </licenses>
   <issueManagement>
-    <system>googlecode</system>
-    <url>http://code.google.com/p/spamschutz/issues/list</url>
+    <system>GitHub issues</system>
+    <url>https://github.com/ottlinger/spamschutz/issues</url>
   </issueManagement>
   <distributionManagement>
     <site>
@@ -50,14 +50,13 @@
     </site>
   </distributionManagement>
   <scm>
-    <connection>scm:hg:http://spamschutz.googlecode.com/hg/</connection>
-    <developerConnection>scm:hg:https://spamschutz.googlecode.com/hg/
-        </developerConnection>
-    <url>http://code.google.com/p/spamschutz/source/browse/</url>
+    <connection>scm:git:git://github.com/ottlinger/spamschutz.git</connection>
+    <developerConnection>scm:git:giti@github.com:ottlinger/spamschutz.git</developerConnection>
+    <url>https://github.com/ottlinger/spamschutz</url>
   </scm>
   <properties>
     <logger.version>1.2.17</logger.version>
-    <junit.version>4.11</junit.version>
+    <junit.version>4.12</junit.version>
     <mockito.version>1.9.5</mockito.version>
     <cobertura.version>2.6</cobertura.version>
     <javadoc.version>2.9.1</javadoc.version>
