@@ -185,12 +185,12 @@
           <enableAssertions>true</enableAssertions>
           <forkCount>3</forkCount>
           <reuseForks>true</reuseForks>
-          <systemProperties>
+          <!--systemProperties>
                         <property>
                             <name>java.awt.headless</name>
                             <value>true</value>
                         </property>
-                    </systemProperties>
+                    </systemProperties-->
         </configuration>
       </plugin>
       <!-- copy Version.java out of normal resource copying to avoid eclipse errors -->
