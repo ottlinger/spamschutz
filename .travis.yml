@@ -6,6 +6,5 @@ addons:
     packages:
     - xvfb
     - tightvncserver
-    - vnc
 env:
   - DSPLAY=:0
