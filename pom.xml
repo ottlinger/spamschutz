@@ -185,7 +185,7 @@
           <enableAssertions>true</enableAssertions>
           <forkCount>3</forkCount>
           <reuseForks>true</reuseForks>
-          <!--systemProperties>
+          <systemProperties>
                         <property>
                             <name>java.awt.headless</name>
                             <value>true</value>
