@@ -1,1 +1,8 @@
 target
+out
+spamschutz.iml
+spamschutz.ipr
+spamschutz.iws
+.project
+.classpath
+.settings
