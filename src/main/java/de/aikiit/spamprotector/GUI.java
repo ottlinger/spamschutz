@@ -17,11 +17,7 @@
  */
 package de.aikiit.spamprotector;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -55,7 +51,11 @@ public class GUI extends JPanel {
      *                 <code>false</code> or applet <code>true</code>.
      */
     public GUI(final boolean isApplet) {
-        init(isApplet);
+        SwingUtilities.invokeLater(
+                () -> {
+                    init(isApplet);
+                }
+        );
     }   // end of Konstruktor
 
     /**
