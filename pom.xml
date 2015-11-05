@@ -140,44 +140,63 @@
     <pluginManagement/>
     <plugins>
       <!-- Licence compliance for GPL, configuration is performed in reporting section  -->
-            <plugin>
-                <groupId>org.apache.rat</groupId>
-                <artifactId>apache-rat-plugin</artifactId>
-                <version>${rat.version}</version>
-                <executions>
-                    <execution>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <!-- as long as other licenses are not yet supported properly -->
-                    <ignoreErrors>true</ignoreErrors>
-                    <useDefaultExcludes>true</useDefaultExcludes>
-                    <useEclipseDefaultExcludes>true</useEclipseDefaultExcludes>
-                    <useMavenDefaultExcludes>true</useMavenDefaultExcludes>
-                    <useIdeaDefaultExcludes>true</useIdeaDefaultExcludes>
-                    <excludes>
-                        <exclude>*.md</exclude>
-                        <exclude>.*</exclude>
-                        <exclude>src/main/resources/**/*</exclude>
-                        <exclude>src/test/resources/**/*</exclude>
-                        <exclude>**/webpage/**/*</exclude>
-                        <exclude>**/webpage/**</exclude>
-                        <exclude>**/webpage/*</exclude>
-                        <exclude>webpage/**</exclude>
-                        <exclude>webpage/**/*</exclude>
-                        <exclude>webpage/*</exclude>
-                        <exclude>**/out*/**</exclude>
-                        <exclude>**/site*/**</exclude>
-                        <exclude>**/*.log</exclude>
-                        <exclude>**/.checkstyle/**/*</exclude>
-                        <exclude>**/.gitignore</exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
+      <plugin>
+        <groupId>org.apache.rat</groupId>
+        <artifactId>apache-rat-plugin</artifactId>
+        <version>${rat.version}</version>
+        <executions>
+          <execution>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <!-- as long as other licenses are not yet supported properly -->
+          <ignoreErrors>true</ignoreErrors>
+          <useDefaultExcludes>true</useDefaultExcludes>
+          <useEclipseDefaultExcludes>true</useEclipseDefaultExcludes>
+          <useMavenDefaultExcludes>true</useMavenDefaultExcludes>
+          <useIdeaDefaultExcludes>true</useIdeaDefaultExcludes>
+          <excludes>
+            <exclude>*.md</exclude>
+            <exclude>.*</exclude>
+            <exclude>src/main/resources/**/*</exclude>
+            <exclude>src/test/resources/**/*</exclude>
+            <exclude>**/webpage/**/*</exclude>
+            <exclude>**/webpage/**</exclude>
+            <exclude>**/webpage/*</exclude>
+            <exclude>webpage/**</exclude>
+            <exclude>webpage/**/*</exclude>
+            <exclude>webpage/*</exclude>
+            <exclude>**/out*/**</exclude>
+            <exclude>**/site*/**</exclude>
+            <exclude>**/*.log</exclude>
+            <exclude>**/.checkstyle/**/*</exclude>
+            <exclude>**/.gitignore</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.7.5.201505241946</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>report</id>
+            <phase>test</phase>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
       <!-- add test configuration to prevent tests from failing if no AWT can be opened -->
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
@@ -220,7 +239,7 @@
                   </includes>
                 </resource>
               </resources>
-                <encoding>${encoding.utf8}</encoding>
+              <encoding>${encoding.utf8}</encoding>
             </configuration>
           </execution>
         </executions>
@@ -396,7 +415,7 @@ Caused by: java.lang.NullPointerException
               <artifactId>maven-javadoc-plugin</artifactId>
               <version>${javadoc.version}</version>
               <configuration>
-                  <encoding>${encoding.utf8}</encoding>
+                <encoding>${encoding.utf8}</encoding>
               </configuration>
             </plugin>
             <plugin>
@@ -448,13 +467,14 @@ Caused by: java.lang.NullPointerException
               <version>2.0</version>
             </plugin>
             <!-- 20090805  disabled due to a bug in Cobertura leading to CI error mails, http://jira.codehaus.org/browse/MCOBERTURA-73 -->
-            <!-- cobertura plugin -->
+            <!-- cobertura plugin 
             <plugin>
               <groupId>org.codehaus.mojo</groupId>
               <artifactId>cobertura-maven-plugin</artifactId>
               <version>${cobertura.version}</version>
             </plugin>
-<!--
+-->
+            <!--
             <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-changelog-plugin</artifactId>
@@ -603,7 +623,7 @@ Caused by: java.lang.NullPointerException
       <id>hirsch</id>
     </developer>
   </developers>
-    <!-- To be able to use the latest version/release candidate -->
+  <!-- To be able to use the latest version/release candidate -->
   <pluginRepositories>
     <pluginRepository>
       <id>staged-releases</id>

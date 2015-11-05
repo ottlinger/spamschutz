@@ -2,6 +2,13 @@
 
 [![Build Status](https://travis-ci.org/ottlinger/spamschutz.svg?branch=master)](https://travis-ci.org/ottlinger/spamschutz)
 
+[![codecov.io](http://codecov.io/github/ottlinger/spamschutz/coverage.svg?bran
+ch=master)](http://codecov.io/github/ottlinger/spamschutz?branch=master)
+
+[![Stories in 
+Ready](https://badge.waffle.io/ottlinger/spamschutz.svg?label=ready&title=Read
+y)](http://waffle.io/ottlinger/spamschutz)
+
 # Purpose of this programm #
 
 This application let's you easily change mail addresses into ASCII-encoded values. Therefore your webpages remain human-readable and spiders won't detect your mail addresses and use them for unwanted purposes.
