@@ -9,6 +9,8 @@ ch=master)](http://codecov.io/github/ottlinger/spamschutz?branch=master)
 Ready](https://badge.waffle.io/ottlinger/spamschutz.svg?label=ready&title=Read
 y)](http://waffle.io/ottlinger/spamschutz)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/ab19f8aeeb264e0bbad1740e07a765aa)](https://www.codacy.com/app/github_25/spamschutz)
+
 # Purpose of this programm #
 
 This application let's you easily change mail addresses into ASCII-encoded values. Therefore your webpages remain human-readable and spiders won't detect your mail addresses and use them for unwanted purposes.
