@@ -38,4 +38,4 @@ If you want to run this programme as a standalone application, perform the follo
 
 ## Reports ##
 
-A current snapshot's maven [site reports](https://github.com/ottlinger/spamschutz/blob/master/webpage/site/index.html) is a good place to start to understand the application without trying it.
+A current snapshot's maven [site reports](https://ottlinger.github.io/spamschutz/) is a good place to start to understand the application without trying it.
