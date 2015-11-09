@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="de"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>AsciiConverter.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SpamSchutz - simple way to protect your mail adresses from naïve spammers</a> &gt; <a href="index.source.html" class="el_package">de.aikiit.spamprotector</a> &gt; <span class="el_source">AsciiConverter.java</span></div><h1>AsciiConverter.java</h1><pre class="source lang-java linenums">/**
+ SpamSchutz - simple way to protect your mail adresses from naiive spammers
+ Copyright (C) 2011, Aiki IT
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ */
+package de.aikiit.spamprotector;
+
+import lombok.NoArgsConstructor;
+
+import java.awt.Toolkit;
+
+/**
+ * Created by IntelliJ IDEA. User: hirsch Date: Apr 10, 2003 Time: 1:16:44 PM
+ */
+<span class="fc" id="L27">@NoArgsConstructor</span>
+public class AsciiConverter implements Converter {
+
+    /**
+     * Replaces each character with its ASCII-code representation or does
+     * nothing if character is not in the range of 'normal' characters.
+     *
+     * @param input Not encoded or replaced value (should be a character).
+     * @return Returns replaced input values.
+     */
+    public final String replaceString(final String input) {
+<span class="fc" id="L38">        StringBuilder codedResult = new StringBuilder();</span>
+
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        for (Character character : input.toCharArray()) {</span>
+            // zeichenweise kodieren
+<span class="fc" id="L42">            codedResult.append(replaceChar(character));</span>
+        }
+<span class="fc" id="L44">        Toolkit.getDefaultToolkit().beep();</span>
+<span class="fc" id="L45">        return codedResult.toString();</span>
+    }     // end of replaceString
+
+    /**
+     * zeichenweise in ASCII-Darstellung umwandeln!
+     *
+     * @param input (Einzelzeichen)
+     * @return ASCI-String
+     */
+    // REVIEW 2011-05-05 check whether this can be replaced by conversion from
+    // int/char to get the ascii code of a given character,
+    // add testing first to
+    // ensure proper functionality
+    private static String replaceChar(final char input) {
+<span class="pc bpc" id="L59" title="78 of 95 branches missed.">        switch (input) {</span>
+            case '!':
+<span class="nc" id="L61">                return &quot;&amp;#33;&quot;;</span>
+
+            case '&quot;':
+<span class="nc" id="L64">                return &quot;&amp;#34;&quot;;</span>
+
+            case '#':
+<span class="nc" id="L67">                return &quot;&amp;#35;&quot;;</span>
+
+            case '$':
+<span class="nc" id="L70">                return &quot;&amp;#36;&quot;;</span>
+
+            case '%':
+<span class="nc" id="L73">                return &quot;&amp;#37;&quot;;</span>
+
+            case '&amp;':
+<span class="nc" id="L76">                return &quot;&amp;amp;&quot;;</span>
+
+            case '\'':
+<span class="nc" id="L79">                return &quot;&amp;#39;&quot;;</span>
+
+            case '(':
+<span class="nc" id="L82">                return &quot;&amp;#40;&quot;;</span>
+
+            case ')':
+<span class="nc" id="L85">                return &quot;&amp;#41;&quot;;</span>
+
+            case '*':
+<span class="fc" id="L88">                return &quot;&amp;#42;&quot;;</span>
+
+            case '+':
+<span class="nc" id="L91">                return &quot;&amp;#43;&quot;;</span>
+
+            case ',':
+<span class="nc" id="L94">                return &quot;&amp;#44;&quot;;</span>
+
+            case '-':
+<span class="nc" id="L97">                return &quot;&amp;#45;&quot;;</span>
+
+            case '.':
+<span class="fc" id="L100">                return &quot;&amp;#46;&quot;;</span>
+
+            case '/':
+<span class="nc" id="L103">                return &quot;&amp;#47;&quot;;</span>
+
+            case '0':
+<span class="nc" id="L106">                return &quot;&amp;#48;&quot;;</span>
+
+            case '1':
+<span class="nc" id="L109">                return &quot;&amp;#49;&quot;;</span>
+
+            case '2':
+<span class="nc" id="L112">                return &quot;&amp;#50;&quot;;</span>
+
+            case '3':
+<span class="nc" id="L115">                return &quot;&amp;#51;&quot;;</span>
+
+            case '4':
+<span class="nc" id="L118">                return &quot;&amp;#52;&quot;;</span>
+
+            case '5':
+<span class="nc" id="L121">                return &quot;&amp;#53;&quot;;</span>
+
+            case '6':
+<span class="nc" id="L124">                return &quot;&amp;#54;&quot;;</span>
+
+            case '7':
+<span class="nc" id="L127">                return &quot;&amp;#55;&quot;;</span>
+
+            case '8':
+<span class="nc" id="L130">                return &quot;&amp;#56;&quot;;</span>
+
+            case '9':
+<span class="nc" id="L133">                return &quot;&amp;#57;&quot;;</span>
+
+            case ':':
+<span class="fc" id="L136">                return &quot;&amp;#58;&quot;;</span>
+
+            case ';':
+<span class="nc" id="L139">                return &quot;&amp;#59;&quot;;</span>
+
+            case '&lt;':
+<span class="nc" id="L142">                return &quot;&amp;#60;&quot;;</span>
+
+            case '=':
+<span class="nc" id="L145">                return &quot;&amp;#61;&quot;;</span>
+
+            case '&gt;':
+<span class="nc" id="L148">                return &quot;&amp;#62;&quot;;</span>
+
+            case '?':
+<span class="nc" id="L151">                return &quot;&amp;#63;&quot;;</span>
+
+            case '@':
+<span class="fc" id="L154">                return &quot;&amp;#64;&quot;;</span>
+
+            case 'A':
+<span class="nc" id="L157">                return &quot;&amp;#65;&quot;;</span>
+
+            case 'B':
+<span class="nc" id="L160">                return &quot;&amp;#66;&quot;;</span>
+
+            case 'C':
+<span class="nc" id="L163">                return &quot;&amp;#67;&quot;;</span>
+
+            case 'D':
+<span class="nc" id="L166">                return &quot;&amp;#68;&quot;;</span>
+
+            case 'E':
+<span class="nc" id="L169">                return &quot;&amp;#69;&quot;;</span>
+
+            case 'F':
+<span class="nc" id="L172">                return &quot;&amp;#70;&quot;;</span>
+
+            case 'G':
+<span class="nc" id="L175">                return &quot;&amp;#71;&quot;;</span>
+
+            case 'H':
+<span class="nc" id="L178">                return &quot;&amp;#72;&quot;;</span>
+
+            case 'I':
+<span class="nc" id="L181">                return &quot;&amp;#73;&quot;;</span>
+
+            case 'J':
+<span class="nc" id="L184">                return &quot;&amp;#74;&quot;;</span>
+
+            case 'K':
+<span class="nc" id="L187">                return &quot;&amp;#75;&quot;;</span>
+
+            case 'L':
+<span class="nc" id="L190">                return &quot;&amp;#76;&quot;;</span>
+
+            case 'M':
+<span class="nc" id="L193">                return &quot;&amp;#77;&quot;;</span>
+
+            case 'N':
+<span class="nc" id="L196">                return &quot;&amp;#78;&quot;;</span>
+
+            case 'O':
+<span class="nc" id="L199">                return &quot;&amp;#79;&quot;;</span>
+
+            case 'P':
+<span class="nc" id="L202">                return &quot;&amp;#80;&quot;;</span>
+
+            case 'Q':
+<span class="nc" id="L205">                return &quot;&amp;#81;&quot;;</span>
+
+            case 'R':
+<span class="nc" id="L208">                return &quot;&amp;#82;&quot;;</span>
+
+            case 'S':
+<span class="nc" id="L211">                return &quot;&amp;#83;&quot;;</span>
+
+            case 'T':
+<span class="nc" id="L214">                return &quot;&amp;#84;&quot;;</span>
+
+            case 'U':
+<span class="nc" id="L217">                return &quot;&amp;#85;&quot;;</span>
+
+            case 'V':
+<span class="nc" id="L220">                return &quot;&amp;#86;&quot;;</span>
+
+            case 'W':
+<span class="nc" id="L223">                return &quot;&amp;#87;&quot;;</span>
+
+            case 'X':
+<span class="nc" id="L226">                return &quot;&amp;#88;&quot;;</span>
+
+            case 'Y':
+<span class="nc" id="L229">                return &quot;&amp;#89;&quot;;</span>
+
+            case 'Z':
+<span class="nc" id="L232">                return &quot;&amp;#90;&quot;;</span>
+
+            case '[':
+<span class="nc" id="L235">                return &quot;&amp;#91;&quot;;</span>
+
+            case '\\':
+<span class="nc" id="L238">                return &quot;&amp;#92;&quot;;</span>
+
+            case ']':
+<span class="nc" id="L241">                return &quot;&amp;#93;&quot;;</span>
+
+            case '^':
+<span class="nc" id="L244">                return &quot;&amp;#94;&quot;;</span>
+
+            case '_':
+<span class="nc" id="L247">                return &quot;&amp;#95;&quot;;</span>
+
+            case '`':
+<span class="nc" id="L250">                return &quot;&amp;#96;&quot;;</span>
+
+            case 'a':
+<span class="fc" id="L253">                return &quot;&amp;#97;&quot;;</span>
+
+            case 'b':
+<span class="nc" id="L256">                return &quot;&amp;#98;&quot;;</span>
+
+            case 'c':
+<span class="fc" id="L259">                return &quot;&amp;#99;&quot;;</span>
+
+            case 'd':
+<span class="nc" id="L262">                return &quot;&amp;#100;&quot;;</span>
+
+            case 'e':
+<span class="fc" id="L265">                return &quot;&amp;#101;&quot;;</span>
+
+            case 'f':
+<span class="nc" id="L268">                return &quot;&amp;#102;&quot;;</span>
+
+            case 'g':
+<span class="nc" id="L271">                return &quot;&amp;#103;&quot;;</span>
+
+            case 'h':
+<span class="nc" id="L274">                return &quot;&amp;#104;&quot;;</span>
+
+            case 'i':
+<span class="fc" id="L277">                return &quot;&amp;#105;&quot;;</span>
+
+            case 'j':
+<span class="nc" id="L280">                return &quot;&amp;#106;&quot;;</span>
+
+            case 'k':
+<span class="fc" id="L283">                return &quot;&amp;#107;&quot;;</span>
+
+            case 'l':
+<span class="fc" id="L286">                return &quot;&amp;#108;&quot;;</span>
+
+            case 'm':
+<span class="fc" id="L289">                return &quot;&amp;#109;&quot;;</span>
+
+            case 'n':
+<span class="nc" id="L292">                return &quot;&amp;#110;&quot;;</span>
+
+            case 'o':
+<span class="fc" id="L295">                return &quot;&amp;#111;&quot;;</span>
+
+            case 'p':
+<span class="nc" id="L298">                return &quot;&amp;#112;&quot;;</span>
+
+            case 'q':
+<span class="nc" id="L301">                return &quot;&amp;#113;&quot;;</span>
+
+            case 'r':
+<span class="fc" id="L304">                return &quot;&amp;#114;&quot;;</span>
+
+            case 's':
+<span class="fc" id="L307">                return &quot;&amp;#115;&quot;;</span>
+
+            case 't':
+<span class="fc" id="L310">                return &quot;&amp;#116;&quot;;</span>
+
+            case 'u':
+<span class="fc" id="L313">                return &quot;&amp;#117;&quot;;</span>
+
+            case 'v':
+<span class="nc" id="L316">                return &quot;&amp;#118;&quot;;</span>
+
+            case 'w':
+<span class="fc" id="L319">                return &quot;&amp;#119;&quot;;</span>
+
+            case 'x':
+<span class="nc" id="L322">                return &quot;&amp;#120;&quot;;</span>
+
+            case 'y':
+<span class="nc" id="L325">                return &quot;&amp;#121;&quot;;</span>
+
+            case 'z':
+<span class="nc" id="L328">                return &quot;&amp;#122;&quot;;</span>
+
+            case '{':
+<span class="nc" id="L331">                return &quot;&amp;#123;&quot;;</span>
+
+            case '|':
+<span class="nc" id="L334">                return &quot;&amp;#124;&quot;;</span>
+
+            case '}':
+<span class="nc" id="L337">                return &quot;&amp;#125;&quot;;</span>
+
+            case '~':
+<span class="nc" id="L340">                return &quot;&amp;#126;&quot;;</span>
+
+            // do nothing if any other character is found
+            default:
+<span class="nc" id="L344">                return String.valueOf(input);</span>
+        } // switch
+    }   // end of replaceChar
+
+} // end of AsciiConverter
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

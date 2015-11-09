@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="de"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>GUI.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SpamSchutz - simple way to protect your mail adresses from naïve spammers</a> &gt; <a href="index.source.html" class="el_package">de.aikiit.spamprotector</a> &gt; <span class="el_source">GUI.java</span></div><h1>GUI.java</h1><pre class="source lang-java linenums">/**
+ SpamSchutz - simple way to protect your mail adresses from naiive spammers
+ Copyright (C) 2011, Aiki IT
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ */
+package de.aikiit.spamprotector;
+
+import javax.swing.*;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Calendar;
+
+/**
+ * This class contains the main UI of this application (both input windows
+ * and all command buttons).
+ *
+ * Created by IntelliJ IDEA. User: hirsch Date: Apr 10, 2003 Time: 3:12:32 PM
+ */
+public class GUI extends JPanel {
+
+    /**
+     * Constant to define the dimension of a text box.
+     */
+<span class="fc" id="L39">    private static final Dimension BOX_DIMENSION = new Dimension(300, 200);</span>
+
+    /**
+     * Preferred size of the complete application window.
+     */
+<span class="fc" id="L44">    public static final Dimension APP_DIMENSION = new Dimension(800, 300);</span>
+
+    /**
+     * Launches and configures the main UI component, while taking care whether
+     * the application is started as an applet or standalone.
+     *
+     * @param isApplet Defines whether the application is started as standalone
+     *                 &lt;code&gt;false&lt;/code&gt; or applet &lt;code&gt;true&lt;/code&gt;.
+     */
+<span class="fc" id="L53">    public GUI(final boolean isApplet) {</span>
+<span class="fc" id="L54">        SwingUtilities.invokeLater(</span>
+                () -&gt; {
+<span class="nc" id="L56">                    init(isApplet);</span>
+<span class="nc" id="L57">                }</span>
+        );
+<span class="fc" id="L59">    }   // end of Konstruktor</span>
+
+    /**
+     * Internal helper to initialize the UI depending on the surrounding this
+     * application is started.
+     *
+     * @param isApplet Defines whether the application is started as standalone
+     *                 &lt;code&gt;false&lt;/code&gt; or applet &lt;code&gt;true&lt;/code&gt;.
+     */
+    private void init(final boolean isApplet) {
+        final JTextField eingabe;
+        final JTextField ausgabe;
+        JPanel knoepfe;
+        JButton ende;
+        JButton start;
+        JButton reset;
+        JButton hilfe;
+        JPanel ioBereich;
+        JLabel eing;
+        JLabel ausg;
+
+<span class="fc" id="L80">        final Calendar calendar = Calendar.getInstance();</span>
+
+        // command help
+<span class="fc" id="L83">        knoepfe = new JPanel();</span>
+<span class="fc" id="L84">        hilfe = new JButton(&quot;Hilfe&quot;);</span>
+<span class="nc" id="L85">        hilfe.setMnemonic('H');</span>
+<span class="nc" id="L86">        hilfe.addActionListener(new ActionListener() {</span>
+            public void actionPerformed(final ActionEvent e) {
+<span class="nc" id="L88">                JOptionPane.showMessageDialog(null, &quot;Einfach ins Eingabefeld &quot;</span>
+                        + &quot;HTML-Code einfügen!\nDann konvertieren &quot;
+                        + &quot;und schon sind weniger SpamAttacken &quot;
+                        + &quot;wahrscheinlich&quot;
+                        + &quot;\n(C) AIKI IT 2003-&quot;
+<span class="nc" id="L93">                        + calendar.get(Calendar.YEAR)</span>
+                        + &quot;, Version: &quot;
+                        + de.aikiit.spamprotector.util.Version.VERSION,
+                        &quot;Spam-Schutz - Hilfe&quot;,
+                        JOptionPane.INFORMATION_MESSAGE);
+<span class="nc" id="L98">            }</span>
+        });
+
+<span class="nc" id="L101">        eingabe = new JTextField();</span>
+<span class="nc" id="L102">        eingabe.setSize(BOX_DIMENSION);</span>
+<span class="nc" id="L103">        eingabe.setPreferredSize(BOX_DIMENSION);</span>
+<span class="nc" id="L104">        ausgabe = new JTextField(&quot;Bitte Text eingeben und Button betätigen!&quot;);</span>
+<span class="nc" id="L105">        ausgabe.setSize(BOX_DIMENSION);</span>
+<span class="nc" id="L106">        ausgabe.setPreferredSize(BOX_DIMENSION);</span>
+
+
+<span class="nc" id="L109">        start = new JButton(&quot;Umwandeln&quot;);</span>
+<span class="nc" id="L110">        start.setMnemonic('U');</span>
+<span class="nc" id="L111">        start.addActionListener(new ActionListener() {</span>
+            public void actionPerformed(final ActionEvent e) {
+                // Eingabefeld auslesen
+<span class="nc" id="L114">                ausgabe.setText(new AsciiConverter().</span>
+<span class="nc" id="L115">                        replaceString(eingabe.getText()));</span>
+<span class="nc" id="L116">            }</span>
+        });
+
+<span class="nc" id="L119">        reset = new JButton(&quot;Reset&quot;);</span>
+<span class="nc" id="L120">        reset.setMnemonic('R');</span>
+<span class="nc" id="L121">        reset.addActionListener(new ActionListener() {</span>
+            public void actionPerformed(final ActionEvent e) {
+<span class="nc" id="L123">                eingabe.setText(&quot;&quot;);</span>
+<span class="nc" id="L124">            }</span>
+        });
+
+<span class="nc" id="L127">        knoepfe.add(start);</span>
+<span class="nc" id="L128">        knoepfe.add(reset);</span>
+
+        // Feldbereich
+<span class="nc" id="L131">        ioBereich = new JPanel(new FlowLayout());</span>
+
+<span class="nc" id="L133">        eing = new JLabel(&quot;1: Eingabe:&quot;);</span>
+<span class="nc" id="L134">        eing.setDisplayedMnemonic('1');</span>
+<span class="nc" id="L135">        eing.setLabelFor(eingabe);</span>
+<span class="nc" id="L136">        ioBereich.add(eing);</span>
+<span class="nc" id="L137">        ioBereich.add(eingabe);</span>
+
+<span class="nc" id="L139">        ausg = new JLabel(&quot;2: Ausgabe:&quot;);</span>
+<span class="nc" id="L140">        ausg.setDisplayedMnemonic('2');</span>
+<span class="nc" id="L141">        ausg.setLabelFor(ausgabe);</span>
+<span class="nc" id="L142">        ioBereich.add(ausg);</span>
+<span class="nc" id="L143">        ioBereich.add(ausgabe);</span>
+
+        // Gesamtkonfiguration des Fensters
+<span class="nc" id="L146">        this.setLayout(new BorderLayout());</span>
+<span class="nc" id="L147">        this.add(knoepfe, BorderLayout.NORTH);</span>
+<span class="nc" id="L148">        this.add(ioBereich, BorderLayout.CENTER);</span>
+
+        // if started standalone we do need a quit-button
+<span class="nc bnc" id="L151" title="All 2 branches missed.">        if (!isApplet) {</span>
+<span class="nc" id="L152">            ende = new JButton(&quot;Ende&quot;);</span>
+<span class="nc" id="L153">            ende.setMnemonic('E');</span>
+            // Programmende
+<span class="nc" id="L155">            ende.addActionListener(new ActionListener() {</span>
+                public void actionPerformed(final ActionEvent e) {
+<span class="nc" id="L157">                    System.exit(0);</span>
+<span class="nc" id="L158">                }</span>
+            });
+
+<span class="nc" id="L161">            knoepfe.add(ende);</span>
+        }
+<span class="nc" id="L163">        knoepfe.add(hilfe);</span>
+
+<span class="nc" id="L165">        this.setVisible(true);</span>
+<span class="nc" id="L166">    }   // end of init</span>
+} // end of class
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
