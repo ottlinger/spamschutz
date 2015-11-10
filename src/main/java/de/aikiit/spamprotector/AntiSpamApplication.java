@@ -21,8 +21,7 @@ package de.aikiit.spamprotector;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
-import javax.swing.JFrame;
-import javax.swing.WindowConstants;
+import javax.swing.*;
 
 /**
  * Application starter class.
@@ -40,14 +39,18 @@ public final class AntiSpamApplication {
     /**
      * Helper that starts and initializes the application itself.
      */
-    static void initApplication() {
-        JFrame frame = new JFrame();
-        GUI g = new GUI(false);
-        frame.setTitle(APP_TITLE);
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setSize(GUI.APP_DIMENSION);
-        frame.add(g);
-        frame.setVisible(true);
+    private static void initApplication() {
+        SwingUtilities.invokeLater(
+                () -> {
+                    JFrame frame = new JFrame();
+                    GUI g = new GUI(false);
+                    frame.setTitle(APP_TITLE);
+                    frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                    frame.setSize(GUI.APP_DIMENSION);
+                    frame.add(g);
+                    frame.setVisible(true);
+                }
+        );
     }
 
     /**

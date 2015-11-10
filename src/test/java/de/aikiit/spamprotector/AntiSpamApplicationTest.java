@@ -28,7 +28,6 @@ import static org.junit.Assert.*;
 public class AntiSpamApplicationTest {
     @Test
     public final void instantiationDone() {
-        AntiSpamApplication.initApplication();
         AntiSpamApplication.main(null);
         assertNotNull("This is just to please the compiler.");
     }
