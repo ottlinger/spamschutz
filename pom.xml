@@ -160,8 +160,9 @@
           <useMavenDefaultExcludes>true</useMavenDefaultExcludes>
           <useIdeaDefaultExcludes>true</useIdeaDefaultExcludes>
           <excludes>
-            <exclude>*.md</exclude>
-            <exclude>.*</exclude>
+            <exclude>**/.travis.yml</exclude>
+            <exclude>**/*.md</exclude>
+            <exclude>**/.*</exclude>
             <exclude>src/main/resources/**/*</exclude>
             <exclude>src/test/resources/**/*</exclude>
             <exclude>**/webpage/**/*</exclude>
