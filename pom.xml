@@ -152,6 +152,7 @@
           </execution>
         </executions>
         <configuration>
+          <ignoreErrors>true</ignoreErrors>
           <useDefaultExcludes>true</useDefaultExcludes>
           <useEclipseDefaultExcludes>true</useEclipseDefaultExcludes>
           <useMavenDefaultExcludes>true</useMavenDefaultExcludes>
