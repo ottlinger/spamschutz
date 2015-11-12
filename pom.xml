@@ -61,7 +61,7 @@
     <cobertura.version>2.6</cobertura.version>
     <javadoc.version>2.10.3</javadoc.version>
     <surefire.version>2.19</surefire.version>
-    <rat.version>0.12-SNAPSHOT</rat.version>
+    <rat.version>0.11</rat.version>
     <encoding.utf8>UTF-8</encoding.utf8>
     <project.reporting.outputEncoding>${encoding.utf8}</project.reporting.outputEncoding>
     <project.build.sourceEncoding>${encoding.utf8}</project.build.sourceEncoding>
@@ -605,11 +605,12 @@ Caused by: java.lang.NullPointerException
       <id>hirsch</id>
     </developer>
   </developers>
-  <!-- To be able to use the latest version/release candidate -->
+  <!-- To be able to use the latest version/release candidate 
   <pluginRepositories>
     <pluginRepository>
       <id>staged-releases</id>
       <url>https://repository.apache.org/content/repositories/orgapachecreadur-1001/</url>
     </pluginRepository>
   </pluginRepositories>
+-->
 </project>
