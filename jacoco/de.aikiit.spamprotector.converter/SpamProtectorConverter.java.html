@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="de"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>SpamProtectorConverter.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SpamSchutz - simple way to protect your mail adresses from naïve spammers</a> &gt; <a href="index.source.html" class="el_package">de.aikiit.spamprotector.converter</a> &gt; <span class="el_source">SpamProtectorConverter.java</span></div><h1>SpamProtectorConverter.java</h1><pre class="source lang-java linenums">/**
+ SpamSchutz - simple way to protect your mail adresses from naiive spammers
+ Copyright (C) 2011, Aiki IT
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ */
+package de.aikiit.spamprotector.converter;
+
+/**
+ * Contains the filter logics and allows to convert to and fro.
+ *
+ * @author hirsch
+ * @version 2015-11-16, 22:32
+ */
+<span class="pc" id="L26">public enum SpamProtectorConverter implements SpamProtector</span>
+{
+
+<span class="fc" id="L29">    EXCLAMATION_MARK('!', &quot;&amp;#33;&quot;), //</span>
+<span class="fc" id="L30">    QUOTE('&quot;', &quot;&amp;#34;&quot;),//</span>
+<span class="fc" id="L31">    HASH('#', &quot;&amp;#35;&quot;), //</span>
+<span class="fc" id="L32">    DOLLAR('$', &quot;&amp;#36;&quot;), //</span>
+<span class="fc" id="L33">    PERCENT('%', &quot;&amp;#37;&quot;), //</span>
+<span class="fc" id="L34">    AMPERSAND('&amp;', &quot;&amp;amp;&quot;), //</span>
+<span class="fc" id="L35">    SIMPLE_QUOTE('\'', &quot;&amp;#39;&quot;), //</span>
+<span class="fc" id="L36">    L_PARENTHIS('(', &quot;&amp;#40;&quot;), //</span>
+<span class="fc" id="L37">    R_PARENTHIS(')', &quot;&amp;#41;&quot;), //</span>
+<span class="fc" id="L38">    ASTERISK('*', &quot;&amp;#42;&quot;), //</span>
+<span class="fc" id="L39">    PLUS('+', &quot;&amp;#43;&quot;), //</span>
+<span class="fc" id="L40">    COMMA(',', &quot;&amp;#44;&quot;), //</span>
+<span class="fc" id="L41">    MINUS('-', &quot;&amp;#45;&quot;), //</span>
+<span class="fc" id="L42">    DOT('.', &quot;&amp;#46;&quot;), //</span>
+<span class="fc" id="L43">    SLASH('/', &quot;&amp;#47;&quot;), //</span>
+                           /*
+    case '0':
+        return &quot;&amp;#48;&quot;;
+
+    case '1':
+        return &quot;&amp;#49;&quot;;
+
+    case '2':
+        return &quot;&amp;#50;&quot;;
+
+    case '3':
+        return &quot;&amp;#51;&quot;;
+
+    case '4':
+        return &quot;&amp;#52;&quot;;
+
+    case '5':
+        return &quot;&amp;#53;&quot;;
+
+    case '6':
+        return &quot;&amp;#54;&quot;;
+
+    case '7':
+        return &quot;&amp;#55;&quot;;
+
+    case '8':
+        return &quot;&amp;#56;&quot;;
+
+    case '9':
+        return &quot;&amp;#57;&quot;;
+
+    case ':':
+        return &quot;&amp;#58;&quot;;
+
+    case ';':
+        return &quot;&amp;#59;&quot;;
+
+    case '&lt;':
+        return &quot;&amp;#60;&quot;;
+
+    case '=':
+        return &quot;&amp;#61;&quot;;
+
+    case '&gt;':
+        return &quot;&amp;#62;&quot;;
+
+    case '?':
+        return &quot;&amp;#63;&quot;;
+
+    case '@':
+        return &quot;&amp;#64;&quot;;
+
+    case 'A':
+        return &quot;&amp;#65;&quot;;
+
+    case 'B':
+        return &quot;&amp;#66;&quot;;
+
+    case 'C':
+        return &quot;&amp;#67;&quot;;
+
+    case 'D':
+        return &quot;&amp;#68;&quot;;
+
+    case 'E':
+        return &quot;&amp;#69;&quot;;
+
+    case 'F':
+        return &quot;&amp;#70;&quot;;
+
+    case 'G':
+        return &quot;&amp;#71;&quot;;
+
+    case 'H':
+        return &quot;&amp;#72;&quot;;
+
+    case 'I':
+        return &quot;&amp;#73;&quot;;
+
+    case 'J':
+        return &quot;&amp;#74;&quot;;
+
+    case 'K':
+        return &quot;&amp;#75;&quot;;
+
+    case 'L':
+        return &quot;&amp;#76;&quot;;
+
+    case 'M':
+        return &quot;&amp;#77;&quot;;
+
+    case 'N':
+        return &quot;&amp;#78;&quot;;
+
+    case 'O':
+        return &quot;&amp;#79;&quot;;
+
+    case 'P':
+        return &quot;&amp;#80;&quot;;
+
+    case 'Q':
+        return &quot;&amp;#81;&quot;;
+
+    case 'R':
+        return &quot;&amp;#82;&quot;;
+
+    case 'S':
+        return &quot;&amp;#83;&quot;;
+
+    case 'T':
+        return &quot;&amp;#84;&quot;;
+
+    case 'U':
+        return &quot;&amp;#85;&quot;;
+
+    case 'V':
+        return &quot;&amp;#86;&quot;;
+
+    case 'W':
+        return &quot;&amp;#87;&quot;;
+
+    case 'X':
+        return &quot;&amp;#88;&quot;;
+
+    case 'Y':
+        return &quot;&amp;#89;&quot;;
+
+    case 'Z':
+        return &quot;&amp;#90;&quot;;
+
+    case '[':
+        return &quot;&amp;#91;&quot;;
+
+    case '\\':
+        return &quot;&amp;#92;&quot;;
+
+    case ']':
+        return &quot;&amp;#93;&quot;;
+
+    case '^':
+        return &quot;&amp;#94;&quot;;
+
+    case '_':
+        return &quot;&amp;#95;&quot;;
+
+    case '`':
+        return &quot;&amp;#96;&quot;;
+
+    case 'a':
+        return &quot;&amp;#97;&quot;;
+
+    case 'b':
+        return &quot;&amp;#98;&quot;;
+
+    case 'c':
+        return &quot;&amp;#99;&quot;;
+
+    case 'd':
+        return &quot;&amp;#100;&quot;;
+
+    case 'e':
+        return &quot;&amp;#101;&quot;;
+
+    case 'f':
+        return &quot;&amp;#102;&quot;;
+
+    case 'g':
+        return &quot;&amp;#103;&quot;;
+
+    case 'h':
+        return &quot;&amp;#104;&quot;;
+
+    case 'i':
+        return &quot;&amp;#105;&quot;;
+
+    case 'j':
+        return &quot;&amp;#106;&quot;;
+
+    case 'k':
+        return &quot;&amp;#107;&quot;;
+
+    case 'l':
+        return &quot;&amp;#108;&quot;;
+
+    case 'm':
+        return &quot;&amp;#109;&quot;;
+
+    case 'n':
+        return &quot;&amp;#110;&quot;;
+
+    case 'o':
+        return &quot;&amp;#111;&quot;;
+
+    case 'p':
+        return &quot;&amp;#112;&quot;;
+
+    case 'q':
+        return &quot;&amp;#113;&quot;;
+
+    case 'r':
+        return &quot;&amp;#114;&quot;;
+
+    case 's':
+        return &quot;&amp;#115;&quot;;
+
+    case 't':
+        return &quot;&amp;#116;&quot;;
+
+    case 'u':
+        return &quot;&amp;#117;&quot;;
+
+    case 'v':
+        return &quot;&amp;#118;&quot;;
+
+    case 'w':
+        return &quot;&amp;#119;&quot;;
+
+    case 'x':
+        return &quot;&amp;#120;&quot;;
+
+    case 'y':
+        return &quot;&amp;#121;&quot;;
+
+    case 'z':
+        return &quot;&amp;#122;&quot;;
+
+    case '{':
+        return &quot;&amp;#123;&quot;;
+
+    case '|':
+        return &quot;&amp;#124;&quot;;
+
+    case '}':
+        return &quot;&amp;#125;&quot;;
+
+    case '~':
+        return &quot;&amp;#126;&quot;;
+**/;
+
+    private char plain;
+    private String scrambled;
+
+
+<span class="fc" id="L287">    SpamProtectorConverter(char input, String output) {</span>
+<span class="fc" id="L288">        this.plain = input;</span>
+<span class="fc" id="L289">        this.scrambled = output;</span>
+<span class="fc" id="L290">    }</span>
+
+    @Override
+    public String getReplacement() {
+<span class="fc" id="L294">        return scrambled;</span>
+    }
+
+    @Override
+    public char getPlainText() {
+<span class="fc" id="L299">        return plain;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
