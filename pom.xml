@@ -381,19 +381,6 @@
                 </excludes>
               </configuration>
             </plugin>
-            <!-- read changes.xml -->
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-changes-plugin</artifactId>
-              <version>2.11</version>
-              <reportSets>
-                <reportSet>
-                  <reports>
-                    <report>changes-report</report>
-                  </reports>
-                </reportSet>
-              </reportSets>
-            </plugin>
             <!-- jdepend plugin -->
             <plugin>
               <groupId>org.codehaus.mojo</groupId>
