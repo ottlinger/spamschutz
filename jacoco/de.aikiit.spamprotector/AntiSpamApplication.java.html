@@ -22,6 +22,7 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Application starter class.
@@ -29,7 +30,7 @@ import javax.swing.*;
  * @author hirsch
  * @version 2011-04-29, 01:51
  */
-<span class="nc" id="L32">@NoArgsConstructor(access = AccessLevel.PRIVATE)</span>
+<span class="nc" id="L33">@NoArgsConstructor(access = AccessLevel.PRIVATE)</span>
 public final class AntiSpamApplication {
 
     /** Application title to use in Swing window. */
@@ -37,21 +38,26 @@ public final class AntiSpamApplication {
             + &quot;der einfachste Schutz gegen Spider-Spam&quot;;
 
     /**
+     * Preferred size of the complete application window.
+     */
+<span class="nc" id="L43">    private static final Dimension APP_DIMENSION = new Dimension(800, 300);</span>
+
+    /**
      * Helper that starts and initializes the application itself.
      */
     private static void initApplication() {
-<span class="nc" id="L43">        SwingUtilities.invokeLater(</span>
+<span class="nc" id="L49">        SwingUtilities.invokeLater(</span>
                 () -&gt; {
-<span class="nc" id="L45">                    JFrame frame = new JFrame();</span>
-<span class="nc" id="L46">                    GUI g = new GUI(false);</span>
-<span class="nc" id="L47">                    frame.setTitle(APP_TITLE);</span>
-<span class="nc" id="L48">                    frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);</span>
-<span class="nc" id="L49">                    frame.setSize(GUI.APP_DIMENSION);</span>
-<span class="nc" id="L50">                    frame.add(g);</span>
-<span class="nc" id="L51">                    frame.setVisible(true);</span>
-<span class="nc" id="L52">                }</span>
+<span class="nc" id="L51">                    JFrame frame = new JFrame();</span>
+<span class="nc" id="L52">                    GUI g = new GUI(false);</span>
+<span class="nc" id="L53">                    frame.setTitle(APP_TITLE);</span>
+<span class="nc" id="L54">                    frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L55">                    frame.setSize(APP_DIMENSION);</span>
+<span class="nc" id="L56">                    frame.add(g);</span>
+<span class="nc" id="L57">                    frame.setVisible(true);</span>
+<span class="nc" id="L58">                }</span>
         );
-<span class="nc" id="L54">    }</span>
+<span class="nc" id="L60">    }</span>
 
     /**
      * Main method that loads the application in a proper size.
@@ -59,7 +65,7 @@ public final class AntiSpamApplication {
      * @param args Arguments from console.
      */
     public static void main(final String[] args) {
-<span class="nc" id="L62">        initApplication();</span>
-<span class="nc" id="L63">    } // end of main</span>
+<span class="nc" id="L68">        initApplication();</span>
+<span class="nc" id="L69">    } // end of main</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
