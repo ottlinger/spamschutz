@@ -22,6 +22,7 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Application starter class.
@@ -37,6 +38,11 @@ public final class AntiSpamApplication {
             + "der einfachste Schutz gegen Spider-Spam";
 
     /**
+     * Preferred size of the complete application window.
+     */
+    private static final Dimension APP_DIMENSION = new Dimension(800, 300);
+
+    /**
      * Helper that starts and initializes the application itself.
      */
     private static void initApplication() {
@@ -46,7 +52,7 @@ public final class AntiSpamApplication {
                     GUI g = new GUI(false);
                     frame.setTitle(APP_TITLE);
                     frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-                    frame.setSize(GUI.APP_DIMENSION);
+                    frame.setSize(APP_DIMENSION);
                     frame.add(g);
                     frame.setVisible(true);
                 }

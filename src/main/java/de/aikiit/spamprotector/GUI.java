@@ -35,11 +35,6 @@ class GUI extends JPanel {
     private static final Dimension BOX_DIMENSION = new Dimension(300, 200);
 
     /**
-     * Preferred size of the complete application window.
-     */
-    static final Dimension APP_DIMENSION = new Dimension(800, 300);
-
-    /**
      * Launches and configures the main UI component, while taking care whether
      * the application is started as an applet or standalone.
      *
@@ -141,7 +136,6 @@ class GUI extends JPanel {
             knoepfe.add(ende);
         }
         knoepfe.add(hilfe);
-
         this.setVisible(true);
     }   // end of init
 } // end of class
