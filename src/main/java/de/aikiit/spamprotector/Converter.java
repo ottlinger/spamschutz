@@ -23,7 +23,7 @@ package de.aikiit.spamprotector;
  * @author hirsch
  * @version 2011-04-29, 00:53
  */
-public interface Converter {
+interface Converter {
 
     /**
      * Main method to replace a given input (not encoded) and returns the
