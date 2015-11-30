@@ -17,6 +17,8 @@
  */
 package de.aikiit.spamprotector;
 
+import de.aikiit.spamprotector.converter.AsciiConverter;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.Calendar;
@@ -32,7 +34,7 @@ class GUI extends JPanel {
     /**
      * Constant to define the dimension of a text box.
      */
-<span class="fc" id="L35">    private static final Dimension BOX_DIMENSION = new Dimension(300, 200);</span>
+<span class="fc" id="L37">    private static final Dimension BOX_DIMENSION = new Dimension(300, 200);</span>
 
     /**
      * Launches and configures the main UI component, while taking care whether
@@ -41,11 +43,11 @@ class GUI extends JPanel {
      * @param isApplet Defines whether the application is started as standalone
      *                 &lt;code&gt;false&lt;/code&gt; or applet &lt;code&gt;true&lt;/code&gt;.
      */
-<span class="fc" id="L44">    GUI(final boolean isApplet) {</span>
-<span class="fc" id="L45">        SwingUtilities.invokeLater(</span>
-<span class="nc" id="L46">                () -&gt; init(isApplet)</span>
+<span class="fc" id="L46">    GUI(final boolean isApplet) {</span>
+<span class="fc" id="L47">        SwingUtilities.invokeLater(</span>
+<span class="nc" id="L48">                () -&gt; init(isApplet)</span>
         );
-<span class="fc" id="L48">    }   // end of Konstruktor</span>
+<span class="fc" id="L50">    }   // end of Konstruktor</span>
 
     /**
      * Internal helper to initialize the UI depending on the surrounding this
@@ -66,77 +68,77 @@ class GUI extends JPanel {
         JLabel eing;
         JLabel ausg;
 
-<span class="fc" id="L69">        final Calendar calendar = Calendar.getInstance();</span>
+<span class="fc" id="L71">        final Calendar calendar = Calendar.getInstance();</span>
 
         // command help
-<span class="fc" id="L72">        knoepfe = new JPanel();</span>
-<span class="fc" id="L73">        hilfe = new JButton(&quot;Hilfe&quot;);</span>
-<span class="nc" id="L74">        hilfe.setMnemonic('H');</span>
-<span class="nc" id="L75">        hilfe.addActionListener(e -&gt; JOptionPane.showMessageDialog(null, &quot;Einfach ins Eingabefeld &quot;</span>
+<span class="fc" id="L74">        knoepfe = new JPanel();</span>
+<span class="fc" id="L75">        hilfe = new JButton(&quot;Hilfe&quot;);</span>
+<span class="fc" id="L76">        hilfe.setMnemonic('H');</span>
+<span class="pc" id="L77">        hilfe.addActionListener(e -&gt; JOptionPane.showMessageDialog(null, &quot;Einfach ins Eingabefeld &quot;</span>
                 + &quot;HTML-Code einfügen!\nDann konvertieren &quot;
                 + &quot;und schon sind weniger SpamAttacken &quot;
                 + &quot;wahrscheinlich&quot;
                 + &quot;\n(C) AIKI IT 2003-&quot;
-<span class="nc" id="L80">                + calendar.get(Calendar.YEAR)</span>
+<span class="nc" id="L82">                + calendar.get(Calendar.YEAR)</span>
                 + &quot;, Version: &quot;
                 + de.aikiit.spamprotector.util.Version.VERSION,
                 &quot;Spam-Schutz - Hilfe&quot;,
                 JOptionPane.INFORMATION_MESSAGE));
 
-<span class="nc" id="L86">        eingabe = new JTextField();</span>
-<span class="nc" id="L87">        eingabe.setSize(BOX_DIMENSION);</span>
-<span class="nc" id="L88">        eingabe.setPreferredSize(BOX_DIMENSION);</span>
-<span class="nc" id="L89">        ausgabe = new JTextField(&quot;Bitte Text eingeben und Button betätigen!&quot;);</span>
-<span class="nc" id="L90">        ausgabe.setSize(BOX_DIMENSION);</span>
-<span class="nc" id="L91">        ausgabe.setPreferredSize(BOX_DIMENSION);</span>
+<span class="fc" id="L88">        eingabe = new JTextField();</span>
+<span class="fc" id="L89">        eingabe.setSize(BOX_DIMENSION);</span>
+<span class="fc" id="L90">        eingabe.setPreferredSize(BOX_DIMENSION);</span>
+<span class="nc" id="L91">        ausgabe = new JTextField(&quot;Bitte Text eingeben und Button betätigen!&quot;);</span>
+<span class="nc" id="L92">        ausgabe.setSize(BOX_DIMENSION);</span>
+<span class="nc" id="L93">        ausgabe.setPreferredSize(BOX_DIMENSION);</span>
 
 
-<span class="nc" id="L94">        start = new JButton(&quot;Umwandeln&quot;);</span>
-<span class="nc" id="L95">        start.setMnemonic('U');</span>
-<span class="nc" id="L96">        start.addActionListener(e -&gt; {</span>
+<span class="nc" id="L96">        start = new JButton(&quot;Umwandeln&quot;);</span>
+<span class="nc" id="L97">        start.setMnemonic('U');</span>
+<span class="nc" id="L98">        start.addActionListener(e -&gt; {</span>
             // Eingabefeld auslesen
-<span class="nc" id="L98">            ausgabe.setText(new AsciiConverter().</span>
-<span class="nc" id="L99">                    replaceString(eingabe.getText()));</span>
-<span class="nc" id="L100">        });</span>
+<span class="nc" id="L100">            ausgabe.setText(new AsciiConverter().</span>
+<span class="nc" id="L101">                    replaceString(eingabe.getText()));</span>
+<span class="nc" id="L102">        });</span>
 
-<span class="nc" id="L102">        reset = new JButton(&quot;Reset&quot;);</span>
-<span class="nc" id="L103">        reset.setMnemonic('R');</span>
-<span class="nc" id="L104">        reset.addActionListener(e -&gt; eingabe.setText(&quot;&quot;));</span>
+<span class="nc" id="L104">        reset = new JButton(&quot;Reset&quot;);</span>
+<span class="nc" id="L105">        reset.setMnemonic('R');</span>
+<span class="nc" id="L106">        reset.addActionListener(e -&gt; eingabe.setText(&quot;&quot;));</span>
 
-<span class="nc" id="L106">        knoepfe.add(start);</span>
-<span class="nc" id="L107">        knoepfe.add(reset);</span>
+<span class="nc" id="L108">        knoepfe.add(start);</span>
+<span class="nc" id="L109">        knoepfe.add(reset);</span>
 
         // Feldbereich
-<span class="nc" id="L110">        ioBereich = new JPanel(new FlowLayout());</span>
+<span class="nc" id="L112">        ioBereich = new JPanel(new FlowLayout());</span>
 
-<span class="nc" id="L112">        eing = new JLabel(&quot;1: Eingabe:&quot;);</span>
-<span class="nc" id="L113">        eing.setDisplayedMnemonic('1');</span>
-<span class="nc" id="L114">        eing.setLabelFor(eingabe);</span>
-<span class="nc" id="L115">        ioBereich.add(eing);</span>
-<span class="nc" id="L116">        ioBereich.add(eingabe);</span>
+<span class="nc" id="L114">        eing = new JLabel(&quot;1: Eingabe:&quot;);</span>
+<span class="nc" id="L115">        eing.setDisplayedMnemonic('1');</span>
+<span class="nc" id="L116">        eing.setLabelFor(eingabe);</span>
+<span class="nc" id="L117">        ioBereich.add(eing);</span>
+<span class="nc" id="L118">        ioBereich.add(eingabe);</span>
 
-<span class="nc" id="L118">        ausg = new JLabel(&quot;2: Ausgabe:&quot;);</span>
-<span class="nc" id="L119">        ausg.setDisplayedMnemonic('2');</span>
-<span class="nc" id="L120">        ausg.setLabelFor(ausgabe);</span>
-<span class="nc" id="L121">        ioBereich.add(ausg);</span>
-<span class="nc" id="L122">        ioBereich.add(ausgabe);</span>
+<span class="nc" id="L120">        ausg = new JLabel(&quot;2: Ausgabe:&quot;);</span>
+<span class="nc" id="L121">        ausg.setDisplayedMnemonic('2');</span>
+<span class="nc" id="L122">        ausg.setLabelFor(ausgabe);</span>
+<span class="nc" id="L123">        ioBereich.add(ausg);</span>
+<span class="nc" id="L124">        ioBereich.add(ausgabe);</span>
 
         // Gesamtkonfiguration des Fensters
-<span class="nc" id="L125">        this.setLayout(new BorderLayout());</span>
-<span class="nc" id="L126">        this.add(knoepfe, BorderLayout.NORTH);</span>
-<span class="nc" id="L127">        this.add(ioBereich, BorderLayout.CENTER);</span>
+<span class="nc" id="L127">        this.setLayout(new BorderLayout());</span>
+<span class="nc" id="L128">        this.add(knoepfe, BorderLayout.NORTH);</span>
+<span class="nc" id="L129">        this.add(ioBereich, BorderLayout.CENTER);</span>
 
         // if started standalone we do need a quit-button
-<span class="nc bnc" id="L130" title="All 2 branches missed.">        if (!isApplet) {</span>
-<span class="nc" id="L131">            ende = new JButton(&quot;Ende&quot;);</span>
-<span class="nc" id="L132">            ende.setMnemonic('E');</span>
+<span class="nc bnc" id="L132" title="All 2 branches missed.">        if (!isApplet) {</span>
+<span class="nc" id="L133">            ende = new JButton(&quot;Ende&quot;);</span>
+<span class="nc" id="L134">            ende.setMnemonic('E');</span>
             // Programmende
-<span class="nc" id="L134">            ende.addActionListener(e -&gt; System.exit(0));</span>
+<span class="nc" id="L136">            ende.addActionListener(e -&gt; System.exit(0));</span>
 
-<span class="nc" id="L136">            knoepfe.add(ende);</span>
+<span class="nc" id="L138">            knoepfe.add(ende);</span>
         }
-<span class="nc" id="L138">        knoepfe.add(hilfe);</span>
-<span class="nc" id="L139">        this.setVisible(true);</span>
-<span class="nc" id="L140">    }   // end of init</span>
+<span class="nc" id="L140">        knoepfe.add(hilfe);</span>
+<span class="nc" id="L141">        this.setVisible(true);</span>
+<span class="nc" id="L142">    }   // end of init</span>
 } // end of class
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

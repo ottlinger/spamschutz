@@ -26,7 +26,7 @@ under the License.
     <copyright>&#169;2015 Aiki IT</copyright>
     <item>
       <title>File: 6,
-             Errors: 9,
+             Errors: 10,
              Warnings: 0,
              Infos: 0
       </title>
@@ -88,7 +88,21 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/ottlinger/spamschutz//checkstyle.html#de.aikiit.spamprotector.AsciiConverter.java">de/aikiit/spamprotector/AsciiConverter.java</a>
+                  <a href="https://github.com/ottlinger/spamschutz//checkstyle.html#de.aikiit.spamprotector.converter.AsciiConverter.java">de/aikiit/spamprotector/converter/AsciiConverter.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/ottlinger/spamschutz//checkstyle.html#de.aikiit.spamprotector.converter.Converter.java">de/aikiit/spamprotector/converter/Converter.java</a>
                 </td>
                 <td>
                   0
@@ -112,20 +126,6 @@ under the License.
                 </td>
                 <td>
                   1
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/ottlinger/spamschutz//checkstyle.html#de.aikiit.spamprotector.Converter.java">de/aikiit/spamprotector/Converter.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
                 </td>
               </tr>
                       </tbody>
