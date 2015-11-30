@@ -17,6 +17,8 @@
  */
 package de.aikiit.spamprotector;
 
+import de.aikiit.spamprotector.converter.AsciiConverter;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.Calendar;

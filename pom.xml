@@ -21,7 +21,7 @@
   <groupId>de.aikiit</groupId>
   <artifactId>spamschutz</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.2-SNAPSHOT</version>
+  <version>1.0.3-SNAPSHOT</version>
   <name>SpamSchutz - simple way to protect your mail adresses from naïve spammers</name>
   <description>This spamschutz (=spam protector in German) can be launched as
         an applet or a standalone application. It converts all given characters
@@ -59,6 +59,7 @@
     <junit.version>4.12</junit.version>
     <mockito.version>1.10.19</mockito.version>
     <cobertura.version>2.6</cobertura.version>
+    <lombok.version>1.16.6</lombok.version>
     <javadoc.version>2.10.3</javadoc.version>
     <surefire.version>2.19</surefire.version>
     <rat.version>0.11</rat.version>
@@ -70,7 +71,7 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.16.6</version>
+      <version>${lombok.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -91,27 +92,6 @@
       <version>${logger.version}</version>
     </dependency>
   </dependencies>
-  <!--
-      <repositories>
-        <repository>
-          <id>jboss.org</id>
-          <name>jboss.org</name>
-          <url>http://repository.jboss.com/maven2/</url>
-        </repository>
-      <repository>
-        <id>maven-repository.dev.java.net</id>
-        <name>Java Dev Net Repository</name>
-        <url>http://download.java.net/maven/2/</url>
-        <releases>
-          <enabled>true</enabled>
-          <updatePolicy>never</updatePolicy>
-        </releases>
-        <snapshots>
-          <enabled>false</enabled>
-        </snapshots>
-      </repository>
-      </repositories>
-    -->
   <build>
     <defaultGoal>clean install</defaultGoal>
     <extensions>

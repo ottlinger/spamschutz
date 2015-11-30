@@ -15,7 +15,7 @@
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package de.aikiit.spamprotector;
+package de.aikiit.spamprotector.converter;
 
 /**
  * Main interface to define spam replacement strategies.
