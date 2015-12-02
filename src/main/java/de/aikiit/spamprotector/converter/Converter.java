@@ -15,7 +15,7 @@
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package de.aikiit.spamprotector;
+package de.aikiit.spamprotector.converter;
 
 /**
  * Main interface to define spam replacement strategies.
@@ -23,7 +23,7 @@ package de.aikiit.spamprotector;
  * @author hirsch
  * @version 2011-04-29, 00:53
  */
-public interface Converter {
+interface Converter {
 
     /**
      * Main method to replace a given input (not encoded) and returns the

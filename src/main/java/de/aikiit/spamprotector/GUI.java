@@ -17,12 +17,10 @@
  */
 package de.aikiit.spamprotector;
 
+import de.aikiit.spamprotector.converter.AsciiConverter;
+
 import javax.swing.*;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.*;
 import java.util.Calendar;
 
 /**
@@ -31,17 +29,12 @@ import java.util.Calendar;
  *
  * Created by IntelliJ IDEA. User: hirsch Date: Apr 10, 2003 Time: 3:12:32 PM
  */
-public class GUI extends JPanel {
+class GUI extends JPanel {
 
     /**
      * Constant to define the dimension of a text box.
      */
     private static final Dimension BOX_DIMENSION = new Dimension(300, 200);
-
-    /**
-     * Preferred size of the complete application window.
-     */
-    public static final Dimension APP_DIMENSION = new Dimension(800, 300);
 
     /**
      * Launches and configures the main UI component, while taking care whether
@@ -50,11 +43,9 @@ public class GUI extends JPanel {
      * @param isApplet Defines whether the application is started as standalone
      *                 <code>false</code> or applet <code>true</code>.
      */
-    public GUI(final boolean isApplet) {
+    GUI(final boolean isApplet) {
         SwingUtilities.invokeLater(
-                () -> {
-                    init(isApplet);
-                }
+                () -> init(isApplet)
         );
     }   // end of Konstruktor
 
@@ -83,20 +74,16 @@ public class GUI extends JPanel {
         knoepfe = new JPanel();
         hilfe = new JButton("Hilfe");
         hilfe.setMnemonic('H');
-        hilfe.addActionListener(new ActionListener() {
-            public void actionPerformed(final ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Einfach ins Eingabefeld "
-                        + "HTML-Code einfügen!\nDann konvertieren "
-                        + "und schon sind weniger SpamAttacken "
-                        + "wahrscheinlich"
-                        + "\n(C) AIKI IT 2003-"
-                        + calendar.get(Calendar.YEAR)
-                        + ", Version: "
-                        + de.aikiit.spamprotector.util.Version.VERSION,
-                        "Spam-Schutz - Hilfe",
-                        JOptionPane.INFORMATION_MESSAGE);
-            }
-        });
+        hilfe.addActionListener(e -> JOptionPane.showMessageDialog(null, "Einfach ins Eingabefeld "
+                + "HTML-Code einfügen!\nDann konvertieren "
+                + "und schon sind weniger SpamAttacken "
+                + "wahrscheinlich"
+                + "\n(C) AIKI IT 2003-"
+                + calendar.get(Calendar.YEAR)
+                + ", Version: "
+                + de.aikiit.spamprotector.util.Version.VERSION,
+                "Spam-Schutz - Hilfe",
+                JOptionPane.INFORMATION_MESSAGE));
 
         eingabe = new JTextField();
         eingabe.setSize(BOX_DIMENSION);
@@ -108,21 +95,15 @@ public class GUI extends JPanel {
 
         start = new JButton("Umwandeln");
         start.setMnemonic('U');
-        start.addActionListener(new ActionListener() {
-            public void actionPerformed(final ActionEvent e) {
-                // Eingabefeld auslesen
-                ausgabe.setText(new AsciiConverter().
-                        replaceString(eingabe.getText()));
-            }
+        start.addActionListener(e -> {
+            // Eingabefeld auslesen
+            ausgabe.setText(new AsciiConverter().
+                    replaceString(eingabe.getText()));
         });
 
         reset = new JButton("Reset");
         reset.setMnemonic('R');
-        reset.addActionListener(new ActionListener() {
-            public void actionPerformed(final ActionEvent e) {
-                eingabe.setText("");
-            }
-        });
+        reset.addActionListener(e -> eingabe.setText(""));
 
         knoepfe.add(start);
         knoepfe.add(reset);
@@ -152,16 +133,11 @@ public class GUI extends JPanel {
             ende = new JButton("Ende");
             ende.setMnemonic('E');
             // Programmende
-            ende.addActionListener(new ActionListener() {
-                public void actionPerformed(final ActionEvent e) {
-                    System.exit(0);
-                }
-            });
+            ende.addActionListener(e -> System.exit(0));
 
             knoepfe.add(ende);
         }
         knoepfe.add(hilfe);
-
         this.setVisible(true);
     }   // end of init
 } // end of class

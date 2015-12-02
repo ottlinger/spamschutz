@@ -18,6 +18,7 @@
 package de.aikiit.spamprotector;
 
 import java.applet.Applet;
+import java.awt.*;
 
 /**
  * Main class that starts an applet with the main UI component.
@@ -25,10 +26,15 @@ import java.applet.Applet;
  */
 public class AntiSpamApplet extends Applet {
     /**
+     * Preferred size of the complete application window.
+     */
+    private static final Dimension APP_DIMENSION = new Dimension(800, 300);
+
+    /**
      * Loads UI for this applet.
      */
     public final void init() {
         add(new GUI(true));
-        setSize(GUI.APP_DIMENSION);
+        setSize(APP_DIMENSION);
     }  // end of init
 } // end of class
