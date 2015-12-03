@@ -57,22 +57,11 @@ class GUI extends JPanel {
      *                 <code>false</code> or applet <code>true</code>.
      */
     private void init(final boolean isApplet) {
-        final JTextField eingabe;
-        final JTextField ausgabe;
-        JPanel knoepfe;
-        JButton ende;
-        JButton start;
-        JButton reset;
-        JButton hilfe;
-        JPanel ioBereich;
-        JLabel eing;
-        JLabel ausg;
-
         final Calendar calendar = Calendar.getInstance();
 
         // command help
-        knoepfe = new JPanel();
-        hilfe = new JButton("Hilfe");
+        final JPanel knoepfe = new JPanel();
+        JButton hilfe = new JButton("Hilfe");
         hilfe.setMnemonic('H');
         hilfe.addActionListener(e -> JOptionPane.showMessageDialog(null, "Einfach ins Eingabefeld "
                 + "HTML-Code einfügen!\nDann konvertieren "
@@ -85,15 +74,14 @@ class GUI extends JPanel {
                 "Spam-Schutz - Hilfe",
                 JOptionPane.INFORMATION_MESSAGE));
 
-        eingabe = new JTextField();
+        final JTextField eingabe = new JTextField();
         eingabe.setSize(BOX_DIMENSION);
         eingabe.setPreferredSize(BOX_DIMENSION);
-        ausgabe = new JTextField("Bitte Text eingeben und Button betätigen!");
+        final JTextField ausgabe = new JTextField("Bitte Text eingeben und Button betätigen!");
         ausgabe.setSize(BOX_DIMENSION);
         ausgabe.setPreferredSize(BOX_DIMENSION);
 
-
-        start = new JButton("Umwandeln");
+        final JButton start = new JButton("--->");
         start.setMnemonic('U');
         start.addActionListener(e -> {
             // Eingabefeld auslesen
@@ -101,23 +89,35 @@ class GUI extends JPanel {
                     replaceString(eingabe.getText()));
         });
 
-        reset = new JButton("Reset");
-        reset.setMnemonic('R');
-        reset.addActionListener(e -> eingabe.setText(""));
+        final JButton revert = new JButton("<---");
+        revert.setMnemonic('v');
+        revert.addActionListener(e -> {
+            // Ausgabefeld auslesen
+            eingabe.setText(new AsciiConverter().
+                    replaceString(ausgabe.getText()));
+        });
 
+        final JButton reset = new JButton("Reset");
+        reset.setMnemonic('R');
+        reset.addActionListener(e -> {
+            eingabe.setText("");
+            ausgabe.setText("");
+        });
+
+        knoepfe.add(revert);
         knoepfe.add(start);
         knoepfe.add(reset);
 
         // Feldbereich
-        ioBereich = new JPanel(new FlowLayout());
+        final JPanel ioBereich = new JPanel(new FlowLayout());
 
-        eing = new JLabel("1: Eingabe:");
+        final JLabel eing = new JLabel("1: Eingabe:");
         eing.setDisplayedMnemonic('1');
         eing.setLabelFor(eingabe);
         ioBereich.add(eing);
         ioBereich.add(eingabe);
 
-        ausg = new JLabel("2: Ausgabe:");
+        final JLabel ausg = new JLabel("2: Ausgabe:");
         ausg.setDisplayedMnemonic('2');
         ausg.setLabelFor(ausgabe);
         ioBereich.add(ausg);
@@ -130,7 +130,7 @@ class GUI extends JPanel {
 
         // if started standalone we do need a quit-button
         if (!isApplet) {
-            ende = new JButton("Ende");
+            final JButton ende = new JButton("Ende");
             ende.setMnemonic('E');
             // Programmende
             ende.addActionListener(e -> System.exit(0));
