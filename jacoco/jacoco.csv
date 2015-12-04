@@ -1,6 +1,7 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
 SpamSchutz - simple way to protect your mail adresses from naïve spammers,de.aikiit.spamprotector.converter,AsciiConverter,157,72,78,19,78,24,78,20,0,3
+SpamSchutz - simple way to protect your mail adresses from naïve spammers,de.aikiit.spamprotector.converter,CharacterConverter,5,41,0,0,0,10,1,7,1,7
 SpamSchutz - simple way to protect your mail adresses from naïve spammers,de.aikiit.spamprotector.util,Version,3,0,0,0,1,0,1,0,1,0
-SpamSchutz - simple way to protect your mail adresses from naïve spammers,de.aikiit.spamprotector,GUI,166,42,2,0,38,12,6,3,5,3
+SpamSchutz - simple way to protect your mail adresses from naïve spammers,de.aikiit.spamprotector,GUI,206,32,2,0,51,9,7,3,6,3
 SpamSchutz - simple way to protect your mail adresses from naïve spammers,de.aikiit.spamprotector,AntiSpamApplication,41,0,0,0,14,0,5,0,5,0
 SpamSchutz - simple way to protect your mail adresses from naïve spammers,de.aikiit.spamprotector,AntiSpamApplet,21,0,0,0,5,0,3,0,3,0
