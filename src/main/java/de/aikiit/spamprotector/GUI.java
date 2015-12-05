@@ -17,7 +17,7 @@
  */
 package de.aikiit.spamprotector;
 
-import de.aikiit.spamprotector.converter.AsciiConverter;
+import de.aikiit.spamprotector.converter.SpamProtector;
 
 import javax.swing.*;
 import java.awt.*;
@@ -47,7 +47,7 @@ class GUI extends JPanel {
         SwingUtilities.invokeLater(
                 () -> init(isApplet)
         );
-    }   // end of Konstruktor
+    }
 
     /**
      * Internal helper to initialize the UI depending on the surrounding this
@@ -60,84 +60,80 @@ class GUI extends JPanel {
         final Calendar calendar = Calendar.getInstance();
 
         // command help
-        final JPanel knoepfe = new JPanel();
-        JButton hilfe = new JButton("Hilfe");
-        hilfe.setMnemonic('H');
-        hilfe.addActionListener(e -> JOptionPane.showMessageDialog(null, "Einfach ins Eingabefeld "
-                + "HTML-Code einfügen!\nDann konvertieren "
-                + "und schon sind weniger SpamAttacken "
-                + "wahrscheinlich"
-                + "\n(C) AIKI IT 2003-"
-                + calendar.get(Calendar.YEAR)
-                + ", Version: "
-                + de.aikiit.spamprotector.util.Version.VERSION,
+        final JPanel buttonArea = new JPanel();
+        JButton help = new JButton("Hilfe");
+        help.setMnemonic('H');
+        help.addActionListener(e -> JOptionPane.showMessageDialog(null, "Einfach ins Eingabefeld "
+                        + "HTML-Code einfügen!\nDann konvertieren "
+                        + "und schon sind weniger SpamAttacken "
+                        + "wahrscheinlich"
+                        + "\n(C) AIKI IT 2003-"
+                        + calendar.get(Calendar.YEAR)
+                        + ", Version: "
+                        + de.aikiit.spamprotector.util.Version.VERSION,
                 "Spam-Schutz - Hilfe",
                 JOptionPane.INFORMATION_MESSAGE));
 
-        final JTextField eingabe = new JTextField();
-        eingabe.setSize(BOX_DIMENSION);
-        eingabe.setPreferredSize(BOX_DIMENSION);
-        final JTextField ausgabe = new JTextField("Bitte Text eingeben und Button betätigen!");
-        ausgabe.setSize(BOX_DIMENSION);
-        ausgabe.setPreferredSize(BOX_DIMENSION);
+        final JTextField input = new JTextField();
+        input.setSize(BOX_DIMENSION);
+        input.setPreferredSize(BOX_DIMENSION);
+        final JTextField output = new JTextField("Bitte Text eingeben und Button betätigen!");
+        output.setSize(BOX_DIMENSION);
+        output.setPreferredSize(BOX_DIMENSION);
 
+        // read input field
         final JButton start = new JButton("--->");
         start.setMnemonic('U');
         start.addActionListener(e -> {
-            // Eingabefeld auslesen
-            ausgabe.setText(new AsciiConverter().
-                    replaceString(eingabe.getText()));
+            output.setText(SpamProtector.toEncoded(input.getText()));
         });
 
+        // read output field
         final JButton revert = new JButton("<---");
         revert.setMnemonic('v');
         revert.addActionListener(e -> {
-            // Ausgabefeld auslesen
-            eingabe.setText(new AsciiConverter().
-                    replaceString(ausgabe.getText()));
+            input.setText(SpamProtector.toPlain(output.getText()));
         });
 
         final JButton reset = new JButton("Reset");
         reset.setMnemonic('R');
         reset.addActionListener(e -> {
-            eingabe.setText("");
-            ausgabe.setText("");
+            input.setText("");
+            output.setText("");
         });
 
-        knoepfe.add(revert);
-        knoepfe.add(start);
-        knoepfe.add(reset);
+        buttonArea.add(revert);
+        buttonArea.add(start);
+        buttonArea.add(reset);
 
-        // Feldbereich
-        final JPanel ioBereich = new JPanel(new FlowLayout());
+        // fields
+        final JPanel ioArea = new JPanel(new FlowLayout());
 
-        final JLabel eing = new JLabel("1: Eingabe:");
-        eing.setDisplayedMnemonic('1');
-        eing.setLabelFor(eingabe);
-        ioBereich.add(eing);
-        ioBereich.add(eingabe);
+        final JLabel inputLabel = new JLabel("1: Eingabe:");
+        inputLabel.setDisplayedMnemonic('1');
+        inputLabel.setLabelFor(input);
+        ioArea.add(inputLabel);
+        ioArea.add(input);
 
-        final JLabel ausg = new JLabel("2: Ausgabe:");
-        ausg.setDisplayedMnemonic('2');
-        ausg.setLabelFor(ausgabe);
-        ioBereich.add(ausg);
-        ioBereich.add(ausgabe);
+        final JLabel outputLabel = new JLabel("2: Ausgabe:");
+        outputLabel.setDisplayedMnemonic('2');
+        outputLabel.setLabelFor(output);
+        ioArea.add(outputLabel);
+        ioArea.add(output);
 
-        // Gesamtkonfiguration des Fensters
+        // window layout
         this.setLayout(new BorderLayout());
-        this.add(knoepfe, BorderLayout.NORTH);
-        this.add(ioBereich, BorderLayout.CENTER);
+        this.add(buttonArea, BorderLayout.NORTH);
+        this.add(ioArea, BorderLayout.CENTER);
 
         // if started standalone we do need a quit-button
         if (!isApplet) {
-            final JButton ende = new JButton("Ende");
-            ende.setMnemonic('E');
-            // Programmende
-            ende.addActionListener(e -> System.exit(0));
-
-            knoepfe.add(ende);
+            final JButton end = new JButton("Ende");
+            end.setMnemonic('E');
+            end.addActionListener(e -> System.exit(0));
+            buttonArea.add(end);
         }
-        knoepfe.add(hilfe);
+        buttonArea.add(help);
         this.setVisible(true);
-    }   // end of init
-} // end of class
+    }
+}

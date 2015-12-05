@@ -36,5 +36,5 @@ public class AntiSpamApplet extends Applet {
     public final void init() {
         add(new GUI(true));
         setSize(APP_DIMENSION);
-    }  // end of init
-} // end of class
+    }
+}

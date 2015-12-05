@@ -17,25 +17,31 @@
  */
 package de.aikiit.spamprotector.converter;
 
-import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 /**
  * @author hirsch
- * @version 2015-12-04, 21:39
+ * @version 2015-12-05, 21:52
  */
-public class CharacterConverterTest {
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public final class SpamProtector {
 
-    @Test
-    public void numberOfConvertibleCharacters() {
-        assertEquals(1, CharacterConverter.values().length);
-    }
+    /**
+      * Converts an encoded value into a plain one.
+      * @param input encoded value as set in an enumeration instance of this class.
+      * @return encoded value or input if no mapping is found.
+      */
+     public static String toPlain(String input) {
+         return input;
+     }
 
-    @Test
-    public void getPlainAndEncodedValue() {
-        assertEquals(" ", CharacterConverter.SPACE.getPlain());
-        assertEquals("&nbsp;", CharacterConverter.SPACE.getReplacement());
-    }
-
+     /**
+      * Converts a plain value into an encoded one.
+      * @param input plain value that is transformed by an enumeration instance of this class.
+      * @return encoded value or input if no mapping is found.
+      */
+     public static String toEncoded(String input) {
+         return input;
+     }
 }
