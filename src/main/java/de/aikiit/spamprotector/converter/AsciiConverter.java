@@ -38,23 +38,19 @@ public class AsciiConverter implements Converter {
         StringBuilder codedResult = new StringBuilder();
 
         for (Character character : input.toCharArray()) {
-            // zeichenweise kodieren
+            // encode character by character
             codedResult.append(replaceChar(character));
         }
         Toolkit.getDefaultToolkit().beep();
         return codedResult.toString();
-    }     // end of replaceString
+    }
 
     /**
-     * zeichenweise in ASCII-Darstellung umwandeln!
+     * Replace character-wise.
      *
-     * @param input (Einzelzeichen)
-     * @return ASCI-String
+     * @param input a single character.
+     * @return ASCI-String encoded value.
      */
-    // REVIEW 2011-05-05 check whether this can be replaced by conversion from
-    // int/char to get the ascii code of a given character,
-    // add testing first to
-    // ensure proper functionality
     private static String replaceChar(final char input) {
         switch (input) {
             case '!':
@@ -342,7 +338,6 @@ public class AsciiConverter implements Converter {
             // do nothing if any other character is found
             default:
                 return String.valueOf(input);
-        } // switch
-    }   // end of replaceChar
-
-} // end of AsciiConverter
+        }
+    }
+}

@@ -51,22 +51,4 @@ public enum CharacterConverter {
         return replacement;
     }
 
-    /**
-     * Converts an encoded value into a plain one.
-     * @param input encoded value as set in an enumeration instance of this class.
-     * @return encoded value or input if no mapping is found.
-     */
-    public static String toPlain(String input) {
-        return input;
-    }
-
-    /**
-     * Converts a plain value into an encoded one.
-     * @param input plain value that is transformed by an enumeration instance of this class.
-     * @return encoded value or input if no mapping is found.
-     */
-    public static String toEncoded(String input) {
-        return input;
-    }
-
 }

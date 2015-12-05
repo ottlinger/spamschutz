@@ -17,25 +17,27 @@
  */
 package de.aikiit.spamprotector.converter;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 /**
  * @author hirsch
- * @version 2015-12-04, 21:39
+ * @version 2015-12-05, 21:53
  */
-public class CharacterConverterTest {
+public class SpamProtectorTest {
 
     @Test
-    public void numberOfConvertibleCharacters() {
-        assertEquals(1, CharacterConverter.values().length);
+    public void conversionRoundtripNull() {
+        assertNull(SpamProtector.toEncoded(null));
+        assertNull(SpamProtector.toPlain(null));
     }
 
-    @Test
-    public void getPlainAndEncodedValue() {
-        assertEquals(" ", CharacterConverter.SPACE.getPlain());
-        assertEquals("&nbsp;", CharacterConverter.SPACE.getReplacement());
+    @Ignore("Not yet implemented")
+    public void conversionExample() {
+        assertEquals(CharacterConverter.SPACE.getReplacement(), SpamProtector.toEncoded(" "));
+        assertEquals(CharacterConverter.SPACE.getPlain(), SpamProtector.toPlain("&nbsp;"));
     }
 
 }
