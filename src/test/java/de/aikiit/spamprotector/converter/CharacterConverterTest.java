@@ -29,7 +29,7 @@ public class CharacterConverterTest {
 
     @Test
     public void numberOfConvertibleCharacters() {
-        assertEquals(1, CharacterConverter.values().length);
+        assertEquals(95, CharacterConverter.values().length);
     }
 
     @Test
@@ -37,5 +37,4 @@ public class CharacterConverterTest {
         assertEquals(" ", CharacterConverter.SPACE.getPlain());
         assertEquals("&nbsp;", CharacterConverter.SPACE.getReplacement());
     }
-
 }
