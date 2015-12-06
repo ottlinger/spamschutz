@@ -1,3 +1,5 @@
+/** Base package for converter logics of the SpamSchutz/SpamProtector application. */
+package de.aikiit.spamprotector.converter;
 /**
  SpamSchutz - simple way to protect your mail adresses from naiive spammers
  Copyright (C) 2011, Aiki IT
@@ -14,27 +16,4 @@
 
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-package de.aikiit.spamprotector.converter;
-
-import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
-
-/**
- * @author hirsch
- * @version 2015-12-04, 21:39
- */
-public class CharacterConverterTest {
-
-    @Test
-    public void numberOfConvertibleCharacters() {
-        assertEquals(95, CharacterConverter.values().length);
-    }
-
-    @Test
-    public void getPlainAndEncodedValue() {
-        assertEquals(" ", CharacterConverter.SPACE.getPlain());
-        assertEquals("&nbsp;", CharacterConverter.SPACE.getReplacement());
-    }
-}
+*/

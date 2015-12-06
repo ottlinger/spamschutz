@@ -34,8 +34,8 @@ import java.awt.*;
 public final class AntiSpamApplication {
 
     /** Application title to use in Swing window. */
-    private static final String APP_TITLE = "spamschutz - "
-            + "der einfachste Schutz gegen Spider-Spam";
+    private static final String APP_TITLE = "SpamProtector - "
+            + "der einfachste Schutz gegen Spider-Spam und RegEx-Mailadressenscanner";
 
     /**
      * Preferred size of the complete application window.
@@ -66,5 +66,5 @@ public final class AntiSpamApplication {
      */
     public static void main(final String[] args) {
         initApplication();
-    } // end of main
+    }
 }
