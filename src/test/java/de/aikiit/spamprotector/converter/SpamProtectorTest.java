@@ -17,10 +17,10 @@
  */
 package de.aikiit.spamprotector.converter;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 /**
  * @author hirsch
@@ -34,7 +34,7 @@ public class SpamProtectorTest {
         assertNull(SpamProtector.toPlain(null));
     }
 
-    @Ignore("Not yet implemented")
+    @Test
     public void conversionExample() {
         assertEquals(CharacterConverter.SPACE.getReplacement(), SpamProtector.toEncoded(" "));
         assertEquals(CharacterConverter.SPACE.getPlain(), SpamProtector.toPlain("&nbsp;"));
