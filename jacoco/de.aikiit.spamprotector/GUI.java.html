@@ -57,13 +57,13 @@ class GUI extends JPanel {
      *                 &lt;code&gt;false&lt;/code&gt; or applet &lt;code&gt;true&lt;/code&gt;.
      */
     private void init(final boolean isApplet) {
-<span class="fc" id="L60">        final Calendar calendar = Calendar.getInstance();</span>
+<span class="nc" id="L60">        final Calendar calendar = Calendar.getInstance();</span>
 
         // command help
-<span class="fc" id="L63">        final JPanel buttonArea = new JPanel();</span>
-<span class="fc" id="L64">        JButton help = new JButton(&quot;Hilfe&quot;);</span>
-<span class="fc" id="L65">        help.setMnemonic('H');</span>
-<span class="pc" id="L66">        help.addActionListener(e -&gt; JOptionPane.showMessageDialog(null, &quot;Einfach ins Eingabefeld &quot;</span>
+<span class="nc" id="L63">        final JPanel buttonArea = new JPanel();</span>
+<span class="nc" id="L64">        JButton help = new JButton(&quot;Hilfe&quot;);</span>
+<span class="nc" id="L65">        help.setMnemonic('H');</span>
+<span class="nc" id="L66">        help.addActionListener(e -&gt; JOptionPane.showMessageDialog(null, &quot;Einfach ins Eingabefeld &quot;</span>
                         + &quot;HTML-Code einfügen!\nDann konvertieren &quot;
                         + &quot;und schon sind weniger SpamAttacken &quot;
                         + &quot;wahrscheinlich&quot;
@@ -74,9 +74,9 @@ class GUI extends JPanel {
                 &quot;Spam-Schutz - Hilfe&quot;,
                 JOptionPane.INFORMATION_MESSAGE));
 
-<span class="fc" id="L77">        final JTextField input = new JTextField();</span>
-<span class="fc" id="L78">        input.setSize(BOX_DIMENSION);</span>
-<span class="fc" id="L79">        input.setPreferredSize(BOX_DIMENSION);</span>
+<span class="nc" id="L77">        final JTextField input = new JTextField();</span>
+<span class="nc" id="L78">        input.setSize(BOX_DIMENSION);</span>
+<span class="nc" id="L79">        input.setPreferredSize(BOX_DIMENSION);</span>
 <span class="nc" id="L80">        final JTextField output = new JTextField(&quot;Bitte Text eingeben und Button betätigen!&quot;);</span>
 <span class="nc" id="L81">        output.setSize(BOX_DIMENSION);</span>
 <span class="nc" id="L82">        output.setPreferredSize(BOX_DIMENSION);</span>

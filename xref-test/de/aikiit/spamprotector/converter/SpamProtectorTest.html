@@ -25,10 +25,10 @@
 <a class="jxr_linenumber" name="L17" href="#L17">17</a>  <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L18" href="#L18">18</a>  <strong class="jxr_keyword">package</strong> de.aikiit.spamprotector.converter;
 <a class="jxr_linenumber" name="L19" href="#L19">19</a>  
-<a class="jxr_linenumber" name="L20" href="#L20">20</a>  <strong class="jxr_keyword">import</strong> org.junit.Ignore;
-<a class="jxr_linenumber" name="L21" href="#L21">21</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
-<a class="jxr_linenumber" name="L22" href="#L22">22</a>  
-<a class="jxr_linenumber" name="L23" href="#L23">23</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.*;
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>  
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertEquals;
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertNull;
 <a class="jxr_linenumber" name="L24" href="#L24">24</a>  
 <a class="jxr_linenumber" name="L25" href="#L25">25</a>  <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="L26" href="#L26">26</a>  <em class="jxr_javadoccomment"> * @author hirsch</em>
@@ -40,15 +40,32 @@
 <a class="jxr_linenumber" name="L32" href="#L32">32</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> conversionRoundtripNull() {
 <a class="jxr_linenumber" name="L33" href="#L33">33</a>          assertNull(SpamProtector.toEncoded(<strong class="jxr_keyword">null</strong>));
 <a class="jxr_linenumber" name="L34" href="#L34">34</a>          assertNull(SpamProtector.toPlain(<strong class="jxr_keyword">null</strong>));
-<a class="jxr_linenumber" name="L35" href="#L35">35</a>      }
-<a class="jxr_linenumber" name="L36" href="#L36">36</a>  
-<a class="jxr_linenumber" name="L37" href="#L37">37</a>      @Ignore(<span class="jxr_string">"Not yet implemented"</span>)
-<a class="jxr_linenumber" name="L38" href="#L38">38</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> conversionExample() {
-<a class="jxr_linenumber" name="L39" href="#L39">39</a>          assertEquals(CharacterConverter.SPACE.getReplacement(), SpamProtector.toEncoded(<span class="jxr_string">" "</span>));
-<a class="jxr_linenumber" name="L40" href="#L40">40</a>          assertEquals(CharacterConverter.SPACE.getPlain(), SpamProtector.toPlain(<span class="jxr_string">"&amp;nbsp;"</span>));
-<a class="jxr_linenumber" name="L41" href="#L41">41</a>      }
-<a class="jxr_linenumber" name="L42" href="#L42">42</a>  
-<a class="jxr_linenumber" name="L43" href="#L43">43</a>  }
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>  
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>          assertEquals(<span class="jxr_string">""</span>, SpamProtector.toEncoded(<span class="jxr_string">""</span>));
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>          assertEquals(<span class="jxr_string">""</span>, SpamProtector.toPlain(<span class="jxr_string">""</span>));
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>      }
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>  
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>      @Test
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> conversionExample() {
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>          assertEquals(CharacterConverter.SPACE.getReplacement(), SpamProtector.toEncoded(<span class="jxr_string">" "</span>));
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>          assertEquals(CharacterConverter.SPACE.getPlain(), SpamProtector.toPlain(<span class="jxr_string">"&amp;nbsp;"</span>));
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>      }
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>  
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>      @Test
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> asciiOnlyIsEncodedCompletelyWithSpacesAndAtSign() {
+<a class="jxr_linenumber" name="L48" href="#L48">48</a>          String input = <span class="jxr_string">"mailto:w oo@suck.er"</span>;
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>          assertEquals(<span class="jxr_string">"&amp;#109;&amp;#97;&amp;#105;&amp;#108;&amp;#116;&amp;#111;&amp;#58;&amp;#119;&amp;nbsp;&amp;#111;"</span> +
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>                  <span class="jxr_string">"&amp;#111;&amp;#64;&amp;#115;&amp;#117;&amp;#99;&amp;#107;&amp;#46;&amp;#101;&amp;#114;"</span>, SpamProtector.toEncoded(input));
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>      }
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>  
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>      @Test
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> nonAsciCharactersAreNotEncodedButTheRest() {
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>          String input = <span class="jxr_string">"mailto:wフィリップoo@suck.нетer"</span>;
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>          assertEquals(<span class="jxr_string">"&amp;#109;&amp;#97;&amp;#105;&amp;#108;&amp;#116;&amp;#111;&amp;#58;&amp;#119;フィリップ&amp;#111;"</span> +
+<a class="jxr_linenumber" name="L57" href="#L57">57</a>                  <span class="jxr_string">"&amp;#111;&amp;#64;&amp;#115;&amp;#117;&amp;#99;&amp;#107;&amp;#46;нет&amp;#101;&amp;#114;"</span>, SpamProtector.toEncoded(input));
+<a class="jxr_linenumber" name="L58" href="#L58">58</a>      }
+<a class="jxr_linenumber" name="L59" href="#L59">59</a>  
+<a class="jxr_linenumber" name="L60" href="#L60">60</a>  }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2015 <a href="http://www.aiki-it.de">Aiki IT</a>. All rights reserved.</div>
