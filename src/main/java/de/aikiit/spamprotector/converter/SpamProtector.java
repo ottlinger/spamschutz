@@ -65,7 +65,7 @@ public final class SpamProtector {
         if (!Strings.isNullOrEmpty(input)) {
             StringBuilder result = new StringBuilder();
 
-            for(Character character : input.toCharArray()) {
+            for (Character character : input.toCharArray()) {
                 result.append(PLAIN.containsKey(character) ? PLAIN.get(character).getReplacement() : character);
             }
 
