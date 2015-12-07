@@ -37,7 +37,7 @@ public class AsciiConverterTest {
         String out = converter.replaceString(in);
         assertEquals("&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#119;&#111;" +
                 "&#111;&#64;&#115;&#117;&#99;&#107;&#46;&#101;&#114;", out);
-    }   // end of main
+    }
 
     @Test
     public final void testConversionOnSingleCharacter() {
