@@ -18,8 +18,11 @@
 package de.aikiit.spamprotector.converter;
 
 import com.google.common.base.Strings;
+import com.google.common.collect.Maps;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+
+import java.util.Map;
 
 /**
  * @author hirsch
@@ -28,8 +31,20 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class SpamProtector {
 
+    private static Map<String, CharacterConverter> ENCODED = Maps.newHashMap();
+    private static Map<Character, CharacterConverter> PLAIN = Maps.newHashMap();
+
+    static {
+        // split up characters
+        for (CharacterConverter character : CharacterConverter.values()) {
+            ENCODED.put(character.getReplacement(), character);
+            PLAIN.put(character.getPlain().charAt(0), character);
+        }
+    }
+
     /**
      * Converts an encoded value into a plain one.
+     *
      * @param input encoded value as set in an enumeration instance of this class.
      * @return encoded value or input if no mapping is found.
      */
@@ -42,12 +57,19 @@ public final class SpamProtector {
 
     /**
      * Converts a plain value into an encoded one.
+     *
      * @param input plain value that is transformed by an enumeration instance of this class.
      * @return encoded value or input if no mapping is found.
      */
     public static String toEncoded(String input) {
         if (!Strings.isNullOrEmpty(input)) {
-            return CharacterConverter.SPACE.getReplacement();
+            StringBuilder result = new StringBuilder();
+
+            for(Character character : input.toCharArray()) {
+                result.append(PLAIN.containsKey(character) ? PLAIN.get(character).getReplacement() : character);
+            }
+
+            return result.toString();
         }
         return input;
     }
