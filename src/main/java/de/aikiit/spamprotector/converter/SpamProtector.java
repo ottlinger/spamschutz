@@ -37,7 +37,7 @@ public final class SpamProtector {
     static {
         // split up characters
         for (CharacterConverter character : CharacterConverter.values()) {
-            ENCODED.put(character.getReplacement(), character);
+            ENCODED.put(character.getReplacement().toLowerCase(), character);
             PLAIN.put(character.getPlain().charAt(0), character);
         }
     }
@@ -50,7 +50,21 @@ public final class SpamProtector {
      */
     public static String toPlain(String input) {
         if (!Strings.isNullOrEmpty(input)) {
-            return CharacterConverter.SPACE.getPlain();
+            String lowerCase = input.toLowerCase();
+            StringBuilder result = new StringBuilder();
+
+            while (!Strings.isNullOrEmpty(lowerCase)) {
+                for (String prefix : ENCODED.keySet()) {
+                    if (lowerCase.startsWith(prefix)) {
+                        result.append(ENCODED.get(prefix).getPlain());
+                        // cut out any found items
+                        lowerCase = lowerCase.substring(prefix.length(), lowerCase.length());
+                    }
+                }
+            }
+
+            return result.toString();
+
         }
         return input;
     }

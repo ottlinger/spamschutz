@@ -20,7 +20,6 @@ package de.aikiit.spamprotector.converter;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 /**
  * Created by IntelliJ IDEA.
@@ -47,11 +46,5 @@ public class AsciiConverterTest {
         // TODO http://www.herongyang.com/Unicode/Encoding-Conversion-Enter-Unicode-Data-in-Java-Program.html
         // assertEquals("U+00A5", converter.replaceString("U+00A5"));
     }
-
-    @Test
-    public final void versionStringSetByMaven() {
-        assertNotNull(de.aikiit.spamprotector.util.Version.VERSION);
-    }
-
 
 } // end of class
