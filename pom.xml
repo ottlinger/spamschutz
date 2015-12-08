@@ -267,7 +267,7 @@
                 <configuration>
                     <filesets>
                         <fileset>
-                            <directory>${basedir}/src/main/java/de/aikiit/bildbearbeiter/util/</directory>
+                            <directory>${basedir}/src/main/java/de/aikiit/spamprotector/util/</directory>
                             <includes>
                                 <include>Version.java</include>
                             </includes>
