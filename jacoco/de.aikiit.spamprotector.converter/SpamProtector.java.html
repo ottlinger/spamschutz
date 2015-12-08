@@ -37,7 +37,7 @@ public final class SpamProtector {
     static {
         // split up characters
 <span class="fc bfc" id="L39" title="All 2 branches covered.">        for (CharacterConverter character : CharacterConverter.values()) {</span>
-<span class="fc" id="L40">            ENCODED.put(character.getReplacement(), character);</span>
+<span class="fc" id="L40">            ENCODED.put(character.getReplacement().toLowerCase(), character);</span>
 <span class="fc" id="L41">            PLAIN.put(character.getPlain().charAt(0), character);</span>
         }
 <span class="fc" id="L43">    }</span>
@@ -50,9 +50,23 @@ public final class SpamProtector {
      */
     public static String toPlain(String input) {
 <span class="fc bfc" id="L52" title="All 2 branches covered.">        if (!Strings.isNullOrEmpty(input)) {</span>
-<span class="fc" id="L53">            return CharacterConverter.SPACE.getPlain();</span>
+<span class="fc" id="L53">            String lowerCase = input.toLowerCase();</span>
+<span class="fc" id="L54">            StringBuilder result = new StringBuilder();</span>
+
+<span class="fc bfc" id="L56" title="All 2 branches covered.">            while (!Strings.isNullOrEmpty(lowerCase)) {</span>
+<span class="fc bfc" id="L57" title="All 2 branches covered.">                for (String prefix : ENCODED.keySet()) {</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">                    if (lowerCase.startsWith(prefix)) {</span>
+<span class="fc" id="L59">                        result.append(ENCODED.get(prefix).getPlain());</span>
+                        // cut out any found items
+<span class="fc" id="L61">                        lowerCase = lowerCase.substring(prefix.length(), lowerCase.length());</span>
+                    }
+<span class="fc" id="L63">                }</span>
+            }
+
+<span class="fc" id="L66">            return result.toString();</span>
+
         }
-<span class="fc" id="L55">        return input;</span>
+<span class="fc" id="L69">        return input;</span>
     }
 
     /**
@@ -62,16 +76,16 @@ public final class SpamProtector {
      * @return encoded value or input if no mapping is found.
      */
     public static String toEncoded(String input) {
-<span class="fc bfc" id="L65" title="All 2 branches covered.">        if (!Strings.isNullOrEmpty(input)) {</span>
-<span class="fc" id="L66">            StringBuilder result = new StringBuilder();</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">        if (!Strings.isNullOrEmpty(input)) {</span>
+<span class="fc" id="L80">            StringBuilder result = new StringBuilder();</span>
 
-<span class="fc bfc" id="L68" title="All 2 branches covered.">            for(Character character : input.toCharArray()) {</span>
-<span class="fc bfc" id="L69" title="All 2 branches covered.">                result.append(PLAIN.containsKey(character) ? PLAIN.get(character).getReplacement() : character);</span>
+<span class="fc bfc" id="L82" title="All 2 branches covered.">            for (Character character : input.toCharArray()) {</span>
+<span class="fc bfc" id="L83" title="All 2 branches covered.">                result.append(PLAIN.containsKey(character) ? PLAIN.get(character).getReplacement() : character);</span>
             }
 
-<span class="fc" id="L72">            return result.toString();</span>
+<span class="fc" id="L86">            return result.toString();</span>
         }
-<span class="fc" id="L74">        return input;</span>
+<span class="fc" id="L88">        return input;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
