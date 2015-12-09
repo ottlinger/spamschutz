@@ -22,7 +22,7 @@
     <groupId>de.aikiit</groupId>
     <artifactId>spamschutz</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.4-SNAPSHOT</version>
+    <version>1.0.5-SNAPSHOT</version>
     <name>SpamSchutz - simple way to protect your mail adresses from naïve spammers</name>
     <description>This spamschutz (=spam protector in German) can be launched as
         an applet or a standalone application. It converts all given characters
@@ -165,9 +165,27 @@
                         </excludes>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>2.6</version>
+                    <configuration>
+                        <archive>
+                            <manifest>
+                                <addClasspath>true</addClasspath>
+                                <mainClass>de.aikiit.spamprotector.AntiSpamApplication</mainClass>
+                            </manifest>
+                        </archive>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
+            <!-- Build an executable JAR -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+            </plugin>
             <!-- Licence compliance for GPL, configuration is performed in reporting section  -->
             <plugin>
                 <groupId>org.apache.rat</groupId>
@@ -267,7 +285,7 @@
                 <configuration>
                     <filesets>
                         <fileset>
-                            <directory>${basedir}/src/main/java/de/aikiit/bildbearbeiter/util/</directory>
+                            <directory>${basedir}/src/main/java/de/aikiit/spamprotector/util/</directory>
                             <includes>
                                 <include>Version.java</include>
                             </includes>
