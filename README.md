@@ -34,9 +34,12 @@ To run this class as an applet you need run
 If you want to run this programme as a standalone application, perform the following:
   * Get your Maven up'n'running
   * Download the sources of spamschutz
-  * run ```mvn clean install -Plive-demo``` to launch the application OR
+  * run ```mvn clean install -Plive-demo``` to launch the application
+
+A different possibility is to launch the combined uberJAR:
+
   * ```mvn clean install```
-  * ```java -jar target/spamschutz-1.0.4-SNAPSHOT.jar``` - please adapt the version number
+  * ```java -jar target/spamschutz-1.0.4-SNAPSHOT-executable.jar``` - please adapt the version number
 
 ## Reports ##
 

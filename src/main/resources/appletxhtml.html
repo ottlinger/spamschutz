@@ -72,13 +72,24 @@ properly configured ?"
 
 <applet codebase="de/aikiit/spamprotector" code="AntiSpamApplet.class"
         width="800" height="250"></applet>
+
+    <object codebase="." classid="java:de.aikiit.spamprotector.AntiSpamApplet"
+            codetype="application/java" width="800" height="250">AntiSpamApplet
+    </object>
+
+        archive = 'DynamicTreeDemo.jar'
 -->
 <hr/>
 <!-- works with FF, Opera; but not Chromium -->
 <p>
-    <object codebase="." classid="java:de.aikiit.spamprotector.AntiSpamApplet"
-            codetype="application/java" width="800" height="250">AntiSpamApplet
-    </object>
+    <applet code = "de.aikiit.spamprotector.AntiSpamApplet"
+            archive = "${project.build.finalName}-executable.jar"
+        width = "800"
+        height = "250">
+        <param name="permissions" value="sandbox" />
+    </applet>
+
+
 </p>
 <hr/>
 <p>

@@ -22,7 +22,7 @@
     <groupId>de.aikiit</groupId>
     <artifactId>spamschutz</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.5-SNAPSHOT</version>
+    <version>1.0.6-SNAPSHOT</version>
     <name>SpamSchutz - simple way to protect your mail adresses from naïve spammers</name>
     <description>This spamschutz (=spam protector in German) can be launched as
         an applet or a standalone application. It converts all given characters
@@ -167,6 +167,19 @@
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>2.4</version>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>2.6</version>
                     <configuration>
@@ -175,13 +188,49 @@
                                 <addClasspath>true</addClasspath>
                                 <mainClass>de.aikiit.spamprotector.AntiSpamApplication</mainClass>
                             </manifest>
+                            <manifestEntries>
+                                <Codebase>*</Codebase>
+                                <Permissions>sandbox</Permissions>
+                            </manifestEntries>
                         </archive>
                     </configuration>
+                </plugin>
+                <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-shade-plugin</artifactId>
+                  <version>2.4.2</version>
+                  <executions>
+                    <execution>
+                      <phase>package</phase>
+                      <goals>
+                        <goal>shade</goal>
+                      </goals>
+                        <configuration>
+                          <shadedArtifactAttached>true</shadedArtifactAttached>
+                          <shadedClassifierName>executable</shadedClassifierName>
+                        <transformers>
+                          <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                              <manifestEntries>
+                                <Main-Class>de.aikiit.spamprotector.AntiSpamApplication</Main-Class>
+                                <Build-Number>${project.version}</Build-Number>
+                                  <Codebase>*</Codebase>
+                                  <Permissions>sandbox</Permissions>
+                              </manifestEntries>
+                          </transformer>
+                        </transformers>
+                      </configuration>
+                    </execution>
+                  </executions>
                 </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
             <!-- Build an executable JAR -->
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-shade-plugin</artifactId>
+              <version>2.4.2</version>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -303,6 +352,10 @@
                 </configuration>
             </plugin>
             <!--  generate source and javadoc.jar -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -532,15 +585,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>2.3</version>
-                        <executions>
-                            <execution>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                            </execution>
-                        </executions>
                     </plugin>
                 </plugins>
             </build>
