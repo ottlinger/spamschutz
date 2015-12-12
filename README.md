@@ -24,12 +24,6 @@ This project uses [Maven](https://maven.apache.org "Official Maven website") to 
 
 ![https://raw.githubusercontent.com/ottlinger/spamschutz/master/webpage/media/gplv3-88x31.png](https://raw.githubusercontent.com/ottlinger/spamschutz/master/webpage/media/gplv3-88x31.png)
 
-## Applet ##
-To run this class as an applet you need run
-  * ```mvn clean install```
-  * Launch ```./target/classes/applet.html``` for an example HTML integration
-  * Launch ```./target/classes/appletxhtml.html``` for an example XHTML integration
-
 ## Application ##
 If you want to run this programme as a standalone application, perform the following:
   * Get your Maven up'n'running
@@ -44,3 +38,11 @@ A different possibility is to launch the combined uberJAR:
 ## Reports ##
 
 A current snapshot's maven [site reports](https://ottlinger.github.io/spamschutz/) is a good place to start to understand the application without trying it.
+
+## DEPRECATED: Applet ##
+To run this class as an applet you need to run
+  * ```mvn clean install```
+  * Launch ```./target/classes/applet.html``` for an example HTML integration
+  * Launch ```./target/classes/appletxhtml.html``` for an example XHTML integration
+
+Due to the current security issues with Java Applet this way is not recommeneded and is addressed in issue #20.
