@@ -17,7 +17,6 @@
  */
 package de.aikiit.spamprotector.converter;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -72,13 +71,25 @@ public class SpamProtectorTest {
         assertEquals(input, SpamProtector.toPlain(encoded));
     }
 
-    // TODO makes the conversion hang :-(
-    @Ignore("Not yet working :-D")
+    @Test
     public void mixOfEncodedAndNonAsciiPlainCanBeDecoded() {
         String plain = "mailto:wフィリップoo@suck.нетer";
         String encoded = "&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#119;フィリップ&#111;&#111;&#64;&#115;&#117;&#99;&#107;&#46;нет&#101;&#114;";
         assertEquals(plain, SpamProtector.toPlain(encoded));
+    }
 
+    @Test
+    public void stupidInputDecode() {
+        assertEquals("", SpamProtector.toPlain(""));
+        assertNull(SpamProtector.toPlain(null));
+        assertEquals("²", SpamProtector.toPlain("²"));
+    }
+
+    @Test
+    public void stupidInputEncode() {
+        assertEquals("", SpamProtector.toEncoded(""));
+        assertNull(SpamProtector.toEncoded(null));
+        assertEquals("²", SpamProtector.toEncoded("²"));
     }
 
 }

@@ -54,12 +54,21 @@ public final class SpamProtector {
             StringBuilder result = new StringBuilder();
 
             while (!Strings.isNullOrEmpty(lowerCase)) {
+
+                int lengthBeforeConversion = lowerCase.length();
+
                 for (String prefix : ENCODED.keySet()) {
                     if (lowerCase.startsWith(prefix)) {
                         result.append(ENCODED.get(prefix).getPlain());
                         // cut out any found items
                         lowerCase = lowerCase.substring(prefix.length(), lowerCase.length());
                     }
+                }
+
+                // in case we did not replace any character trim one and restart
+                if (lowerCase.length() == lengthBeforeConversion) {
+                    result.append(lowerCase.charAt(0));
+                    lowerCase = lowerCase.substring(1);
                 }
             }
 
