@@ -31,8 +31,8 @@ import java.util.Map;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class SpamProtector {
 
-    private static Map<String, CharacterConverter> ENCODED = Maps.newHashMap();
-    private static Map<Character, CharacterConverter> PLAIN = Maps.newHashMap();
+    private static final Map<String, CharacterConverter> ENCODED = Maps.newHashMap();
+    private static final Map<Character, CharacterConverter> PLAIN = Maps.newHashMap();
 
     static {
         // split up characters

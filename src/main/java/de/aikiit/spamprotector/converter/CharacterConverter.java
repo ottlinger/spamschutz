@@ -125,8 +125,8 @@ public enum CharacterConverter {
     //
     ;
 
-    private String plain;
-    private String replacement;
+    private final String plain;
+    private final String replacement;
 
     CharacterConverter(String plain, String placement) {
         this.plain = plain;

@@ -84,16 +84,12 @@ class GUI extends JPanel {
         // read input field
         final JButton start = new JButton("--->");
         start.setMnemonic('U');
-        start.addActionListener(e -> {
-            output.setText(SpamProtector.toEncoded(input.getText()));
-        });
+        start.addActionListener(e -> output.setText(SpamProtector.toEncoded(input.getText())));
 
         // read output field
         final JButton revert = new JButton("<---");
         revert.setMnemonic('v');
-        revert.addActionListener(e -> {
-            input.setText(SpamProtector.toPlain(output.getText()));
-        });
+        revert.addActionListener(e -> input.setText(SpamProtector.toPlain(output.getText())));
 
         final JButton reset = new JButton("Reset");
         reset.setMnemonic('R');

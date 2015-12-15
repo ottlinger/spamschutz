@@ -31,7 +31,7 @@ import java.awt.*;
  * @version 2011-04-29, 01:51
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class AntiSpamApplication {
+final class AntiSpamApplication {
 
     /** Application title to use in Swing window. */
     private static final String APP_TITLE = "SpamProtector - "
