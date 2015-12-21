@@ -46,3 +46,4 @@ To run this class as an applet you need to run
   * Launch ```./target/classes/appletxhtml.html``` for an example XHTML integration
 
 Due to the current security issues with Java Applet this way is not recommeneded and is addressed in issue #20.
+As of 2015-12 it's not possible to integrate Spamschutz into an HTML page without warnings - therefore this way is deprecated.
