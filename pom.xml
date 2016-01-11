@@ -56,7 +56,7 @@
         <url>https://github.com/ottlinger/spamschutz</url>
     </scm>
     <properties>
-        <logger.version>1.2.17</logger.version>
+        <logger.version>2.5</logger.version>
         <junit.version>4.12</junit.version>
         <mockito.version>1.10.19</mockito.version>
         <cobertura.version>2.6</cobertura.version>
@@ -93,10 +93,21 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <!-- http://logging.apache.org/log4j/2.x/manual/api.html -->
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>${logger.version}</version>
+          <groupId>org.apache.logging.log4j</groupId>
+          <artifactId>log4j-core</artifactId>
+          <version>${logger.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.logging.log4j</groupId>
+          <artifactId>log4j-1.2-api</artifactId>
+          <version>${logger.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.logging.log4j</groupId>
+          <artifactId>log4j-api</artifactId>
+          <version>${logger.version}</version>
         </dependency>
     </dependencies>
     <build>
