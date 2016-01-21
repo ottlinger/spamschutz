@@ -41,7 +41,7 @@ class GUI extends JPanel {
      * the application is started as an applet or standalone.
      *
      * @param isApplet Defines whether the application is started as standalone
-     *                 <code>false</code> or applet <code>true</code>.
+     *                 {@code false} or applet {@code true}.
      */
     GUI(final boolean isApplet) {
         SwingUtilities.invokeLater(
@@ -54,7 +54,7 @@ class GUI extends JPanel {
      * application is started.
      *
      * @param isApplet Defines whether the application is started as standalone
-     *                 <code>false</code> or applet <code>true</code>.
+     *                 {@code false} or applet {@code true}.
      */
     private void init(final boolean isApplet) {
         final Calendar calendar = Calendar.getInstance();

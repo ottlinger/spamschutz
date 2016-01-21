@@ -34,22 +34,14 @@ import static org.junit.Assert.assertEquals;
 public class LocalizationHelperTest {
 
     /**
-     * Retrieve a plain i18n-value.
-     */
-    @Test
-    public final void checkValueRetrievingFromBundle() {
-        assertEquals("Fortschritt", getBundleString("fotorenamer.ui.progress"));
-    }
-
-    /**
-     * Retrieve a i18n-value with parameters set.
+     * Retrieve a i18n-value with parameters.
      */
     @Test
     public final void checkParametrizedValueExtraction() {
-        assertEquals("Erfolg und dann folgt noch die 7", getParameterizedBundleString("fotorenamer.test.param",
+        assertEquals("Erfolg und dann folgt noch die 7", getParameterizedBundleString("spamschutz.test.param",
                 "Erfolg", 7));
         // ignore warning, we want to test what happens here! An empty String or null changes the output.
-        assertEquals("{0} und dann folgt noch die {1}", getParameterizedBundleString("fotorenamer.test.param",
+        assertEquals("{0} und dann folgt noch die {1}", getParameterizedBundleString("spamschutz.test.param",
                 new Object[]{}));
     }
 
@@ -78,6 +70,6 @@ public class LocalizationHelperTest {
 
     @Test
     public final void umlautEncodingWorksCorrectly() {
-        assertEquals("ßäü", getBundleString("fotorenamer.test.umlauts"));
+        assertEquals("ßäü", getBundleString("spamschutz.test.umlauts"));
     }
 }

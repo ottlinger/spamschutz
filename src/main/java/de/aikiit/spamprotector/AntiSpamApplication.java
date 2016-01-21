@@ -17,13 +17,13 @@
  */
 
 package de.aikiit.spamprotector;
-
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 import javax.swing.*;
 import java.awt.*;
 
+import static de.aikiit.spamprotector.util.LocalizationHelper.getBundleString;
 /**
  * Application starter class.
  *
@@ -33,15 +33,6 @@ import java.awt.*;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 final class AntiSpamApplication {
 
-    /** Application title to use in Swing window. */
-    private static final String APP_TITLE = "SpamProtector - "
-            + "der einfachste Schutz gegen Spider-Spam und RegEx-Mailadressenscanner";
-
-    /**
-     * Preferred size of the complete application window.
-     */
-    private static final Dimension APP_DIMENSION = new Dimension(800, 300);
-
     /**
      * Helper that starts and initializes the application itself.
      */
@@ -50,9 +41,9 @@ final class AntiSpamApplication {
                 () -> {
                     JFrame frame = new JFrame();
                     GUI g = new GUI(false);
-                    frame.setTitle(APP_TITLE);
+                    frame.setTitle(getBundleString("spamschutz.main.title"));
                     frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-                    frame.setSize(APP_DIMENSION);
+                    frame.setSize(new Dimension(800, 300));
                     frame.add(g);
                     frame.setVisible(true);
                 }

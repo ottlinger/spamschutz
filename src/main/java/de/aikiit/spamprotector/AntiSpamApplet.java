@@ -25,16 +25,12 @@ import java.awt.*;
  * User: hirsch Date: Apr 10, 2003 Time: 1:24:52 PM
  */
 public class AntiSpamApplet extends Applet {
-    /**
-     * Preferred size of the complete application window.
-     */
-    private static final Dimension APP_DIMENSION = new Dimension(800, 300);
 
     /**
      * Loads UI for this applet.
      */
     public final void init() {
         add(new GUI(true));
-        setSize(APP_DIMENSION);
+        setSize(new Dimension(800, 300));
     }
 }
