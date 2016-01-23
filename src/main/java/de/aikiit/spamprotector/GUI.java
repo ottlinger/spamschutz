@@ -1,19 +1,19 @@
 /**
- SpamSchutz - simple way to protect your mail adresses from naiive spammers
- Copyright (C) 2011, Aiki IT
-
- This program is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
-
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
-
- You should have received a copy of the GNU General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * SpamSchutz - simple way to protect your mail adresses from naiive spammers
+ * Copyright (C) 2011, Aiki IT
+ * <p/>
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * <p/>
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * <p/>
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 package de.aikiit.spamprotector;
 
@@ -22,6 +22,8 @@ import de.aikiit.spamprotector.converter.SpamProtector;
 import javax.swing.*;
 import java.awt.*;
 import java.util.Calendar;
+
+import static de.aikiit.spamprotector.util.LocalizationHelper.getBundleString;
 
 /**
  * This class contains the main UI of this application (both input windows
@@ -61,8 +63,8 @@ class GUI extends JPanel {
 
         // command help
         final JPanel buttonArea = new JPanel();
-        JButton help = new JButton("Hilfe");
-        help.setMnemonic('H');
+        JButton help = new JButton(getBundleString("spamschutz.ui.help"));
+        help.setMnemonic(getBundleString("spamschutz.ui.help.mnemonic").charAt(0));
         help.addActionListener(e -> JOptionPane.showMessageDialog(null, "Einfach ins Eingabefeld "
                         + "HTML-Code einfügen!\nDann konvertieren "
                         + "und schon sind weniger SpamAttacken "
@@ -91,8 +93,8 @@ class GUI extends JPanel {
         revert.setMnemonic('v');
         revert.addActionListener(e -> input.setText(SpamProtector.toPlain(output.getText())));
 
-        final JButton reset = new JButton("Reset");
-        reset.setMnemonic('R');
+        final JButton reset = new JButton(getBundleString("spamschutz.ui.reset"));
+        reset.setMnemonic(getBundleString("spamschutz.ui.reset.mnemonic").charAt(0));
         reset.addActionListener(e -> {
             input.setText("");
             output.setText("");
@@ -124,8 +126,8 @@ class GUI extends JPanel {
 
         // if started standalone we do need a quit-button
         if (!isApplet) {
-            final JButton end = new JButton("Ende");
-            end.setMnemonic('E');
+            final JButton end = new JButton(getBundleString("spamschutz.ui.end"));
+            end.setMnemonic(getBundleString("spamschutz.ui.end.mnemonic").charAt(0));
             end.addActionListener(e -> System.exit(0));
             buttonArea.add(end);
         }
