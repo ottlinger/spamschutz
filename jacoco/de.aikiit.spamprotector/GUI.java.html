@@ -107,14 +107,14 @@ class GUI extends JPanel {
         // fields
 <span class="nc" id="L108">        final JPanel ioArea = new JPanel(new FlowLayout());</span>
 
-<span class="nc" id="L110">        final JLabel inputLabel = new JLabel(&quot;1: Eingabe:&quot;);</span>
-<span class="nc" id="L111">        inputLabel.setDisplayedMnemonic('1');</span>
+<span class="nc" id="L110">        final JLabel inputLabel = new JLabel(getBundleString(&quot;spamschutz.ui.input&quot;));</span>
+<span class="nc" id="L111">        inputLabel.setDisplayedMnemonic(getBundleString(&quot;spamschutz.ui.input.mnemonic&quot;).charAt(0));</span>
 <span class="nc" id="L112">        inputLabel.setLabelFor(input);</span>
 <span class="nc" id="L113">        ioArea.add(inputLabel);</span>
 <span class="nc" id="L114">        ioArea.add(input);</span>
 
-<span class="nc" id="L116">        final JLabel outputLabel = new JLabel(&quot;2: Ausgabe:&quot;);</span>
-<span class="nc" id="L117">        outputLabel.setDisplayedMnemonic('2');</span>
+<span class="nc" id="L116">        final JLabel outputLabel = new JLabel(getBundleString(&quot;spamschutz.ui.output&quot;));</span>
+<span class="nc" id="L117">        outputLabel.setDisplayedMnemonic(getBundleString(&quot;spamschutz.ui.output.mnemonic&quot;).charAt(0));</span>
 <span class="nc" id="L118">        outputLabel.setLabelFor(output);</span>
 <span class="nc" id="L119">        ioArea.add(outputLabel);</span>
 <span class="nc" id="L120">        ioArea.add(output);</span>
