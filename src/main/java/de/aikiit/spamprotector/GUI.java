@@ -107,14 +107,14 @@ class GUI extends JPanel {
         // fields
         final JPanel ioArea = new JPanel(new FlowLayout());
 
-        final JLabel inputLabel = new JLabel("1: Eingabe:");
-        inputLabel.setDisplayedMnemonic('1');
+        final JLabel inputLabel = new JLabel(getBundleString("spamschutz.ui.input"));
+        inputLabel.setDisplayedMnemonic(getBundleString("spamschutz.ui.input.mnemonic").charAt(0));
         inputLabel.setLabelFor(input);
         ioArea.add(inputLabel);
         ioArea.add(input);
 
-        final JLabel outputLabel = new JLabel("2: Ausgabe:");
-        outputLabel.setDisplayedMnemonic('2');
+        final JLabel outputLabel = new JLabel(getBundleString("spamschutz.ui.output"));
+        outputLabel.setDisplayedMnemonic(getBundleString("spamschutz.ui.output.mnemonic").charAt(0));
         outputLabel.setLabelFor(output);
         ioArea.add(outputLabel);
         ioArea.add(output);
