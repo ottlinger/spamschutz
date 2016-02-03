@@ -79,7 +79,7 @@ class GUI extends JPanel {
         final JTextField input = new JTextField();
         input.setSize(BOX_DIMENSION);
         input.setPreferredSize(BOX_DIMENSION);
-        final JTextField output = new JTextField("Bitte Text eingeben und Button betätigen!");
+        final JTextField output = new JTextField(getBundleString("spamschutz.ui.default.output"));
         output.setSize(BOX_DIMENSION);
         output.setPreferredSize(BOX_DIMENSION);
 
