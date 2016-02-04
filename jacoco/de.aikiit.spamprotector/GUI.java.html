@@ -59,10 +59,10 @@ class GUI extends JPanel {
      *                 {@code false} or applet {@code true}.
      */
     private void init(final boolean isApplet) {
-<span class="fc" id="L62">        final Calendar calendar = Calendar.getInstance();</span>
+<span class="nc" id="L62">        final Calendar calendar = Calendar.getInstance();</span>
 
         // command help
-<span class="fc" id="L65">        final JPanel buttonArea = new JPanel();</span>
+<span class="nc" id="L65">        final JPanel buttonArea = new JPanel();</span>
 <span class="nc" id="L66">        JButton help = new JButton(getBundleString(&quot;spamschutz.ui.help&quot;));</span>
 <span class="nc" id="L67">        help.setMnemonic(getBundleString(&quot;spamschutz.ui.help.mnemonic&quot;).charAt(0));</span>
 <span class="nc" id="L68">        help.addActionListener(e -&gt; JOptionPane.showMessageDialog(null, &quot;Einfach ins Eingabefeld &quot;</span>
@@ -84,13 +84,13 @@ class GUI extends JPanel {
 <span class="nc" id="L84">        output.setPreferredSize(BOX_DIMENSION);</span>
 
         // read input field
-<span class="nc" id="L87">        final JButton start = new JButton(&quot;---&gt;&quot;);</span>
-<span class="nc" id="L88">        start.setMnemonic('U');</span>
+<span class="nc" id="L87">        final JButton start = new JButton(getBundleString(&quot;spamschutz.ui.button.rtl&quot;));</span>
+<span class="nc" id="L88">        start.setMnemonic(getBundleString(&quot;spamschutz.ui.button.rtl.mnemonic&quot;).charAt(0));</span>
 <span class="nc" id="L89">        start.addActionListener(e -&gt; output.setText(SpamProtector.toEncoded(input.getText())));</span>
 
         // read output field
-<span class="nc" id="L92">        final JButton revert = new JButton(&quot;&lt;---&quot;);</span>
-<span class="nc" id="L93">        revert.setMnemonic('v');</span>
+<span class="nc" id="L92">        final JButton revert = new JButton(getBundleString(&quot;spamschutz.ui.button.ltr&quot;));</span>
+<span class="nc" id="L93">        revert.setMnemonic(getBundleString(&quot;spamschutz.ui.button.ltr.mnemonic&quot;).charAt(0));</span>
 <span class="nc" id="L94">        revert.addActionListener(e -&gt; input.setText(SpamProtector.toPlain(output.getText())));</span>
 
 <span class="nc" id="L96">        final JButton reset = new JButton(getBundleString(&quot;spamschutz.ui.reset&quot;));</span>

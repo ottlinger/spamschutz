@@ -92,13 +92,13 @@
 <a class="jxr_linenumber" name="L84" href="#L84">84</a>          output.setPreferredSize(BOX_DIMENSION);
 <a class="jxr_linenumber" name="L85" href="#L85">85</a>  
 <a class="jxr_linenumber" name="L86" href="#L86">86</a>          <em class="jxr_comment">// read input field</em>
-<a class="jxr_linenumber" name="L87" href="#L87">87</a>          <strong class="jxr_keyword">final</strong> JButton start = <strong class="jxr_keyword">new</strong> JButton(<span class="jxr_string">"---&gt;"</span>);
-<a class="jxr_linenumber" name="L88" href="#L88">88</a>          start.setMnemonic('U');
+<a class="jxr_linenumber" name="L87" href="#L87">87</a>          <strong class="jxr_keyword">final</strong> JButton start = <strong class="jxr_keyword">new</strong> JButton(getBundleString(<span class="jxr_string">"spamschutz.ui.button.rtl"</span>));
+<a class="jxr_linenumber" name="L88" href="#L88">88</a>          start.setMnemonic(getBundleString(<span class="jxr_string">"spamschutz.ui.button.rtl.mnemonic"</span>).charAt(0));
 <a class="jxr_linenumber" name="L89" href="#L89">89</a>          start.addActionListener(e -&gt; output.setText(SpamProtector.toEncoded(input.getText())));
 <a class="jxr_linenumber" name="L90" href="#L90">90</a>  
 <a class="jxr_linenumber" name="L91" href="#L91">91</a>          <em class="jxr_comment">// read output field</em>
-<a class="jxr_linenumber" name="L92" href="#L92">92</a>          <strong class="jxr_keyword">final</strong> JButton revert = <strong class="jxr_keyword">new</strong> JButton(<span class="jxr_string">"&lt;---"</span>);
-<a class="jxr_linenumber" name="L93" href="#L93">93</a>          revert.setMnemonic('v');
+<a class="jxr_linenumber" name="L92" href="#L92">92</a>          <strong class="jxr_keyword">final</strong> JButton revert = <strong class="jxr_keyword">new</strong> JButton(getBundleString(<span class="jxr_string">"spamschutz.ui.button.ltr"</span>));
+<a class="jxr_linenumber" name="L93" href="#L93">93</a>          revert.setMnemonic(getBundleString(<span class="jxr_string">"spamschutz.ui.button.ltr.mnemonic"</span>).charAt(0));
 <a class="jxr_linenumber" name="L94" href="#L94">94</a>          revert.addActionListener(e -&gt; input.setText(SpamProtector.toPlain(output.getText())));
 <a class="jxr_linenumber" name="L95" href="#L95">95</a>  
 <a class="jxr_linenumber" name="L96" href="#L96">96</a>          <strong class="jxr_keyword">final</strong> JButton reset = <strong class="jxr_keyword">new</strong> JButton(getBundleString(<span class="jxr_string">"spamschutz.ui.reset"</span>));
