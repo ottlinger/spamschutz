@@ -84,13 +84,13 @@ class GUI extends JPanel {
         output.setPreferredSize(BOX_DIMENSION);
 
         // read input field
-        final JButton start = new JButton("--->");
-        start.setMnemonic('U');
+        final JButton start = new JButton(getBundleString("spamschutz.ui.button.rtl"));
+        start.setMnemonic(getBundleString("spamschutz.ui.button.rtl.mnemonic").charAt(0));
         start.addActionListener(e -> output.setText(SpamProtector.toEncoded(input.getText())));
 
         // read output field
-        final JButton revert = new JButton("<---");
-        revert.setMnemonic('v');
+        final JButton revert = new JButton(getBundleString("spamschutz.ui.button.ltr"));
+        revert.setMnemonic(getBundleString("spamschutz.ui.button.ltr.mnemonic").charAt(0));
         revert.addActionListener(e -> input.setText(SpamProtector.toPlain(output.getText())));
 
         final JButton reset = new JButton(getBundleString("spamschutz.ui.reset"));
