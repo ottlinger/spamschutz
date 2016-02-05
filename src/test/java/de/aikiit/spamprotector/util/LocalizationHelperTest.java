@@ -75,8 +75,7 @@ public class LocalizationHelperTest {
 
     @Test
     public final void unknownKey() {
-        // TODO [WARNING]
-        // java.util.MissingResourceException: Can't find resource for bundle java.util.PropertyResourceBundle, key spamschutz.ui.button.rtl
-        // return plain key if unknown instead of except
+        String unknown = "abcde.unknown";
+        assertEquals(unknown, getBundleString(unknown));
     }
 }
