@@ -83,11 +83,10 @@
 <a class="jxr_linenumber" name="L75" href="#L75">75</a>  
 <a class="jxr_linenumber" name="L76" href="#L76">76</a>      @Test
 <a class="jxr_linenumber" name="L77" href="#L77">77</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">void</strong> unknownKey() {
-<a class="jxr_linenumber" name="L78" href="#L78">78</a>          <em class="jxr_comment">// TODO [WARNING]</em>
-<a class="jxr_linenumber" name="L79" href="#L79">79</a>          <em class="jxr_comment">// java.util.MissingResourceException: Can't find resource for bundle java.util.PropertyResourceBundle, key spamschutz.ui.button.rtl</em>
-<a class="jxr_linenumber" name="L80" href="#L80">80</a>          <em class="jxr_comment">// return plain key if unknown instead of except</em>
-<a class="jxr_linenumber" name="L81" href="#L81">81</a>      }
-<a class="jxr_linenumber" name="L82" href="#L82">82</a>  }
+<a class="jxr_linenumber" name="L78" href="#L78">78</a>          String unknown = <span class="jxr_string">"abcde.unknown"</span>;
+<a class="jxr_linenumber" name="L79" href="#L79">79</a>          assertEquals(unknown, getBundleString(unknown));
+<a class="jxr_linenumber" name="L80" href="#L80">80</a>      }
+<a class="jxr_linenumber" name="L81" href="#L81">81</a>  }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2016 <a href="http://www.aiki-it.de">Aiki IT</a>. All rights reserved.</div>
