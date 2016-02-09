@@ -24,11 +24,11 @@ import java.awt.*;
 import java.util.Calendar;
 
 import static de.aikiit.spamprotector.util.LocalizationHelper.getBundleString;
+import static de.aikiit.spamprotector.util.LocalizationHelper.getParameterizedBundleString;
 
 /**
  * This class contains the main UI of this application (both input windows
  * and all command buttons).
- *
  * Created by IntelliJ IDEA. User: hirsch Date: Apr 10, 2003 Time: 3:12:32 PM
  */
 class GUI extends JPanel {
@@ -65,15 +65,10 @@ class GUI extends JPanel {
         final JPanel buttonArea = new JPanel();
         JButton help = new JButton(getBundleString("spamschutz.ui.help"));
         help.setMnemonic(getBundleString("spamschutz.ui.help.mnemonic").charAt(0));
-        help.addActionListener(e -> JOptionPane.showMessageDialog(null, "Einfach ins Eingabefeld "
-                        + "HTML-Code einfügen!\nDann konvertieren "
-                        + "und schon sind weniger SpamAttacken "
-                        + "wahrscheinlich"
-                        + "\n(C) AIKI IT 2003-"
-                        + calendar.get(Calendar.YEAR)
-                        + ", Version: "
-                        + de.aikiit.spamprotector.util.Version.VERSION,
-                "Spam-Schutz - Hilfe",
+        help.addActionListener(e -> JOptionPane.showMessageDialog(null, getParameterizedBundleString("spamschutz.ui.help.text",
+                calendar.get(Calendar.YEAR),
+                de.aikiit.spamprotector.util.Version.VERSION),
+                getBundleString("spamschutz.ui.help.title"),
                 JOptionPane.INFORMATION_MESSAGE));
 
         final JTextField input = new JTextField();
