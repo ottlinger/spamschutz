@@ -35,7 +35,7 @@ A different possibility is to launch the combined uberJAR:
 
 ### Localization ###
 
-Relates to [issue #29](../../issues/29)
+Relates to [issue #22](../../issues/22)
 
   As of now the application can be localized (at the moment only German and English is supported). Use the following parameters to explicitly set language and country or trust your system defaults:
 ```
