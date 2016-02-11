@@ -92,4 +92,10 @@ public class SpamProtectorTest {
         assertEquals("²", SpamProtector.toEncoded("²"));
     }
 
+    @Test
+    public void issue24LowercasingIsDefaultBehaviour() {
+        assertEquals("A", SpamProtector.toPlain(CharacterConverter.CAPITAL_A.getPlain()));
+        assertEquals("a", SpamProtector.toPlain(CharacterConverter.A.getPlain()));
+    }
+
 }

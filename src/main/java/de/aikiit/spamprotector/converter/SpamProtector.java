@@ -50,24 +50,24 @@ public final class SpamProtector {
      */
     public static String toPlain(String input) {
         if (!Strings.isNullOrEmpty(input)) {
-            String lowerCase = input.toLowerCase();
+            String toTransform = input;
             StringBuilder result = new StringBuilder();
 
-            while (!Strings.isNullOrEmpty(lowerCase)) {
-                int lengthBeforeConversion = lowerCase.length();
+            while (!Strings.isNullOrEmpty(toTransform)) {
+                int lengthBeforeConversion = toTransform.length();
 
                 for (String prefix : ENCODED.keySet()) {
                     // cut out any found items
-                    if (lowerCase.startsWith(prefix)) {
+                    if (toTransform.startsWith(prefix)) {
                         result.append(ENCODED.get(prefix).getPlain());
-                        lowerCase = lowerCase.substring(prefix.length(), lowerCase.length());
+                        toTransform = toTransform.substring(prefix.length(), toTransform.length());
                     }
                 }
 
                 // in case we did not replace any character trim one and restart
-                if (lowerCase.length() == lengthBeforeConversion) {
-                    result.append(lowerCase.charAt(0));
-                    lowerCase = lowerCase.substring(1);
+                if (toTransform.length() == lengthBeforeConversion) {
+                    result.append(toTransform.charAt(0));
+                    toTransform = toTransform.substring(1);
                 }
             }
 

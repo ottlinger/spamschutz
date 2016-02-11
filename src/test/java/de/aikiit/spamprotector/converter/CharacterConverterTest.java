@@ -37,4 +37,5 @@ public class CharacterConverterTest {
         assertEquals(" ", CharacterConverter.SPACE.getPlain());
         assertEquals("&nbsp;", CharacterConverter.SPACE.getReplacement());
     }
+
 }
