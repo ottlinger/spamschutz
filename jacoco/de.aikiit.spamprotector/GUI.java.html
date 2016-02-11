@@ -59,10 +59,10 @@ class GUI extends JPanel {
      *                 {@code false} or applet {@code true}.
      */
     private void init(final boolean isApplet) {
-<span class="fc" id="L62">        final Calendar calendar = Calendar.getInstance();</span>
+<span class="nc" id="L62">        final Calendar calendar = Calendar.getInstance();</span>
 
         // command help
-<span class="fc" id="L65">        final JPanel buttonArea = new JPanel();</span>
+<span class="nc" id="L65">        final JPanel buttonArea = new JPanel();</span>
 <span class="nc" id="L66">        JButton help = new JButton(getBundleString(&quot;spamschutz.ui.help&quot;));</span>
 <span class="nc" id="L67">        help.setMnemonic(getBundleString(&quot;spamschutz.ui.help.mnemonic&quot;).charAt(0));</span>
 <span class="nc" id="L68">        help.addActionListener(e -&gt; JOptionPane.showMessageDialog(null, getParameterizedBundleString(&quot;spamschutz.ui.help.text&quot;,</span>
