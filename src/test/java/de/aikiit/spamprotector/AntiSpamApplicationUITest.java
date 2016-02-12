@@ -24,8 +24,7 @@ import static org.junit.Assert.*;
  * @author hirsch
  * @version 2011-12-28, 13:26
  */
-@org.junit.Ignore("Not working on Travis, because VNC/X is not allowed on docker agents.")
-public class AntiSpamApplicationTest {
+public class AntiSpamApplicationUITest {
     @Test
     public final void instantiationDone() {
         AntiSpamApplication.main(null);
