@@ -1,5 +1,5 @@
 #!/bin/bash
 echo "Generating new mvn site ..."
-mvn clean site:site
+mvn clean site:site -Puitest
 echo "DONE - ready to commit and push"
 git checkout gh-pages && ./copy-site.sh 
