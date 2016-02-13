@@ -36,7 +36,7 @@ class GUI extends JPanel {
     /**
      * Constant to define the dimension of a text box.
      */
-<span class="fc" id="L39">    private static final Dimension BOX_DIMENSION = new Dimension(300, 200);</span>
+<span class="nc" id="L39">    private static final Dimension BOX_DIMENSION = new Dimension(300, 200);</span>
 
     /**
      * Launches and configures the main UI component, while taking care whether
@@ -45,11 +45,11 @@ class GUI extends JPanel {
      * @param isApplet Defines whether the application is started as standalone
      *                 {@code false} or applet {@code true}.
      */
-<span class="fc" id="L48">    GUI(final boolean isApplet) {</span>
-<span class="fc" id="L49">        SwingUtilities.invokeLater(</span>
+<span class="nc" id="L48">    GUI(final boolean isApplet) {</span>
+<span class="nc" id="L49">        SwingUtilities.invokeLater(</span>
 <span class="nc" id="L50">                () -&gt; init(isApplet)</span>
         );
-<span class="fc" id="L52">    }</span>
+<span class="nc" id="L52">    }</span>
 
     /**
      * Internal helper to initialize the UI depending on the surrounding this
