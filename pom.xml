@@ -243,18 +243,16 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>${surefire.version}</version>
           <configuration>
-            <excludes>
-              <exclude>**/**UITest.java</exclude>
-            </excludes>
+            <excludedGroups>de.aikiit.spamprotector.UITest</excludedGroups>
             <enableAssertions>true</enableAssertions>
             <forkCount>1</forkCount>
             <reuseForks>true</reuseForks>
             <!--systemProperties>
-                                    <property>
-                                        <name>java.awt.headless</name>
-                                        <value>true</value>
-                                    </property>
-                                </systemProperties-->
+                                                <property>
+                                                    <name>java.awt.headless</name>
+                                                    <value>true</value>
+                                                </property>
+                                            </systemProperties-->
           </configuration>
         </plugin>
       </plugins>
@@ -591,11 +589,7 @@
               <artifactId>maven-surefire-plugin</artifactId>
               <version>${surefire.version}</version>
               <configuration>
-                <includes>
-                  <include>
-                      **/*UITest.java
-                    </include>
-                </includes>
+                <groups>de.aikiit.spamprotector.UITest</groups>
                 <enableAssertions>true</enableAssertions>
                 <forkCount>1</forkCount>
                 <reuseForks>true</reuseForks>
@@ -609,6 +603,12 @@
             </plugin>
           </plugins>
         </pluginManagement>
+        <plugins>
+          <plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>${surefire.version}</version>
+          </plugin>
+        </plugins>
       </build>
     </profile>
     <!-- Run mvn clean install -Plive-demo for a live demo of this tool -->

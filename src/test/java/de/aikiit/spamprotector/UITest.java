@@ -17,17 +17,11 @@
  */
 package de.aikiit.spamprotector;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
-
 /**
+ * Marker interface to be used with Junit categories to mark Tests that need a Graphical UI.
+ *
  * @author hirsch
- * @version 2011-12-28, 13:26
+ * @version 2016-02-13, 20:07
  */
-public class AntiSpamApplicationUITest {
-    @Test
-    public final void instantiationDone() {
-        AntiSpamApplication.main(null);
-        assertNotNull("This is just to please the compiler.");
-    }
+public interface UITest {
 }

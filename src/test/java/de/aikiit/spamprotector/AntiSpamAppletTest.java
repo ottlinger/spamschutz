@@ -18,6 +18,7 @@
 package de.aikiit.spamprotector;
 
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -25,7 +26,7 @@ import static org.junit.Assert.assertNotNull;
  * @author hirsch
  * @version 2011-12-28, 13:20
  */
-@org.junit.Ignore("Not working on Travis")
+@Category(UITest.class)
 public class AntiSpamAppletTest {
     @Test
     public final void instantiationDone() {
