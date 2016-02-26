@@ -61,7 +61,7 @@
     <cobertura.version>2.6</cobertura.version>
     <lombok.version>1.16.6</lombok.version>
     <javadoc.version>2.10.3</javadoc.version>
-    <surefire.version>2.19</surefire.version>
+    <surefire.version>2.19.1</surefire.version>
     <rat.version>0.11</rat.version>
     <guava.version>19.0-rc3</guava.version>
     <encoding.utf8>UTF-8</encoding.utf8>
