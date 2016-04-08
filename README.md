@@ -11,8 +11,8 @@ Ready](https://badge.waffle.io/ottlinger/spamschutz.svg?label=ready&title=Ready)
 
 # Purpose of this programm #
 
-This application let's you easily change mail addresses into ASCII-encoded values. Therefore your webpages remain human-readable and spiders are unable to n't detect your mail addresses and use them for unwanted purposes.
-This app can be launched as an applet or as a standalone version.
+This application lets you easily change mail addresses or other HTML contents into ASCII-encoded values. Therefore your webpages remain human-readable and spiders are unable to detect your mail addresses and use them for unwanted purposes.
+This app can be launched as a standalone version.
 
 :smile:
 
@@ -45,12 +45,3 @@ mvn -Plive-demo -Duser.language=en -Duser.country=US
 ## Reports ##
 
 A current snapshot's maven [site reports](https://ottlinger.github.io/spamschutz/) is a good place to start to understand the application without trying it.
-
-## DEPRECATED: Applet ##
-To run this class as an applet you need to run
-  * ```mvn clean install```
-  * Launch ```./target/classes/applet.html``` for an example HTML integration
-  * Launch ```./target/classes/appletxhtml.html``` for an example XHTML integration
-
-Due to the current security issues with Java Applet this way is not recommeneded and is addressed in issue #20.
-As of 2015-12 it's not possible to integrate Spamschutz into an HTML page without warnings - therefore this way is deprecated.
