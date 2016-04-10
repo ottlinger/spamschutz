@@ -16,6 +16,10 @@ This app can be launched as a standalone version.
 
 :smile:
 
+# Version history
+
+Details about the current versions can be found in HISTORY.md
+
 # Developer information #
 
 This project uses [Maven](https://maven.apache.org "Official Maven website") to generate its artefacts.
