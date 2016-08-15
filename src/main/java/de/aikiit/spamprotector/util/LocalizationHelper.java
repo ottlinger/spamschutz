@@ -24,6 +24,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.text.MessageFormat;
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
@@ -140,8 +141,7 @@ public final class LocalizationHelper {
      * I18N-tutorial</a>
      */
     public static String getParameterizedBundleString(final String key, final Object... parameters) {
-        LOG.debug("Applying " + ((parameters == null) ? null : parameters
-                .length) + " parameters to " + key);
+        LOG.debug("Applying " + ((parameters == null) ? null : Arrays.toString(parameters)) + " parameters to " + key);
         FORMAT.applyPattern(getBundleString(key));
         return FORMAT.format(parameters);
     }

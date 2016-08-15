@@ -17,9 +17,15 @@
  */
 package de.aikiit.spamprotector;
 
+import de.aikiit.spamprotector.util.LocalizationHelper;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
+import static de.aikiit.spamprotector.util.LocalizationHelper.getParameterizedBundleString;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
 /**
@@ -28,6 +34,13 @@ import static org.junit.Assert.assertNotNull;
  */
 @Category(UITest.class)
 public class GUITest {
+
+    /**
+     * Logger.
+     */
+    private static final Logger LOG =
+            LogManager.getLogger(GUITest.class);
+
     @Test
     public final void startGuiNoApplet() {
         GUI gui = new GUI(false);
@@ -38,5 +51,18 @@ public class GUITest {
     public final void startGuiApplet() {
         GUI gui = new GUI(true);
         assertNotNull(gui);
+    }
+
+    @Test
+    public final void ensureYearIs4digits() {
+        assertEquals(4, String.valueOf(GUI.now.getYear()).length());
+
+        String msg = getParameterizedBundleString("spamschutz.ui.help.text",
+                GUI.now.getYear(),
+                de.aikiit.spamprotector.util.Version.VERSION);
+
+        LOG.debug(msg);
+
+        // FIXME issue#25: assertFalse(msg.contains("2."));
     }
 }

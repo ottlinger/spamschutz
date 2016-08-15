@@ -17,11 +17,13 @@
  */
 package de.aikiit.spamprotector;
 
+import com.google.common.annotations.VisibleForTesting;
 import de.aikiit.spamprotector.converter.SpamProtector;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.temporal.TemporalField;
 
 import static de.aikiit.spamprotector.util.LocalizationHelper.getBundleString;
 import static de.aikiit.spamprotector.util.LocalizationHelper.getParameterizedBundleString;
@@ -37,6 +39,9 @@ class GUI extends JPanel {
      * Constant to define the dimension of a text box.
      */
     private static final Dimension BOX_DIMENSION = new Dimension(300, 200);
+
+    @VisibleForTesting
+    static final LocalDate now = LocalDate.now();
 
     /**
      * Launches and configures the main UI component, while taking care whether
@@ -59,14 +64,12 @@ class GUI extends JPanel {
      *                 {@code false} or applet {@code true}.
      */
     private void init(final boolean isApplet) {
-        final Calendar calendar = Calendar.getInstance();
-
         // command help
         final JPanel buttonArea = new JPanel();
         JButton help = new JButton(getBundleString("spamschutz.ui.help"));
         help.setMnemonic(getBundleString("spamschutz.ui.help.mnemonic").charAt(0));
         help.addActionListener(e -> JOptionPane.showMessageDialog(null, getParameterizedBundleString("spamschutz.ui.help.text",
-                calendar.get(Calendar.YEAR),
+                now.getYear(),
                 de.aikiit.spamprotector.util.Version.VERSION),
                 getBundleString("spamschutz.ui.help.title"),
                 JOptionPane.INFORMATION_MESSAGE));
