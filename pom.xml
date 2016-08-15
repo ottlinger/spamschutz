@@ -62,7 +62,7 @@
     <lombok.version>1.16.10</lombok.version>
     <javadoc.version>2.10.3</javadoc.version>
     <surefire.version>2.19.1</surefire.version>
-    <rat.version>0.11</rat.version>
+    <rat.version>0.12</rat.version>
     <guava.version>19.0</guava.version>
     <encoding.utf8>UTF-8</encoding.utf8>
     <shade.version>2.4.3</shade.version>
