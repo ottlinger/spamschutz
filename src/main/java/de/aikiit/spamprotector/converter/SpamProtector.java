@@ -56,10 +56,11 @@ public final class SpamProtector {
             while (!Strings.isNullOrEmpty(toTransform)) {
                 int lengthBeforeConversion = toTransform.length();
 
-                for (String prefix : ENCODED.keySet()) {
+                for(Map.Entry<String, CharacterConverter> entry : ENCODED.entrySet()) {
                     // cut out any found items
+                    String prefix = entry.getKey();
                     if (toTransform.startsWith(prefix)) {
-                        result.append(ENCODED.get(prefix).getPlain());
+                        result.append(entry.getValue().getPlain());
                         toTransform = toTransform.substring(prefix.length(), toTransform.length());
                     }
                 }
