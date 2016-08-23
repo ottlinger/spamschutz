@@ -408,7 +408,6 @@
         <artifactId>maven-site-plugin</artifactId>
         <version>3.5.1</version>
         <configuration>
-          <templateFile>${basedir}/maven-site.vm</templateFile>
           <outputEncoding>${encoding.utf8}</outputEncoding>
           <inputEncoding>${encoding.utf8}</inputEncoding>
           <!-- reporting plugins are configured according to new mvn3 standard -->
