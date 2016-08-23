@@ -23,7 +23,6 @@ import de.aikiit.spamprotector.converter.SpamProtector;
 import javax.swing.*;
 import java.awt.*;
 import java.time.LocalDate;
-import java.time.temporal.TemporalField;
 
 import static de.aikiit.spamprotector.util.LocalizationHelper.getBundleString;
 import static de.aikiit.spamprotector.util.LocalizationHelper.getParameterizedBundleString;
