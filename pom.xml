@@ -298,7 +298,7 @@
       <!-- copy Version.java out of normal resource copying to avoid eclipse errors -->
       <plugin>
         <artifactId>maven-resources-plugin</artifactId>
-        <version>3.0.1</version>
+        <version>3.0.2</version>
         <executions>
           <execution>
             <id>copy-version-resources</id>
@@ -364,7 +364,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.5.1</version>
+        <version>3.6.0</version>
         <configuration>
           <encoding>${encoding.utf8}</encoding>
           <source>1.8</source>
