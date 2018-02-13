@@ -60,7 +60,7 @@
     <mockito.version>2.13.0</mockito.version>
     <cobertura.version>2.7</cobertura.version>
     <lombok.version>1.16.20</lombok.version>
-    <javadoc.version>2.10.4</javadoc.version>
+    <javadoc.version>3.0.0</javadoc.version>
     <surefire.version>2.19.1</surefire.version>
     <rat.version>0.12</rat.version>
     <guava.version>24.0-jre</guava.version>
@@ -330,7 +330,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
-        <version>1.12</version>
+        <version>3.0.0</version>
         <executions>
           <execution>
             <phase>generate-sources</phase>
