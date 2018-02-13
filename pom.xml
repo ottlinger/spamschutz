@@ -58,7 +58,7 @@
     <logger.version>2.10.0</logger.version>
     <junit.version>4.12</junit.version>
     <mockito.version>2.13.0</mockito.version>
-    <cobertura.version>2.6</cobertura.version>
+    <cobertura.version>2.7</cobertura.version>
     <lombok.version>1.16.20</lombok.version>
     <javadoc.version>2.10.4</javadoc.version>
     <surefire.version>2.19.1</surefire.version>
@@ -514,13 +514,12 @@
         <version>2.0</version>
       </plugin>
       <!-- 20090805  disabled due to a bug in Cobertura leading to CI error mails, http://jira.codehaus.org/browse/MCOBERTURA-73 -->
-      <!-- cobertura plugin
-                <plugin>
-                  <groupId>org.codehaus.mojo</groupId>
-                  <artifactId>cobertura-maven-plugin</artifactId>
-                  <version>${cobertura.version}</version>
-                </plugin>
-    -->
+      <!-- cobertura plugin -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>cobertura-maven-plugin</artifactId>
+        <version>${cobertura.version}</version>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-changelog-plugin</artifactId>
@@ -620,7 +619,7 @@
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>exec-maven-plugin</artifactId>
-            <version>1.5.0</version>
+            <version>1.6.0</version>
             <executions>
               <execution>
                 <phase>test</phase>
