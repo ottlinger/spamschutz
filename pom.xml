@@ -60,7 +60,7 @@
     <mockito.version>2.18.3</mockito.version>
     <lombok.version>1.16.22</lombok.version>
     <javadoc.version>3.0.0</javadoc.version>
-    <surefire.version>2.21.0</surefire.version>
+    <surefire.version>2.22.0</surefire.version>
     <rat.version>0.12</rat.version>
     <guava.version>26.0-jre</guava.version>
     <encoding.utf8>UTF-8</encoding.utf8>
