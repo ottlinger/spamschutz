@@ -68,6 +68,9 @@
     <project.reporting.outputEncoding>${encoding.utf8}</project.reporting.outputEncoding>
     <project.build.sourceEncoding>${encoding.utf8}</project.build.sourceEncoding>
   </properties>
+  <prerequisites>
+    <maven>3.5.</maven>
+  </prerequisites>
   <dependencies>
     <dependency>
       <groupId>org.projectlombok</groupId>
