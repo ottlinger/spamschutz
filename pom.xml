@@ -69,7 +69,7 @@
     <project.build.sourceEncoding>${encoding.utf8}</project.build.sourceEncoding>
   </properties>
   <prerequisites>
-    <maven>3.5.</maven>
+    <maven>3.5</maven>
   </prerequisites>
   <dependencies>
     <dependency>
