@@ -11,7 +11,8 @@ Ready](https://badge.waffle.io/ottlinger/spamschutz.svg?label=ready&title=Ready)
 
 # Purpose of this programm #
 
-This application lets you easily change mail addresses or other HTML contents into ASCII-encoded values. Therefore your webpages remain human-readable and spiders are unable to detect your mail addresses and use them for unwanted purposes.
+This application lets you easily change mail addresses or other HTML contents into ASCII-encoded values. Therefore your webpages remain human-readable and spiders are unable to detect your mail addresses and use them for unwanted purposes, when relying on regular expressions for data extraction.
+
 This app can be launched as a standalone version.
 
 :smile:
