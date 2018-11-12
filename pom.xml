@@ -139,33 +139,33 @@
     </resources>
     <pluginManagement>
       <plugins>
-      <plugin>
-        <groupId>org.pitest</groupId>
-        <artifactId>pitest-maven</artifactId>
-        <version>1.4.3</version>
-        <configuration>
-          <timeoutConstant>8000</timeoutConstant>
-          <threads>8</threads>
-          <coverageThreshold>80</coverageThreshold>
-          <!--mutationThreshold>8</mutationThreshold-->
-          <failWhenNoMutations>false</failWhenNoMutations>
-          <verbose>true</verbose>
-          <targetClasses>
-            <param>de.aikiit.spamprotector*</param>
-          </targetClasses>
-          <targetTests>
-            <param>de.aikiit.spamprotector*</param>
-          </targetTests>
-        </configuration>
-        <executions>
-          <execution>
-            <id>mutationcoverage</id>
-            <goals>
-              <goal>mutationCoverage</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
+        <plugin>
+          <groupId>org.pitest</groupId>
+          <artifactId>pitest-maven</artifactId>
+          <version>1.4.3</version>
+          <configuration>
+            <timeoutConstant>8000</timeoutConstant>
+            <threads>8</threads>
+            <coverageThreshold>80</coverageThreshold>
+            <!--mutationThreshold>8</mutationThreshold-->
+            <failWhenNoMutations>false</failWhenNoMutations>
+            <verbose>true</verbose>
+            <targetClasses>
+              <param>de.aikiit.spamprotector*</param>
+            </targetClasses>
+            <targetTests>
+              <param>de.aikiit.spamprotector*</param>
+            </targetTests>
+          </configuration>
+          <executions>
+            <execution>
+              <id>mutationcoverage</id>
+              <goals>
+                <goal>mutationCoverage</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-enforcer-plugin</artifactId>
@@ -652,10 +652,10 @@
     </developer>
   </developers>
   <!-- To be able to use the latest version/release candidate-->
-    <pluginRepositories>
-      <pluginRepository>
-        <id>staged-releases</id>
-        <url>https://repository.apache.org/content/repositories/orgapachecreadur-1005/</url>
-      </pluginRepository>
-    </pluginRepositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>staged-releases</id>
+      <url>https://repository.apache.org/content/repositories/orgapachecreadur-1005/</url>
+    </pluginRepository>
+  </pluginRepositories>
 </project>
