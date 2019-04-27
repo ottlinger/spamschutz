@@ -18,7 +18,7 @@ This app can be launched as a standalone version.
 
 # Version history
 
-Details about the current versions can be found in [version history](HISTORY.md)
+Details about the current versions can be found in the [changelog](CHANGES.md)
 
 # Developer information #
 
