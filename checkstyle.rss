@@ -23,10 +23,10 @@ under the License.
     <link>https://github.com/ottlinger/spamschutz/</link>
     <description>SpamSchutz - simple way to protect your mail adresses from naïve spammers - Checkstyle report</description>
     <language>en-us</language>
-    <copyright>&#169;2019 Aiki IT</copyright>
+    <copyright>&#169;2020 Aiki IT</copyright>
     <item>
       <title>File: 12,
-             Errors: 167,
+             Errors: 165,
              Warnings: 0,
              Infos: 0
       </title>
@@ -74,6 +74,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/ottlinger/spamschutz//checkstyle.html#de.aikiit.spamprotector.converter.SpamProtector.java">de/aikiit/spamprotector/converter/SpamProtector.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  13
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/ottlinger/spamschutz//checkstyle.html#de.aikiit.spamprotector.AntiSpamApplication.java">de/aikiit/spamprotector/AntiSpamApplication.java</a>
                 </td>
                 <td>
@@ -84,20 +98,6 @@ under the License.
                 </td>
                 <td>
                   6
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/ottlinger/spamschutz//checkstyle.html#de.aikiit.spamprotector.converter.SpamProtector.java">de/aikiit/spamprotector/converter/SpamProtector.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  14
                 </td>
               </tr>
                           <tr>
@@ -181,7 +181,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  22
+                  21
                 </td>
               </tr>
                           <tr>
