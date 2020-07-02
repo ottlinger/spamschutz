@@ -31,7 +31,7 @@ import static de.aikiit.spamprotector.util.LocalizationHelper.getBundleString;
  * @version 2011-04-29, 01:51
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-final class AntiSpamApplication {
+public final class AntiSpamApplication {
 
     /**
      * Helper that starts and initializes the application itself.
