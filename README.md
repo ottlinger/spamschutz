@@ -28,14 +28,15 @@ This project uses [Maven](https://maven.apache.org "Official Maven website") to 
 
 ## Application ##
 If you want to run this programme as a standalone application, perform the following:
-  * Get your Maven up'n'running
-  * Download the sources of spamschutz
-  * run ```mvn clean install -Plive-demo``` to launch the application
+
+* Get your Maven up'n'running
+* Download the sources of spamschutz
+* run ```mvn clean install -Plive-demo``` to launch the application
 
 A different possibility is to launch the combined uberJAR:
 
-  * ```mvn clean install```
-  * ```java -jar target/spamschutz-1.0.4-SNAPSHOT-executable.jar``` - please adapt the version number
+* ```mvn clean install```
+* ```java -jar target/spamschutz-1.0.4-SNAPSHOT-executable.jar``` - please adapt the version number
 
 ### Localization ###
 
