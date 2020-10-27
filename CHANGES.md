@@ -3,5 +3,5 @@
 ## 1.0.6-SNAPSHOT - currently in development
 
 Main features are:
-* Applet
-* Main application (FatJAR)
+  * Applet
+  * Main application (FatJAR)
