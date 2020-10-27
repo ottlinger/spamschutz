@@ -8,7 +8,7 @@
 
 https://github.com/users/ottlinger/projects/2
 
-# Purpose of this programm #
+# Purpose of this programm 
 
 This application lets you easily change mail addresses or other HTML contents into ASCII-encoded values. Therefore your webpages remain human-readable and spiders are unable to detect your mail addresses and use them for unwanted purposes, when relying on regular expressions for data extraction.
 
@@ -20,13 +20,13 @@ This app can be launched as a standalone version.
 
 Details about the current versions can be found in the [changelog](CHANGES.md)
 
-# Developer information #
+# Developer information 
 
 This project uses [Maven](https://maven.apache.org "Official Maven website") to generate its artefacts.
 
 ![https://raw.githubusercontent.com/ottlinger/spamschutz/master/webpage/media/gplv3-88x31.png](https://raw.githubusercontent.com/ottlinger/spamschutz/master/webpage/media/gplv3-88x31.png)
 
-## Application ##
+## Application 
 If you want to run this programme as a standalone application, perform the following:
   * Get your Maven up'n'running
   * Download the sources of spamschutz
@@ -37,7 +37,7 @@ A different possibility is to launch the combined uberJAR:
   * ```mvn clean install```
   * ```java -jar target/spamschutz-1.0.4-SNAPSHOT-executable.jar``` - please adapt the version number
 
-### Localization ###
+### Localization
 
 Relates to [issue #22](../../issues/22)
 
@@ -46,6 +46,6 @@ Relates to [issue #22](../../issues/22)
 mvn -Plive-demo -Duser.language=en -Duser.country=US
 ```
 
-## Reports ##
+## Reports
 
 A current snapshot's maven [site reports](https://ottlinger.github.io/spamschutz/) is a good place to start to understand the application without trying it.
