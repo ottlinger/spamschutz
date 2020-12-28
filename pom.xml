@@ -206,7 +206,7 @@
             <useIdeaDefaultExcludes>true</useIdeaDefaultExcludes>
             <addDefaultLicenseMatchers>true</addDefaultLicenseMatchers>
             <excludes>
-              <exclude>.github</exclude>
+              <exclude>.github/**</exclude>
               <exclude>.travis.yml</exclude>
               <exclude>LICENSE.txt</exclude>
               <exclude>*.md</exclude>
