@@ -4,8 +4,7 @@
 
 [![codecov.io](http://codecov.io/github/ottlinger/spamschutz/coverage.svg?branch=master)](http://codecov.io/github/ottlinger/spamschutz?branch=master)
 
-[![Codacy Badge](https://api.codacy.com/project/badge/grade/ab19f8aeeb264e0bbad1740e07a765aa)](https://www.codacy.com/app/github_25/spamschutz)
-
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/93ad105bf87d4261a5fca994c4d56af3)](https://www.codacy.com/gh/ottlinger/spamschutz/dashboard)
 https://github.com/users/ottlinger/projects/2
 
 # Purpose of this programm 
