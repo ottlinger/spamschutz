@@ -62,7 +62,7 @@
     <javadoc.version>3.3.2</javadoc.version>
     <surefire.version>3.0.0-M5</surefire.version>
     <rat.version>0.13</rat.version>
-    <guava.version>31.0.1-jre</guava.version>
+    <guava.version>31.1-jre</guava.version>
     <encoding.utf8>UTF-8</encoding.utf8>
     <shade.version>3.2.4</shade.version>
     <project.reporting.outputEncoding>${encoding.utf8}</project.reporting.outputEncoding>
@@ -461,7 +461,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
-        <version>3.10.0</version>
+        <version>3.11.0</version>
         <configuration>
           <outputEncoding>${encoding.utf8}</outputEncoding>
           <inputEncoding>${encoding.utf8}</inputEncoding>
