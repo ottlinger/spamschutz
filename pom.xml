@@ -60,7 +60,7 @@
     <mockito.version>4.3.1</mockito.version>
     <lombok.version>1.18.22</lombok.version>
     <javadoc.version>3.3.2</javadoc.version>
-    <surefire.version>3.0.0-M5</surefire.version>
+    <surefire.version>3.0.0-M6</surefire.version>
     <rat.version>0.13</rat.version>
     <guava.version>31.1-jre</guava.version>
     <encoding.utf8>UTF-8</encoding.utf8>
@@ -470,7 +470,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jxr-plugin</artifactId>
-        <version>3.1.1</version>
+        <version>3.2.0</version>
       </plugin>
       <!-- 2011-03-26 generates build number for filtering, seems to fail with hg as SCM provider, see http://jira.codehaus.org/browse/MOJO-1436 -->
       <plugin>
@@ -517,7 +517,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jxr-plugin</artifactId>
-        <version>3.1.1</version>
+        <version>3.2.0</version>
         <configuration>
           <aggregate>true</aggregate>
           <linkJavadoc>true</linkJavadoc>
