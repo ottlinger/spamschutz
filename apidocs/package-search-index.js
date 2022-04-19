@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"de.aikiit.spamprotector"},{"l":"de.aikiit.spamprotector.converter"},{"l":"de.aikiit.spamprotector.util"}]
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"de.aikiit.spamprotector"},{"l":"de.aikiit.spamprotector.converter"},{"l":"de.aikiit.spamprotector.util"}];updateSearchResults();
