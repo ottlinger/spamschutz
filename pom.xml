@@ -64,7 +64,7 @@
     <rat.version>0.13</rat.version>
     <guava.version>31.1-jre</guava.version>
     <encoding.utf8>UTF-8</encoding.utf8>
-    <shade.version>3.2.4</shade.version>
+    <shade.version>3.3.0</shade.version>
     <project.reporting.outputEncoding>${encoding.utf8}</project.reporting.outputEncoding>
     <project.build.sourceEncoding>${encoding.utf8}</project.build.sourceEncoding>
   </properties>
@@ -404,7 +404,7 @@
       <!-- hudson finds Version.java twice and fails with a duplicate class-error -->
       <plugin>
         <artifactId>maven-clean-plugin</artifactId>
-        <version>3.1.0</version>
+        <version>3.2.0</version>
         <configuration>
           <filesets>
             <fileset>
