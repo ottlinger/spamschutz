@@ -58,7 +58,7 @@
     <logger.version>2.17.2</logger.version>
     <junit.version>4.13.2</junit.version>
     <mockito.version>4.3.1</mockito.version>
-    <lombok.version>1.18.22</lombok.version>
+    <lombok.version>1.18.24</lombok.version>
     <javadoc.version>3.3.2</javadoc.version>
     <surefire.version>3.0.0-M6</surefire.version>
     <rat.version>0.13</rat.version>
