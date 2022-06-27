@@ -61,7 +61,7 @@
     <lombok.version>1.18.24</lombok.version>
     <javadoc.version>3.4.0</javadoc.version>
     <surefire.version>3.0.0-M6</surefire.version>
-    <rat.version>0.13</rat.version>
+    <rat.version>0.14</rat.version>
     <guava.version>31.1-jre</guava.version>
     <encoding.utf8>UTF-8</encoding.utf8>
     <shade.version>3.3.0</shade.version>
@@ -404,7 +404,7 @@
       <!-- hudson finds Version.java twice and fails with a duplicate class-error -->
       <plugin>
         <artifactId>maven-clean-plugin</artifactId>
-        <version>3.1.0</version>
+        <version>3.2.0</version>
         <configuration>
           <filesets>
             <fileset>
