@@ -61,7 +61,7 @@
     <lombok.version>1.18.24</lombok.version>
     <javadoc.version>3.4.0</javadoc.version>
     <surefire.version>3.0.0-M7</surefire.version>
-    <rat.version>0.14</rat.version>
+    <rat.version>0.15</rat.version>
     <guava.version>31.1-jre</guava.version>
     <encoding.utf8>UTF-8</encoding.utf8>
     <shade.version>3.3.0</shade.version>
@@ -142,7 +142,7 @@
         <plugin>
           <groupId>org.pitest</groupId>
           <artifactId>pitest-maven</artifactId>
-          <version>1.7.5</version>
+          <version>1.9.5</version>
           <configuration>
             <timeoutConstant>8000</timeoutConstant>
             <threads>8</threads>
