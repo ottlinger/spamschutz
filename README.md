@@ -34,7 +34,7 @@ If you want to run this programme as a standalone application, perform the follo
 A different possibility is to launch the combined uberJAR:
 
   * ```mvn clean install```
-  * ```java -jar target/spamschutz-1.0.4-SNAPSHOT-executable.jar``` - please adapt the version number
+  * ```java -jar target/spamschutz-1.0.6-SNAPSHOT-executable.jar``` - please adapt the version number
 
 ### Localization
 
