@@ -56,4 +56,5 @@ jobs:
       - name: Build with Maven
         run: mvn -e -B -V -ntp clean package
 
-# TODO Codecov integration
+      - name: Code coverage with codecov
+        uses: codecov/codecov-action@v3
