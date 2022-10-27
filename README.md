@@ -1,7 +1,5 @@
 # SpamSchutz
 
-[![Travis Build Status](https://travis-ci.org/ottlinger/spamschutz.svg?branch=master)](https://travis-ci.org/ottlinger/spamschutz)
-
 GA: [![Github Action master branch status](https://github.com/ottlinger/spamschutz/actions/workflows/maven.yml/badge.svg?branch=master)](https://github.com/ottlinger/spamschutz/actions)
 
 [![codecov.io](http://codecov.io/github/ottlinger/spamschutz/coverage.svg?branch=master)](http://codecov.io/github/ottlinger/spamschutz?branch=master)
