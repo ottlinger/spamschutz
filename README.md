@@ -1,13 +1,15 @@
 # SpamSchutz
 
-[![Build Status](https://travis-ci.org/ottlinger/spamschutz.svg?branch=master)](https://travis-ci.org/ottlinger/spamschutz)
+[![Travis Build Status](https://travis-ci.org/ottlinger/spamschutz.svg?branch=master)](https://travis-ci.org/ottlinger/spamschutz)
+
+GA: [![Github Action master branch status](https://github.com/ottlinger/spamschutz/actions/workflows/maven.yml/badge.svg?branch=master)](https://github.com/ottlinger/spamschutz/actions)
 
 [![codecov.io](http://codecov.io/github/ottlinger/spamschutz/coverage.svg?branch=master)](http://codecov.io/github/ottlinger/spamschutz?branch=master)
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/93ad105bf87d4261a5fca994c4d56af3)](https://www.codacy.com/gh/ottlinger/spamschutz/dashboard)
 https://github.com/users/ottlinger/projects/2
 
-# Purpose of this programm 
+# Purpose of this programm
 
 This application lets you easily change mail addresses or other HTML contents into ASCII-encoded values. Therefore your webpages remain human-readable and spiders are unable to detect your mail addresses and use them for unwanted purposes, when relying on regular expressions for data extraction.
 
@@ -19,13 +21,13 @@ This app can be launched as a standalone version.
 
 Details about the current versions can be found in the [changelog](CHANGES.md)
 
-# Developer information 
+# Developer information
 
 This project uses [Maven](https://maven.apache.org "Official Maven website") to generate its artefacts.
 
 ![https://raw.githubusercontent.com/ottlinger/spamschutz/master/webpage/media/gplv3-88x31.png](https://raw.githubusercontent.com/ottlinger/spamschutz/master/webpage/media/gplv3-88x31.png)
 
-## Application 
+## Application
 If you want to run this programme as a standalone application, perform the following:
   * Get your Maven up'n'running
   * Download the sources of spamschutz
