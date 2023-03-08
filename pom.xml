@@ -55,7 +55,7 @@
     <url>https://github.com/ottlinger/spamschutz</url>
   </scm>
   <properties>
-    <logger.version>2.19.0</logger.version>
+    <logger.version>2.20.0</logger.version>
     <junit.version>4.13.2</junit.version>
     <mockito.version>5.1.1</mockito.version>
     <lombok.version>1.18.24</lombok.version>
