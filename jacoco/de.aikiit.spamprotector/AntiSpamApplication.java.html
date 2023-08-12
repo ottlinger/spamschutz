@@ -1,5 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="de"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AntiSpamApplication.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SpamSchutz - simple way to protect your mail adresses from naïve spammers</a> &gt; <a href="index.source.html" class="el_package">de.aikiit.spamprotector</a> &gt; <span class="el_source">AntiSpamApplication.java</span></div><h1>AntiSpamApplication.java</h1><pre class="source lang-java linenums">/**
- SpamSchutz - simple way to protect your mail adresses from naiive spammers
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="de"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AntiSpamApplication.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SpamSchutz - simple way to protect your mail addresses from naïve spammers</a> &gt; <a href="index.source.html" class="el_package">de.aikiit.spamprotector</a> &gt; <span class="el_source">AntiSpamApplication.java</span></div><h1>AntiSpamApplication.java</h1><pre class="source lang-java linenums">///usr/bin/env jbang &quot;$0&quot; &quot;$@&quot; ; exit $?
+//DEPS org.projectlombok:lombok:1.18.28
+//DEPS com.google.guava:guava:32.1.2-jre
+//DEPS org.apache.logging.log4j:log4j-core:2.20.0
+//SOURCES **
+
+/**
+ SpamSchutz - simple way to protect your mail addresses from naïve spammers
  Copyright (C) 2011, Aiki IT
 
  This program is free software: you can redistribute it and/or modify
@@ -15,6 +21,7 @@
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
  */
+
 
 package de.aikiit.spamprotector;
 import lombok.AccessLevel;
@@ -37,18 +44,18 @@ public final class AntiSpamApplication {
      * Helper that starts and initializes the application itself.
      */
     private static void initApplication() {
-<span class="nc" id="L40">        SwingUtilities.invokeLater(</span>
+<span class="nc" id="L47">        SwingUtilities.invokeLater(</span>
                 () -&gt; {
-<span class="nc" id="L42">                    JFrame frame = new JFrame();</span>
-<span class="nc" id="L43">                    GUI g = new GUI(false);</span>
-<span class="nc" id="L44">                    frame.setTitle(getBundleString(&quot;spamschutz.main.title&quot;));</span>
-<span class="nc" id="L45">                    frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);</span>
-<span class="nc" id="L46">                    frame.setSize(new Dimension(800, 300));</span>
-<span class="nc" id="L47">                    frame.add(g);</span>
-<span class="nc" id="L48">                    frame.setVisible(true);</span>
-<span class="nc" id="L49">                }</span>
+<span class="nc" id="L49">                    JFrame frame = new JFrame();</span>
+<span class="nc" id="L50">                    GUI g = new GUI(false);</span>
+<span class="nc" id="L51">                    frame.setTitle(getBundleString(&quot;spamschutz.main.title&quot;));</span>
+<span class="nc" id="L52">                    frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L53">                    frame.setSize(new Dimension(800, 300));</span>
+<span class="nc" id="L54">                    frame.add(g);</span>
+<span class="nc" id="L55">                    frame.setVisible(true);</span>
+<span class="nc" id="L56">                }</span>
         );
-<span class="nc" id="L51">    }</span>
+<span class="nc" id="L58">    }</span>
 
     /**
      * Main method that loads the application in a proper size.
@@ -56,7 +63,7 @@ public final class AntiSpamApplication {
      * @param args Arguments from console.
      */
     public static void main(final String[] args) {
-<span class="nc" id="L59">        initApplication();</span>
-<span class="nc" id="L60">    }</span>
+<span class="nc" id="L66">        initApplication();</span>
+<span class="nc" id="L67">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
