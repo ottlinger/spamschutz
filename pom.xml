@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    SpamSchutz - simple way to protect your mail adresses from naiive spammers
+    SpamSchutz - simple way to protect your mail addresses from naiive spammers
     Copyright (C) 2011, Aiki IT
 
     This program is free software: you can redistribute it and/or modify
@@ -22,11 +22,11 @@
   <artifactId>spamschutz</artifactId>
   <packaging>jar</packaging>
   <version>1.0.6-SNAPSHOT</version>
-  <name>SpamSchutz - simple way to protect your mail adresses from naïve spammers</name>
+  <name>SpamSchutz - simple way to protect your mail addresses from naïve spammers</name>
   <description>This spamschutz (=spam protector in German) can be launched as
         an applet or a standalone application. It converts all given characters
         to their ASCII representation, thus making it hard for regular
-        expressions to find mail adresses.
+        expressions to find mail addresses.
     </description>
   <url>https://github.com/ottlinger/spamschutz/</url>
   <organization>
