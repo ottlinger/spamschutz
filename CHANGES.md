@@ -1,8 +1,14 @@
 # History
 
-## 1.0.6-SNAPSHOT - currently in development
+## 1.0.7-SNAPSHOT - currently in development
 
-Main features are:
+* Play around with jBang
+
+
+## 1.0.6
+
+* Dependency updates.
+* Main features are:
 
   * Applet
   * Main application (FatJAR)
