@@ -1,5 +1,5 @@
 /**
- SpamSchutz - simple way to protect your mail addresses from naiive spammers
+ SpamSchutz - simple way to protect your mail addresses from naïve spammers
  Copyright (C) 2011, Aiki IT
 
  This program is free software: you can redistribute it and/or modify
