@@ -5,25 +5,26 @@
 //SOURCES **
 
 /**
- SpamSchutz - simple way to protect your mail addresses from naïve spammers
- Copyright (C) 2011, Aiki IT
-
- This program is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
-
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
-
- You should have received a copy of the GNU General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * SpamSchutz - simple way to protect your mail addresses from naïve spammers
+ * Copyright (C) 2011, Aiki IT
+ * <p>
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * <p>
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * <p>
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 
 package de.aikiit.spamprotector;
+
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
@@ -31,6 +32,7 @@ import javax.swing.*;
 import java.awt.*;
 
 import static de.aikiit.spamprotector.util.LocalizationHelper.getBundleString;
+
 /**
  * Application starter class.
  */
@@ -44,7 +46,7 @@ public final class AntiSpamApplication {
         SwingUtilities.invokeLater(
                 () -> {
                     JFrame frame = new JFrame();
-                    GUI g = new GUI(false);
+                    GUI g = new GUI();
                     frame.setTitle(getBundleString("spamschutz.main.title"));
                     frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
                     frame.setSize(new Dimension(800, 300));
