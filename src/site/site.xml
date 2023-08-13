@@ -53,7 +53,7 @@ under the License.
             <topBarEnabled>true</topBarEnabled>
             <!--
                   <topBarIcon>
-                    <name>Project documentationn</name>
+                    <name>Project documentation</name>
                     <alt>SpamSchutz logo</alt>
                     <src>/images/topbar-logo.png</src>
                     <href>/index.html</href>
