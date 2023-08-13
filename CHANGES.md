@@ -5,7 +5,7 @@
 * Play around with jBang
 * Remove applet
 
-## 1.0.6
+## 1.0.6 - 2023-08-13
 
 * Dependency updates.
 * Main features are:
