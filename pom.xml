@@ -21,7 +21,7 @@
   <groupId>de.aikiit</groupId>
   <artifactId>spamschutz</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.6</version>
+  <version>1.1.0-SNAPSHOT</version>
   <name>SpamSchutz - simple way to protect your mail addresses from naïve spammers</name>
   <description>This spamschutz (=spam protector in German) can be launched as
         an applet or a standalone application. It converts all given characters
