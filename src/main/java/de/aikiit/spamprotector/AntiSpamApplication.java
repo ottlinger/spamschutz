@@ -33,9 +33,6 @@ import java.awt.*;
 import static de.aikiit.spamprotector.util.LocalizationHelper.getBundleString;
 /**
  * Application starter class.
- *
- * @author hirsch
- * @version 2011-04-29, 01:51
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class AntiSpamApplication {

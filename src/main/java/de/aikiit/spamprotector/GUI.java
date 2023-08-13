@@ -30,7 +30,6 @@ import static de.aikiit.spamprotector.util.LocalizationHelper.getParameterizedBu
 /**
  * This class contains the main UI of this application (both input windows
  * and all command buttons).
- * Created by IntelliJ IDEA. User: hirsch Date: Apr 10, 2003 Time: 3:12:32 PM
  */
 class GUI extends JPanel {
 
@@ -43,33 +42,24 @@ class GUI extends JPanel {
     static final LocalDate now = LocalDate.now();
 
     /**
-     * Launches and configures the main UI component, while taking care whether
-     * the application is started as an applet or standalone.
-     *
-     * @param isApplet Defines whether the application is started as standalone
-     *                 {@code false} or applet {@code true}.
+     * Launches and configures the main UI component.
      */
     GUI(final boolean isApplet) {
-        SwingUtilities.invokeLater(
-                () -> init(isApplet)
-        );
+        SwingUtilities.invokeLater(this::init);
     }
 
     /**
      * Internal helper to initialize the UI depending on the surrounding this
      * application is started.
-     *
-     * @param isApplet Defines whether the application is started as standalone
-     *                 {@code false} or applet {@code true}.
      */
-    private void init(final boolean isApplet) {
+    private void init() {
         // command help
         final JPanel buttonArea = new JPanel();
         JButton help = new JButton(getBundleString("spamschutz.ui.help"));
         help.setMnemonic(getBundleString("spamschutz.ui.help.mnemonic").charAt(0));
         help.addActionListener(e -> JOptionPane.showMessageDialog(null, getParameterizedBundleString("spamschutz.ui.help.text",
-                String.valueOf(now.getYear()),
-                de.aikiit.spamprotector.util.Version.VERSION),
+                        String.valueOf(now.getYear()),
+                        de.aikiit.spamprotector.util.Version.VERSION),
                 getBundleString("spamschutz.ui.help.title"),
                 JOptionPane.INFORMATION_MESSAGE));
 
@@ -121,13 +111,10 @@ class GUI extends JPanel {
         this.add(buttonArea, BorderLayout.NORTH);
         this.add(ioArea, BorderLayout.CENTER);
 
-        // if started standalone we do need a quit-button
-        if (!isApplet) {
-            final JButton end = new JButton(getBundleString("spamschutz.ui.end"));
-            end.setMnemonic(getBundleString("spamschutz.ui.end.mnemonic").charAt(0));
-            end.addActionListener(e -> System.exit(0));
-            buttonArea.add(end);
-        }
+        final JButton end = new JButton(getBundleString("spamschutz.ui.end"));
+        end.setMnemonic(getBundleString("spamschutz.ui.end.mnemonic").charAt(0));
+        end.addActionListener(e -> System.exit(0));
+        buttonArea.add(end);
         buttonArea.add(help);
         this.setVisible(true);
     }
