@@ -113,7 +113,9 @@
     </dependency>
   </dependencies>
   <build>
-    <defaultGoal>clean versions:display-dependency-updates versions:display-plugin-updates enforcer:display-info install org.pitest:pitest-maven:mutationCoverage</defaultGoal>
+    <defaultGoal>clean versions:display-dependency-updates versions:display-plugin-updates enforcer:display-info
+            install org.pitest:pitest-maven:mutationCoverage
+        </defaultGoal>
     <extensions>
       <extension>
         <groupId>org.apache.maven.scm</groupId>
@@ -154,7 +156,8 @@
           </executions>
           <configuration>
             <generateGitPropertiesFile>true</generateGitPropertiesFile>
-            <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
+            <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties
+                        </generateGitPropertiesFilename>
             <includeOnlyProperties>
               <includeOnlyProperty>^git.build.(time|version)$</includeOnlyProperty>
               <includeOnlyProperty>^git.commit.id.(abbrev|full)$</includeOnlyProperty>
@@ -321,20 +324,20 @@
             <forkCount>1</forkCount>
             <reuseForks>true</reuseForks>
             <!--systemProperties>
-                                                <property>
-                                                    <name>java.awt.headless</name>
-                                                    <value>true</value>
-                                                </property>
-                                            </systemProperties-->
+                                                            <property>
+                                                                <name>java.awt.headless</name>
+                                                                <value>true</value>
+                                                            </property>
+                                                        </systemProperties-->
           </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
       <!-- not working with JDK8 plugin>
-        <groupId>io.github.git-commit-id</groupId>
-        <artifactId>git-commit-id-maven-plugin</artifactId>
-      </plugin -->
+              <groupId>io.github.git-commit-id</groupId>
+              <artifactId>git-commit-id-maven-plugin</artifactId>
+            </plugin -->
       <plugin>
         <groupId>org.pitest</groupId>
         <artifactId>pitest-maven</artifactId>
@@ -381,6 +384,21 @@
         <artifactId>maven-resources-plugin</artifactId>
         <version>3.3.1</version>
         <executions>
+          <execution>
+            <id>copy-sidebar-icon</id>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <phase>site</phase>
+            <configuration>
+              <resources>
+                <resource>
+                  <directory>${project.build.directory}/webpage/logo/</directory>
+                </resource>
+              </resources>
+              <outputDirectory>${project.build.directory}/target/site/img/</outputDirectory>
+            </configuration>
+          </execution>
           <execution>
             <id>copy-version-resources</id>
             <phase>process-resources</phase>
@@ -628,11 +646,11 @@
                 <forkCount>1</forkCount>
                 <reuseForks>true</reuseForks>
                 <!--systemProperties>
-                                          <property>
-                                              <name>java.awt.headless</name>
-                                              <value>true</value>
-                                          </property>
-                                      </systemProperties-->
+                                                          <property>
+                                                              <name>java.awt.headless</name>
+                                                              <value>true</value>
+                                                          </property>
+                                                      </systemProperties-->
               </configuration>
             </plugin>
           </plugins>
@@ -682,10 +700,10 @@
     </developer>
   </developers>
   <!-- To be able to use the latest version/release candidate
-  <pluginRepositories>
-    <pluginRepository>
-      <id>staged-releases</id>
-      <url>https://repository.apache.org/content/repositories/orgapachecreadur-1005/</url>
-    </pluginRepository>
-  </pluginRepositories-->
+    <pluginRepositories>
+      <pluginRepository>
+        <id>staged-releases</id>
+        <url>https://repository.apache.org/content/repositories/orgapachecreadur-1005/</url>
+      </pluginRepository>
+    </pluginRepositories-->
 </project>
