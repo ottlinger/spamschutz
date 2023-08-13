@@ -379,7 +379,6 @@
           </execution>
         </executions>
       </plugin>
-      <!-- copy Version.java out of normal resource copying to avoid eclipse errors -->
       <plugin>
         <artifactId>maven-resources-plugin</artifactId>
         <version>3.3.1</version>
@@ -389,16 +388,17 @@
             <goals>
               <goal>copy-resources</goal>
             </goals>
-            <phase>site</phase>
+            <phase>process-resources</phase>
             <configuration>
               <resources>
                 <resource>
-                  <directory>${project.build.directory}/webpage/logo/</directory>
+                  <directory>${basedir}/webpage/logo/</directory>
                 </resource>
               </resources>
-              <outputDirectory>${project.build.directory}/target/site/img/</outputDirectory>
+              <outputDirectory>${basedir}/target/site/img/</outputDirectory>
             </configuration>
           </execution>
+          <!-- copy Version.java out of normal resource copying to avoid eclipse errors -->
           <execution>
             <id>copy-version-resources</id>
             <phase>process-resources</phase>

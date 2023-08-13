@@ -54,7 +54,7 @@ under the License.
             <topBarIcon>
                 <name>SpamSchutz logo</name>
                 <alt>SpamSchutz</alt>
-                <src>postal-horn.png</src>
+                <src>img/postal-horn.png</src>
                 <href>/index.html</href>
             </topBarIcon>
             <gitHub>
