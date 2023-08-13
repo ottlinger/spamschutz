@@ -29,36 +29,41 @@ under the License.
     <version position="bottom"/>
 
     <poweredBy>
-       <logo name="Maven" href="http://maven.apache.org/"
-             img="http://maven.apache.org/images/logos/maven-feather.png"/>
-     </poweredBy>
+        <logo name="Maven" href="http://maven.apache.org/"
+              img="http://maven.apache.org/images/logos/maven-feather.png"/>
+    </poweredBy>
 
     <!-- https://maven.apache.org/doxia/doxia-sitetools/doxia-decoration-model/decoration.html -->
     <skin>
-       <groupId>org.apache.maven.skins</groupId>
-       <artifactId>maven-fluido-skin</artifactId>
-       <version>2.0.0-M7</version>
-     </skin>
+        <groupId>org.apache.maven.skins</groupId>
+        <artifactId>maven-fluido-skin</artifactId>
+        <version>2.0.0-M7</version>
+    </skin>
 
     <body>
-        <menu ref="parent"  inherit="top" />
+        <menu ref="parent" inherit="top"/>
         <menu ref="reports" inherit="bottom"/>
         <menu ref="modules" inherit="bottom"/>
 
         <menu name="Reports" ref="reports">
         </menu>
     </body>
-  <custom>
-    <fluidoSkin>
-      <topBarEnabled>true</topBarEnabled>
-<!--
-      <topBarIcon>
-        <name>Project documentationn</name>
-        <alt>SpamSchutz logo</alt>
-        <src>/images/topbar-logo.png</src>
-        <href>/index.html</href>
-      </topBarIcon>
--->
-    </fluidoSkin>
-  </custom>
+    <custom>
+        <fluidoSkin>
+            <topBarEnabled>true</topBarEnabled>
+            <!--
+                  <topBarIcon>
+                    <name>Project documentationn</name>
+                    <alt>SpamSchutz logo</alt>
+                    <src>/images/topbar-logo.png</src>
+                    <href>/index.html</href>
+                  </topBarIcon>
+            -->
+            <gitHub>
+                <projectId>ottlinger/spamschutz</projectId>
+                <ribbonOrientation>right</ribbonOrientation>
+                <ribbonColor>green</ribbonColor>
+            </gitHub>
+        </fluidoSkin>
+    </custom>
 </project>
