@@ -1,9 +1,9 @@
 # History
 
-## 1.0.7-SNAPSHOT - currently in development
+## 1.1.0-SNAPSHOT - currently in development
 
 * Play around with jBang
-
+* Remove applet
 
 ## 1.0.6
 
