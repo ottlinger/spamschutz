@@ -25,22 +25,21 @@ import lombok.NoArgsConstructor;
 import java.util.Map;
 
 /**
- * @author hirsch
- * @version 2015-12-05, 21:52
+ * Class encapsulates the actual character conversion logics.
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class SpamProtector {
 
-<span class="fc" id="L34">    private static final Map&lt;String, CharacterConverter&gt; ENCODED = Maps.newHashMap();</span>
-<span class="fc" id="L35">    private static final Map&lt;Character, CharacterConverter&gt; PLAIN = Maps.newHashMap();</span>
+<span class="fc" id="L33">    private static final Map&lt;String, CharacterConverter&gt; ENCODED = Maps.newHashMap();</span>
+<span class="fc" id="L34">    private static final Map&lt;Character, CharacterConverter&gt; PLAIN = Maps.newHashMap();</span>
 
     static {
         // split up characters
-<span class="fc bfc" id="L39" title="All 2 branches covered.">        for (CharacterConverter character : CharacterConverter.values()) {</span>
-<span class="fc" id="L40">            ENCODED.put(character.getReplacement().toLowerCase(), character);</span>
-<span class="fc" id="L41">            PLAIN.put(character.getPlain().charAt(0), character);</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">        for (CharacterConverter character : CharacterConverter.values()) {</span>
+<span class="fc" id="L39">            ENCODED.put(character.getReplacement().toLowerCase(), character);</span>
+<span class="fc" id="L40">            PLAIN.put(character.getPlain().charAt(0), character);</span>
         }
-<span class="fc" id="L43">    }</span>
+<span class="fc" id="L42">    }</span>
 
     /**
      * Converts an encoded value into a plain one.
@@ -49,33 +48,33 @@ public final class SpamProtector {
      * @return encoded value or input if no mapping is found.
      */
     public static String toPlain(String input) {
-<span class="fc bfc" id="L52" title="All 2 branches covered.">        if (!Strings.isNullOrEmpty(input)) {</span>
-<span class="fc" id="L53">            String toTransform = input;</span>
-<span class="fc" id="L54">            StringBuilder result = new StringBuilder();</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">        if (!Strings.isNullOrEmpty(input)) {</span>
+<span class="fc" id="L52">            String toTransform = input;</span>
+<span class="fc" id="L53">            StringBuilder result = new StringBuilder();</span>
 
-<span class="fc bfc" id="L56" title="All 2 branches covered.">            while (!Strings.isNullOrEmpty(toTransform)) {</span>
-<span class="fc" id="L57">                int lengthBeforeConversion = toTransform.length();</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">            while (!Strings.isNullOrEmpty(toTransform)) {</span>
+<span class="fc" id="L56">                int lengthBeforeConversion = toTransform.length();</span>
 
-<span class="fc bfc" id="L59" title="All 2 branches covered.">                for(Map.Entry&lt;String, CharacterConverter&gt; entry : ENCODED.entrySet()) {</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">                for(Map.Entry&lt;String, CharacterConverter&gt; entry : ENCODED.entrySet()) {</span>
                     // cut out any found items
-<span class="fc" id="L61">                    String prefix = entry.getKey();</span>
-<span class="fc bfc" id="L62" title="All 2 branches covered.">                    if (toTransform.startsWith(prefix)) {</span>
-<span class="fc" id="L63">                        result.append(entry.getValue().getPlain());</span>
-<span class="fc" id="L64">                        toTransform = toTransform.substring(prefix.length(), toTransform.length());</span>
+<span class="fc" id="L60">                    String prefix = entry.getKey();</span>
+<span class="fc bfc" id="L61" title="All 2 branches covered.">                    if (toTransform.startsWith(prefix)) {</span>
+<span class="fc" id="L62">                        result.append(entry.getValue().getPlain());</span>
+<span class="fc" id="L63">                        toTransform = toTransform.substring(prefix.length(), toTransform.length());</span>
                     }
-<span class="fc" id="L66">                }</span>
+<span class="fc" id="L65">                }</span>
 
                 // in case we did not replace any character trim one and restart
-<span class="fc bfc" id="L69" title="All 2 branches covered.">                if (toTransform.length() == lengthBeforeConversion) {</span>
-<span class="fc" id="L70">                    result.append(toTransform.charAt(0));</span>
-<span class="fc" id="L71">                    toTransform = toTransform.substring(1);</span>
+<span class="fc bfc" id="L68" title="All 2 branches covered.">                if (toTransform.length() == lengthBeforeConversion) {</span>
+<span class="fc" id="L69">                    result.append(toTransform.charAt(0));</span>
+<span class="fc" id="L70">                    toTransform = toTransform.substring(1);</span>
                 }
-<span class="fc" id="L73">            }</span>
+<span class="fc" id="L72">            }</span>
 
-<span class="fc" id="L75">            return result.toString();</span>
+<span class="fc" id="L74">            return result.toString();</span>
 
         }
-<span class="fc" id="L78">        return input;</span>
+<span class="fc" id="L77">        return input;</span>
     }
 
     /**
@@ -85,16 +84,16 @@ public final class SpamProtector {
      * @return encoded value or input if no mapping is found.
      */
     public static String toEncoded(String input) {
-<span class="fc bfc" id="L88" title="All 2 branches covered.">        if (!Strings.isNullOrEmpty(input)) {</span>
-<span class="fc" id="L89">            StringBuilder result = new StringBuilder();</span>
+<span class="fc bfc" id="L87" title="All 2 branches covered.">        if (!Strings.isNullOrEmpty(input)) {</span>
+<span class="fc" id="L88">            StringBuilder result = new StringBuilder();</span>
 
-<span class="fc bfc" id="L91" title="All 2 branches covered.">            for (Character character : input.toCharArray()) {</span>
-<span class="fc bfc" id="L92" title="All 2 branches covered.">                result.append(PLAIN.containsKey(character) ? PLAIN.get(character).getReplacement() : character);</span>
+<span class="fc bfc" id="L90" title="All 2 branches covered.">            for (Character character : input.toCharArray()) {</span>
+<span class="fc bfc" id="L91" title="All 2 branches covered.">                result.append(PLAIN.containsKey(character) ? PLAIN.get(character).getReplacement() : character);</span>
             }
 
-<span class="fc" id="L95">            return result.toString();</span>
+<span class="fc" id="L94">            return result.toString();</span>
         }
-<span class="fc" id="L97">        return input;</span>
+<span class="fc" id="L96">        return input;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

@@ -3,6 +3,5 @@ SpamSchutz - simple way to protect your mail addresses from naïve spammers,de.a
 SpamSchutz - simple way to protect your mail addresses from naïve spammers,de.aikiit.spamprotector.converter,CharacterConverter,0,780,0,0,0,102,0,4,0,4
 SpamSchutz - simple way to protect your mail addresses from naïve spammers,de.aikiit.spamprotector.util,Version,3,0,0,0,1,0,1,0,1,0
 SpamSchutz - simple way to protect your mail addresses from naïve spammers,de.aikiit.spamprotector.util,LocalizationHelper,7,136,3,5,2,28,3,7,0,6
-SpamSchutz - simple way to protect your mail addresses from naïve spammers,de.aikiit.spamprotector,GUI,261,0,2,0,55,0,10,0,9,0
-SpamSchutz - simple way to protect your mail addresses from naïve spammers,de.aikiit.spamprotector,AntiSpamApplication,36,0,0,0,12,0,3,0,3,0
-SpamSchutz - simple way to protect your mail addresses from naïve spammers,de.aikiit.spamprotector,AntiSpamApplet,18,0,0,0,4,0,2,0,2,0
+SpamSchutz - simple way to protect your mail addresses from naïve spammers,de.aikiit.spamprotector,GUI,254,0,0,0,53,0,8,0,8,0
+SpamSchutz - simple way to protect your mail addresses from naïve spammers,de.aikiit.spamprotector,AntiSpamApplication,35,0,0,0,12,0,3,0,3,0

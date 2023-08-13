@@ -5,25 +5,26 @@
 //SOURCES **
 
 /**
- SpamSchutz - simple way to protect your mail addresses from naïve spammers
- Copyright (C) 2011, Aiki IT
-
- This program is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
-
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
-
- You should have received a copy of the GNU General Public License
- along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ * SpamSchutz - simple way to protect your mail addresses from naïve spammers
+ * Copyright (C) 2011, Aiki IT
+ * &lt;p&gt;
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * &lt;p&gt;
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * &lt;p&gt;
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
  */
 
 
 package de.aikiit.spamprotector;
+
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
@@ -31,11 +32,9 @@ import javax.swing.*;
 import java.awt.*;
 
 import static de.aikiit.spamprotector.util.LocalizationHelper.getBundleString;
+
 /**
  * Application starter class.
- *
- * @author hirsch
- * @version 2011-04-29, 01:51
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class AntiSpamApplication {
@@ -44,18 +43,18 @@ public final class AntiSpamApplication {
      * Helper that starts and initializes the application itself.
      */
     private static void initApplication() {
-<span class="nc" id="L47">        SwingUtilities.invokeLater(</span>
+<span class="nc" id="L46">        SwingUtilities.invokeLater(</span>
                 () -&gt; {
-<span class="nc" id="L49">                    JFrame frame = new JFrame();</span>
-<span class="nc" id="L50">                    GUI g = new GUI(false);</span>
-<span class="nc" id="L51">                    frame.setTitle(getBundleString(&quot;spamschutz.main.title&quot;));</span>
-<span class="nc" id="L52">                    frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);</span>
-<span class="nc" id="L53">                    frame.setSize(new Dimension(800, 300));</span>
-<span class="nc" id="L54">                    frame.add(g);</span>
-<span class="nc" id="L55">                    frame.setVisible(true);</span>
-<span class="nc" id="L56">                }</span>
+<span class="nc" id="L48">                    JFrame frame = new JFrame();</span>
+<span class="nc" id="L49">                    GUI g = new GUI();</span>
+<span class="nc" id="L50">                    frame.setTitle(getBundleString(&quot;spamschutz.main.title&quot;));</span>
+<span class="nc" id="L51">                    frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L52">                    frame.setSize(new Dimension(800, 300));</span>
+<span class="nc" id="L53">                    frame.add(g);</span>
+<span class="nc" id="L54">                    frame.setVisible(true);</span>
+<span class="nc" id="L55">                }</span>
         );
-<span class="nc" id="L58">    }</span>
+<span class="nc" id="L57">    }</span>
 
     /**
      * Main method that loads the application in a proper size.
@@ -63,7 +62,7 @@ public final class AntiSpamApplication {
      * @param args Arguments from console.
      */
     public static void main(final String[] args) {
-<span class="nc" id="L66">        initApplication();</span>
-<span class="nc" id="L67">    }</span>
+<span class="nc" id="L65">        initApplication();</span>
+<span class="nc" id="L66">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

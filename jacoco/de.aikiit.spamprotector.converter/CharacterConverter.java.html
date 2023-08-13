@@ -21,130 +21,127 @@ package de.aikiit.spamprotector.converter;
  * Encapsulates the character conversion logics.
  * Each changeable character is represented by an enumeration instance and
  * allows conversion from/to the encoded value.
- *
- * @author hirsch
- * @version 2015-12-04, 21:34
  */
-<span class="fc" id="L28">public enum CharacterConverter {</span>
+<span class="fc" id="L25">public enum CharacterConverter {</span>
 
-<span class="fc" id="L30">    SPACE(&quot; &quot;, &quot;&amp;nbsp;&quot;), //</span>
-<span class="fc" id="L31">    EXCLAMATION_MARK(&quot;!&quot;, &quot;&amp;#33;&quot;), //</span>
-<span class="fc" id="L32">    QUOTE(&quot;\&quot;&quot;, &quot;&amp;#34;&quot;), //</span>
-<span class="fc" id="L33">    HASH(&quot;#&quot;, &quot;&amp;#35;&quot;), //</span>
-<span class="fc" id="L34">    DOLLAR(&quot;$&quot;, &quot;&amp;#36;&quot;), //</span>
-<span class="fc" id="L35">    PERCENT(&quot;%&quot;, &quot;&amp;#37;&quot;), //</span>
-<span class="fc" id="L36">    AMPERSAND(&quot;&amp;&quot;, &quot;&amp;amp;&quot;), //</span>
-<span class="fc" id="L37">    SINGLE_QUOTE(&quot;\'&quot;, &quot;&amp;#39;&quot;), //</span>
-<span class="fc" id="L38">    LEFT_BRACKET(&quot;(&quot;, &quot;&amp;#40;&quot;), //</span>
-<span class="fc" id="L39">    RIGHT_BRACKET(&quot;)&quot;, &quot;&amp;#41;&quot;), //</span>
-<span class="fc" id="L40">    ASTERISK(&quot;*&quot;, &quot;&amp;#42;&quot;), //</span>
-<span class="fc" id="L41">    PLUS(&quot;+&quot;, &quot;&amp;#43;&quot;), //</span>
-<span class="fc" id="L42">    COMMA(&quot;,&quot;, &quot;&amp;#44;&quot;), //</span>
-<span class="fc" id="L43">    MINUS(&quot;-&quot;, &quot;&amp;#45;&quot;), //</span>
-<span class="fc" id="L44">    DOT(&quot;.&quot;, &quot;&amp;#46;&quot;), //</span>
-<span class="fc" id="L45">    SLASH(&quot;/&quot;, &quot;&amp;#47;&quot;), //</span>
-<span class="fc" id="L46">    ZERO(&quot;0&quot;, &quot;&amp;#48;&quot;), //</span>
-<span class="fc" id="L47">    ONE(&quot;1&quot;, &quot;&amp;#49;&quot;), //</span>
-<span class="fc" id="L48">    TWO(&quot;2&quot;, &quot;&amp;#50;&quot;), //</span>
-<span class="fc" id="L49">    THREE(&quot;3&quot;, &quot;&amp;#51;&quot;), //</span>
-<span class="fc" id="L50">    FOUR(&quot;4&quot;, &quot;&amp;#52;&quot;), //</span>
-<span class="fc" id="L51">    FIVE(&quot;5&quot;, &quot;&amp;#53;&quot;), //</span>
-<span class="fc" id="L52">    SIX(&quot;6&quot;, &quot;&amp;#54;&quot;), //</span>
-<span class="fc" id="L53">    SEVEN(&quot;7&quot;, &quot;&amp;#55;&quot;), //</span>
-<span class="fc" id="L54">    EIGHT(&quot;8&quot;, &quot;&amp;#56;&quot;), //</span>
-<span class="fc" id="L55">    NINE(&quot;9&quot;, &quot;&amp;#57;&quot;), //</span>
-<span class="fc" id="L56">    COLON(&quot;:&quot;, &quot;&amp;#58;&quot;), //</span>
-<span class="fc" id="L57">    SEMICOLON(&quot;;&quot;, &quot;&amp;#59;&quot;), //</span>
-<span class="fc" id="L58">    LT(&quot;&lt;&quot;, &quot;&amp;#60;&quot;), //</span>
-<span class="fc" id="L59">    EQUAL(&quot;=&quot;, &quot;&amp;#61;&quot;), //</span>
-<span class="fc" id="L60">    GT(&quot;&gt;&quot;, &quot;&amp;#62;&quot;), //</span>
-<span class="fc" id="L61">    QUESTION_MARK(&quot;?&quot;, &quot;&amp;#63;&quot;), //</span>
-<span class="fc" id="L62">    AT(&quot;@&quot;, &quot;&amp;#64;&quot;), //</span>
-<span class="fc" id="L63">    CAPITAL_A(&quot;A&quot;, &quot;&amp;#65;&quot;), //</span>
-<span class="fc" id="L64">    CAPITAL_B(&quot;B&quot;, &quot;&amp;#66;&quot;), //</span>
-<span class="fc" id="L65">    CAPITAL_C(&quot;C&quot;, &quot;&amp;#67;&quot;), //</span>
-<span class="fc" id="L66">    CAPITAL_D(&quot;D&quot;, &quot;&amp;#68;&quot;), //</span>
-<span class="fc" id="L67">    CAPITAL_E(&quot;E&quot;, &quot;&amp;#69;&quot;), //</span>
-<span class="fc" id="L68">    CAPITAL_F(&quot;F&quot;, &quot;&amp;#70;&quot;), //</span>
-<span class="fc" id="L69">    CAPITAL_G(&quot;G&quot;, &quot;&amp;#71;&quot;), //</span>
-<span class="fc" id="L70">    CAPITAL_H(&quot;H&quot;, &quot;&amp;#72;&quot;), //</span>
-<span class="fc" id="L71">    CAPITAL_I(&quot;I&quot;, &quot;&amp;#73;&quot;), //</span>
-<span class="fc" id="L72">    CAPITAL_J(&quot;J&quot;, &quot;&amp;#74;&quot;), //</span>
-<span class="fc" id="L73">    CAPITAL_K(&quot;K&quot;, &quot;&amp;#75;&quot;), //</span>
-<span class="fc" id="L74">    CAPITAL_L(&quot;L&quot;, &quot;&amp;#76;&quot;), //</span>
-<span class="fc" id="L75">    CAPITAL_M(&quot;M&quot;, &quot;&amp;#77;&quot;), //</span>
-<span class="fc" id="L76">    CAPITAL_N(&quot;N&quot;, &quot;&amp;#78;&quot;), //</span>
-<span class="fc" id="L77">    CAPITAL_O(&quot;O&quot;, &quot;&amp;#79;&quot;), //</span>
-<span class="fc" id="L78">    CAPITAL_P(&quot;P&quot;, &quot;&amp;#80;&quot;), //</span>
-<span class="fc" id="L79">    CAPITAL_Q(&quot;Q&quot;, &quot;&amp;#81;&quot;), //</span>
-<span class="fc" id="L80">    CAPITAL_R(&quot;R&quot;, &quot;&amp;#82;&quot;), //</span>
-<span class="fc" id="L81">    CAPITAL_S(&quot;S&quot;, &quot;&amp;#83;&quot;), //</span>
-<span class="fc" id="L82">    CAPITAL_T(&quot;T&quot;, &quot;&amp;#84;&quot;), //</span>
-<span class="fc" id="L83">    CAPITAL_U(&quot;U&quot;, &quot;&amp;#85;&quot;), //</span>
-<span class="fc" id="L84">    CAPITAL_V(&quot;V&quot;, &quot;&amp;#86;&quot;), //</span>
-<span class="fc" id="L85">    CAPITAL_W(&quot;W&quot;, &quot;&amp;#87;&quot;), //</span>
-<span class="fc" id="L86">    CAPITAL_X(&quot;X&quot;, &quot;&amp;#88;&quot;), //</span>
-<span class="fc" id="L87">    CAPITAL_Y(&quot;Y&quot;, &quot;&amp;#89;&quot;), //</span>
-<span class="fc" id="L88">    CAPITAL_Z(&quot;Z&quot;, &quot;&amp;#90;&quot;), //</span>
-<span class="fc" id="L89">    LEFT_SQUARE_BRACKET(&quot;[&quot;, &quot;&amp;#91;&quot;), //</span>
-<span class="fc" id="L90">    BACKSLASH(&quot;\\&quot;, &quot;&amp;#92;&quot;), //</span>
-<span class="fc" id="L91">    RIGHT_SQUARE_BRACKET(&quot;]&quot;, &quot;&amp;#93;&quot;), //</span>
-<span class="fc" id="L92">    CIRCUMFLEX(&quot;^&quot;, &quot;&amp;#94;&quot;), //</span>
-<span class="fc" id="L93">    UNDERSCORE(&quot;_&quot;, &quot;&amp;#95;&quot;), //</span>
-<span class="fc" id="L94">    TICK(&quot;`&quot;, &quot;&amp;#96;&quot;), //</span>
-<span class="fc" id="L95">    A(&quot;a&quot;, &quot;&amp;#97;&quot;), //</span>
-<span class="fc" id="L96">    B(&quot;b&quot;, &quot;&amp;#98;&quot;), //</span>
-<span class="fc" id="L97">    C(&quot;c&quot;, &quot;&amp;#99;&quot;), //</span>
-<span class="fc" id="L98">    D(&quot;d&quot;, &quot;&amp;#100;&quot;), //</span>
-<span class="fc" id="L99">    E(&quot;e&quot;, &quot;&amp;#101;&quot;), //</span>
-<span class="fc" id="L100">    F(&quot;f&quot;, &quot;&amp;#102;&quot;), //</span>
-<span class="fc" id="L101">    G(&quot;g&quot;, &quot;&amp;#103;&quot;), //</span>
-<span class="fc" id="L102">    H(&quot;h&quot;, &quot;&amp;#104;&quot;), //</span>
-<span class="fc" id="L103">    I(&quot;i&quot;, &quot;&amp;#105;&quot;), //</span>
-<span class="fc" id="L104">    J(&quot;j&quot;, &quot;&amp;#106;&quot;), //</span>
-<span class="fc" id="L105">    K(&quot;k&quot;, &quot;&amp;#107;&quot;), //</span>
-<span class="fc" id="L106">    L(&quot;l&quot;, &quot;&amp;#108;&quot;), //</span>
-<span class="fc" id="L107">    M(&quot;m&quot;, &quot;&amp;#109;&quot;), //</span>
-<span class="fc" id="L108">    N(&quot;n&quot;, &quot;&amp;#110;&quot;), //</span>
-<span class="fc" id="L109">    O(&quot;o&quot;, &quot;&amp;#111;&quot;), //</span>
-<span class="fc" id="L110">    P(&quot;p&quot;, &quot;&amp;#112;&quot;), //</span>
-<span class="fc" id="L111">    Q(&quot;q&quot;, &quot;&amp;#113;&quot;), //</span>
-<span class="fc" id="L112">    R(&quot;r&quot;, &quot;&amp;#114;&quot;), //</span>
-<span class="fc" id="L113">    S(&quot;s&quot;, &quot;&amp;#115;&quot;), //</span>
-<span class="fc" id="L114">    T(&quot;t&quot;, &quot;&amp;#116;&quot;), //</span>
-<span class="fc" id="L115">    U(&quot;u&quot;, &quot;&amp;#117;&quot;), //</span>
-<span class="fc" id="L116">    V(&quot;v&quot;, &quot;&amp;#118;&quot;), //</span>
-<span class="fc" id="L117">    W(&quot;w&quot;, &quot;&amp;#119;&quot;), //</span>
-<span class="fc" id="L118">    X(&quot;x&quot;, &quot;&amp;#120;&quot;), //</span>
-<span class="fc" id="L119">    Y(&quot;y&quot;, &quot;&amp;#121;&quot;), //</span>
-<span class="fc" id="L120">    Z(&quot;z&quot;, &quot;&amp;#122;&quot;), //</span>
-<span class="fc" id="L121">    LEFT_CURLY_BRACKET(&quot;{&quot;, &quot;&amp;#123;&quot;), //</span>
-<span class="fc" id="L122">    PIPE(&quot;|&quot;, &quot;&amp;#124;&quot;), //</span>
-<span class="fc" id="L123">    RIGHT_CURLY_BRACKET(&quot;}&quot;, &quot;&amp;#125;&quot;), //</span>
-<span class="fc" id="L124">    TILDE(&quot;~&quot;, &quot;&amp;#126;&quot;), //</span>
+<span class="fc" id="L27">    SPACE(&quot; &quot;, &quot;&amp;nbsp;&quot;), //</span>
+<span class="fc" id="L28">    EXCLAMATION_MARK(&quot;!&quot;, &quot;&amp;#33;&quot;), //</span>
+<span class="fc" id="L29">    QUOTE(&quot;\&quot;&quot;, &quot;&amp;#34;&quot;), //</span>
+<span class="fc" id="L30">    HASH(&quot;#&quot;, &quot;&amp;#35;&quot;), //</span>
+<span class="fc" id="L31">    DOLLAR(&quot;$&quot;, &quot;&amp;#36;&quot;), //</span>
+<span class="fc" id="L32">    PERCENT(&quot;%&quot;, &quot;&amp;#37;&quot;), //</span>
+<span class="fc" id="L33">    AMPERSAND(&quot;&amp;&quot;, &quot;&amp;amp;&quot;), //</span>
+<span class="fc" id="L34">    SINGLE_QUOTE(&quot;\'&quot;, &quot;&amp;#39;&quot;), //</span>
+<span class="fc" id="L35">    LEFT_BRACKET(&quot;(&quot;, &quot;&amp;#40;&quot;), //</span>
+<span class="fc" id="L36">    RIGHT_BRACKET(&quot;)&quot;, &quot;&amp;#41;&quot;), //</span>
+<span class="fc" id="L37">    ASTERISK(&quot;*&quot;, &quot;&amp;#42;&quot;), //</span>
+<span class="fc" id="L38">    PLUS(&quot;+&quot;, &quot;&amp;#43;&quot;), //</span>
+<span class="fc" id="L39">    COMMA(&quot;,&quot;, &quot;&amp;#44;&quot;), //</span>
+<span class="fc" id="L40">    MINUS(&quot;-&quot;, &quot;&amp;#45;&quot;), //</span>
+<span class="fc" id="L41">    DOT(&quot;.&quot;, &quot;&amp;#46;&quot;), //</span>
+<span class="fc" id="L42">    SLASH(&quot;/&quot;, &quot;&amp;#47;&quot;), //</span>
+<span class="fc" id="L43">    ZERO(&quot;0&quot;, &quot;&amp;#48;&quot;), //</span>
+<span class="fc" id="L44">    ONE(&quot;1&quot;, &quot;&amp;#49;&quot;), //</span>
+<span class="fc" id="L45">    TWO(&quot;2&quot;, &quot;&amp;#50;&quot;), //</span>
+<span class="fc" id="L46">    THREE(&quot;3&quot;, &quot;&amp;#51;&quot;), //</span>
+<span class="fc" id="L47">    FOUR(&quot;4&quot;, &quot;&amp;#52;&quot;), //</span>
+<span class="fc" id="L48">    FIVE(&quot;5&quot;, &quot;&amp;#53;&quot;), //</span>
+<span class="fc" id="L49">    SIX(&quot;6&quot;, &quot;&amp;#54;&quot;), //</span>
+<span class="fc" id="L50">    SEVEN(&quot;7&quot;, &quot;&amp;#55;&quot;), //</span>
+<span class="fc" id="L51">    EIGHT(&quot;8&quot;, &quot;&amp;#56;&quot;), //</span>
+<span class="fc" id="L52">    NINE(&quot;9&quot;, &quot;&amp;#57;&quot;), //</span>
+<span class="fc" id="L53">    COLON(&quot;:&quot;, &quot;&amp;#58;&quot;), //</span>
+<span class="fc" id="L54">    SEMICOLON(&quot;;&quot;, &quot;&amp;#59;&quot;), //</span>
+<span class="fc" id="L55">    LT(&quot;&lt;&quot;, &quot;&amp;#60;&quot;), //</span>
+<span class="fc" id="L56">    EQUAL(&quot;=&quot;, &quot;&amp;#61;&quot;), //</span>
+<span class="fc" id="L57">    GT(&quot;&gt;&quot;, &quot;&amp;#62;&quot;), //</span>
+<span class="fc" id="L58">    QUESTION_MARK(&quot;?&quot;, &quot;&amp;#63;&quot;), //</span>
+<span class="fc" id="L59">    AT(&quot;@&quot;, &quot;&amp;#64;&quot;), //</span>
+<span class="fc" id="L60">    CAPITAL_A(&quot;A&quot;, &quot;&amp;#65;&quot;), //</span>
+<span class="fc" id="L61">    CAPITAL_B(&quot;B&quot;, &quot;&amp;#66;&quot;), //</span>
+<span class="fc" id="L62">    CAPITAL_C(&quot;C&quot;, &quot;&amp;#67;&quot;), //</span>
+<span class="fc" id="L63">    CAPITAL_D(&quot;D&quot;, &quot;&amp;#68;&quot;), //</span>
+<span class="fc" id="L64">    CAPITAL_E(&quot;E&quot;, &quot;&amp;#69;&quot;), //</span>
+<span class="fc" id="L65">    CAPITAL_F(&quot;F&quot;, &quot;&amp;#70;&quot;), //</span>
+<span class="fc" id="L66">    CAPITAL_G(&quot;G&quot;, &quot;&amp;#71;&quot;), //</span>
+<span class="fc" id="L67">    CAPITAL_H(&quot;H&quot;, &quot;&amp;#72;&quot;), //</span>
+<span class="fc" id="L68">    CAPITAL_I(&quot;I&quot;, &quot;&amp;#73;&quot;), //</span>
+<span class="fc" id="L69">    CAPITAL_J(&quot;J&quot;, &quot;&amp;#74;&quot;), //</span>
+<span class="fc" id="L70">    CAPITAL_K(&quot;K&quot;, &quot;&amp;#75;&quot;), //</span>
+<span class="fc" id="L71">    CAPITAL_L(&quot;L&quot;, &quot;&amp;#76;&quot;), //</span>
+<span class="fc" id="L72">    CAPITAL_M(&quot;M&quot;, &quot;&amp;#77;&quot;), //</span>
+<span class="fc" id="L73">    CAPITAL_N(&quot;N&quot;, &quot;&amp;#78;&quot;), //</span>
+<span class="fc" id="L74">    CAPITAL_O(&quot;O&quot;, &quot;&amp;#79;&quot;), //</span>
+<span class="fc" id="L75">    CAPITAL_P(&quot;P&quot;, &quot;&amp;#80;&quot;), //</span>
+<span class="fc" id="L76">    CAPITAL_Q(&quot;Q&quot;, &quot;&amp;#81;&quot;), //</span>
+<span class="fc" id="L77">    CAPITAL_R(&quot;R&quot;, &quot;&amp;#82;&quot;), //</span>
+<span class="fc" id="L78">    CAPITAL_S(&quot;S&quot;, &quot;&amp;#83;&quot;), //</span>
+<span class="fc" id="L79">    CAPITAL_T(&quot;T&quot;, &quot;&amp;#84;&quot;), //</span>
+<span class="fc" id="L80">    CAPITAL_U(&quot;U&quot;, &quot;&amp;#85;&quot;), //</span>
+<span class="fc" id="L81">    CAPITAL_V(&quot;V&quot;, &quot;&amp;#86;&quot;), //</span>
+<span class="fc" id="L82">    CAPITAL_W(&quot;W&quot;, &quot;&amp;#87;&quot;), //</span>
+<span class="fc" id="L83">    CAPITAL_X(&quot;X&quot;, &quot;&amp;#88;&quot;), //</span>
+<span class="fc" id="L84">    CAPITAL_Y(&quot;Y&quot;, &quot;&amp;#89;&quot;), //</span>
+<span class="fc" id="L85">    CAPITAL_Z(&quot;Z&quot;, &quot;&amp;#90;&quot;), //</span>
+<span class="fc" id="L86">    LEFT_SQUARE_BRACKET(&quot;[&quot;, &quot;&amp;#91;&quot;), //</span>
+<span class="fc" id="L87">    BACKSLASH(&quot;\\&quot;, &quot;&amp;#92;&quot;), //</span>
+<span class="fc" id="L88">    RIGHT_SQUARE_BRACKET(&quot;]&quot;, &quot;&amp;#93;&quot;), //</span>
+<span class="fc" id="L89">    CIRCUMFLEX(&quot;^&quot;, &quot;&amp;#94;&quot;), //</span>
+<span class="fc" id="L90">    UNDERSCORE(&quot;_&quot;, &quot;&amp;#95;&quot;), //</span>
+<span class="fc" id="L91">    TICK(&quot;`&quot;, &quot;&amp;#96;&quot;), //</span>
+<span class="fc" id="L92">    A(&quot;a&quot;, &quot;&amp;#97;&quot;), //</span>
+<span class="fc" id="L93">    B(&quot;b&quot;, &quot;&amp;#98;&quot;), //</span>
+<span class="fc" id="L94">    C(&quot;c&quot;, &quot;&amp;#99;&quot;), //</span>
+<span class="fc" id="L95">    D(&quot;d&quot;, &quot;&amp;#100;&quot;), //</span>
+<span class="fc" id="L96">    E(&quot;e&quot;, &quot;&amp;#101;&quot;), //</span>
+<span class="fc" id="L97">    F(&quot;f&quot;, &quot;&amp;#102;&quot;), //</span>
+<span class="fc" id="L98">    G(&quot;g&quot;, &quot;&amp;#103;&quot;), //</span>
+<span class="fc" id="L99">    H(&quot;h&quot;, &quot;&amp;#104;&quot;), //</span>
+<span class="fc" id="L100">    I(&quot;i&quot;, &quot;&amp;#105;&quot;), //</span>
+<span class="fc" id="L101">    J(&quot;j&quot;, &quot;&amp;#106;&quot;), //</span>
+<span class="fc" id="L102">    K(&quot;k&quot;, &quot;&amp;#107;&quot;), //</span>
+<span class="fc" id="L103">    L(&quot;l&quot;, &quot;&amp;#108;&quot;), //</span>
+<span class="fc" id="L104">    M(&quot;m&quot;, &quot;&amp;#109;&quot;), //</span>
+<span class="fc" id="L105">    N(&quot;n&quot;, &quot;&amp;#110;&quot;), //</span>
+<span class="fc" id="L106">    O(&quot;o&quot;, &quot;&amp;#111;&quot;), //</span>
+<span class="fc" id="L107">    P(&quot;p&quot;, &quot;&amp;#112;&quot;), //</span>
+<span class="fc" id="L108">    Q(&quot;q&quot;, &quot;&amp;#113;&quot;), //</span>
+<span class="fc" id="L109">    R(&quot;r&quot;, &quot;&amp;#114;&quot;), //</span>
+<span class="fc" id="L110">    S(&quot;s&quot;, &quot;&amp;#115;&quot;), //</span>
+<span class="fc" id="L111">    T(&quot;t&quot;, &quot;&amp;#116;&quot;), //</span>
+<span class="fc" id="L112">    U(&quot;u&quot;, &quot;&amp;#117;&quot;), //</span>
+<span class="fc" id="L113">    V(&quot;v&quot;, &quot;&amp;#118;&quot;), //</span>
+<span class="fc" id="L114">    W(&quot;w&quot;, &quot;&amp;#119;&quot;), //</span>
+<span class="fc" id="L115">    X(&quot;x&quot;, &quot;&amp;#120;&quot;), //</span>
+<span class="fc" id="L116">    Y(&quot;y&quot;, &quot;&amp;#121;&quot;), //</span>
+<span class="fc" id="L117">    Z(&quot;z&quot;, &quot;&amp;#122;&quot;), //</span>
+<span class="fc" id="L118">    LEFT_CURLY_BRACKET(&quot;{&quot;, &quot;&amp;#123;&quot;), //</span>
+<span class="fc" id="L119">    PIPE(&quot;|&quot;, &quot;&amp;#124;&quot;), //</span>
+<span class="fc" id="L120">    RIGHT_CURLY_BRACKET(&quot;}&quot;, &quot;&amp;#125;&quot;), //</span>
+<span class="fc" id="L121">    TILDE(&quot;~&quot;, &quot;&amp;#126;&quot;), //</span>
     //
     ;
 
     private final String plain;
     private final String replacement;
 
-<span class="fc" id="L131">    CharacterConverter(final String plain, final String placement) {</span>
-<span class="fc" id="L132">        this.plain = plain;</span>
-<span class="fc" id="L133">        this.replacement = placement;</span>
-<span class="fc" id="L134">    }</span>
+<span class="fc" id="L128">    CharacterConverter(final String plain, final String placement) {</span>
+<span class="fc" id="L129">        this.plain = plain;</span>
+<span class="fc" id="L130">        this.replacement = placement;</span>
+<span class="fc" id="L131">    }</span>
 
     /**
      * @return the plain/not encoded value of that character.
      */
     public String getPlain() {
-<span class="fc" id="L140">        return plain;</span>
+<span class="fc" id="L137">        return plain;</span>
     }
 
     /**
      * @return the encoded value of that character.
      */
     public String getReplacement() {
-<span class="fc" id="L147">        return replacement;</span>
+<span class="fc" id="L144">        return replacement;</span>
     }
 
 }
