@@ -26,10 +26,7 @@ import static de.aikiit.spamprotector.util.LocalizationHelper.*;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Testing resource bundling.
- *
- * @author hirsch
- * @version 23.08.11
+ * Testing resource bundling and i18n handling.
  */
 public class LocalizationHelperTest {
 

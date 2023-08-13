@@ -25,8 +25,7 @@ import lombok.NoArgsConstructor;
 import java.util.Map;
 
 /**
- * @author hirsch
- * @version 2015-12-05, 21:52
+ * Class encapsulates the actual character conversion logics.
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class SpamProtector {

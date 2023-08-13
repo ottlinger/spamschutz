@@ -18,10 +18,7 @@
 package de.aikiit.spamprotector;
 
 /**
- * Marker interface to be used with Junit categories to mark Tests that need a Graphical UI.
- *
- * @author hirsch
- * @version 2016-02-13, 20:07
+ * Marker interface to be used with Junit categories to mark Tests that need a graphical UI.
  */
 public interface UITest {
 }

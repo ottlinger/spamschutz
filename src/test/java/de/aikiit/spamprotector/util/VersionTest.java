@@ -22,8 +22,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * @author hirsch
- * @version 2011-11-12, 14:39
+ * Verify (Maven-filter)-included class is available.
  */
 public class VersionTest {
     @Test

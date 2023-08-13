@@ -26,8 +26,7 @@ import static de.aikiit.spamprotector.util.LocalizationHelper.getParameterizedBu
 import static org.junit.Assert.*;
 
 /**
- * @author hirsch
- * @version 2011-12-28, 13:57
+ * Verifies the UI components work properly.
  */
 @Category(UITest.class)
 public class GUITest {
@@ -39,14 +38,8 @@ public class GUITest {
             LogManager.getLogger(GUITest.class);
 
     @Test
-    public final void startGuiNoApplet() {
-        GUI gui = new GUI(false);
-        assertNotNull(gui);
-    }
-
-    @Test
-    public final void startGuiApplet() {
-        GUI gui = new GUI(true);
+    public final void startGui() {
+        GUI gui = new GUI();
         assertNotNull(gui);
     }
 

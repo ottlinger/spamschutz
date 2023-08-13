@@ -23,8 +23,7 @@ import org.junit.experimental.categories.Category;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * @author hirsch
- * @version 2011-12-28, 13:26
+ * Launches the application itself.
  */
 @Category(UITest.class)
 public class AntiSpamApplicationTest {

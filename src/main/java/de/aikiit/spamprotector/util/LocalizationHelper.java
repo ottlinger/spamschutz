@@ -31,10 +31,7 @@ import java.util.ResourceBundle;
 
 /**
  * Helper to deal with localizations and ease the usage of
- * resource bundles within spamprotector.
- *
- * @author hirsch
- * @version 23.08.11
+ * resource bundles within spamschutz.
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class LocalizationHelper {
@@ -115,16 +112,6 @@ public final class LocalizationHelper {
             LOG.error("Retrieving unknown key " + key + ". Please fix your property files.");
             return key;
         }
-        // l18n basics:
-        // http://www.kodejava.org/examples/220.html
-        // l18n buttons:
-        // http://www.java2s.com/Code/Java/I18N/Createonebuttoninternationalizedly.htm
-        // l18n with parameters:
-        // http://www.java2s.com/Code/Java/I18N/ResourceBundlewithparameterposition.htm
-        // parameters are a but uneasier than with grails -
-        // http://download.oracle.com/javase/tutorial/i18n/format/messageFormat.html
-        // encoding issues / eclipse plugin:
-        // http://stackoverflow.com/questions/863838/problem-with-java-properties-utf8-encoding-in-eclipse
     }
 
     /**
@@ -133,11 +120,11 @@ public final class LocalizationHelper {
      * applying localization parameters.
      *
      * @param key        Key to retrieve from the bundle,
-     *                   e.g. <i>fotorenamer.foo.parameteredtitle</i>.
+     *                   e.g. <i>spamprotector.foo.title</i>
      * @param parameters Object array with all parameters.
      * @return Returns the value from the bundle
      * with the given parameters applied.
-     * @see <a href="http://download.oracle.com/javase/tutorial/i18n/format/messageFormat.html">
+     * @see <a href="https://docs.oracle.com/javase/tutorial/i18n/format/messageFormat.html">
      * I18N-tutorial</a>
      */
     public static String getParameterizedBundleString(final String key, final Object... parameters) {

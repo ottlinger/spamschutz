@@ -22,8 +22,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * @author hirsch
- * @version 2015-12-04, 21:39
+ * Verifies conversion works.
  */
 public class CharacterConverterTest {
 

@@ -23,8 +23,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
 /**
- * @author hirsch
- * @version 2015-12-05, 21:53
+ * Convert real-world examples in order to avoid regressions.
  */
 public class SpamProtectorTest {
 

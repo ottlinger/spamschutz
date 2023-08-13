@@ -44,7 +44,7 @@ class GUI extends JPanel {
     /**
      * Launches and configures the main UI component.
      */
-    GUI(final boolean isApplet) {
+    GUI() {
         SwingUtilities.invokeLater(this::init);
     }
 

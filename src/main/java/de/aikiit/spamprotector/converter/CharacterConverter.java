@@ -21,9 +21,6 @@ package de.aikiit.spamprotector.converter;
  * Encapsulates the character conversion logics.
  * Each changeable character is represented by an enumeration instance and
  * allows conversion from/to the encoded value.
- *
- * @author hirsch
- * @version 2015-12-04, 21:34
  */
 public enum CharacterConverter {
 
