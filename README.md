@@ -42,7 +42,7 @@ A different possibility is to launch the combined uberJAR:
 
 Relates to [issue #22](../../issues/22)
 
-  As of now the application can be localized (at the moment only German and English is supported). Use the following parameters to explicitly set language and country or trust your system defaults:
+  As of now the application can be localized (at the moment only German and English are supported). Use the following parameters to explicitly set language and country or trust your system defaults:
 ```bash
 mvn -Plive-demo -Duser.language=en -Duser.country=US
 ```
