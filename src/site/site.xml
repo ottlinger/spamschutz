@@ -51,14 +51,12 @@ under the License.
     <custom>
         <fluidoSkin>
             <topBarEnabled>true</topBarEnabled>
-            <!--
-                  <topBarIcon>
-                    <name>Project documentation</name>
-                    <alt>SpamSchutz logo</alt>
-                    <src>/images/topbar-logo.png</src>
-                    <href>/index.html</href>
-                  </topBarIcon>
-            -->
+            <topBarIcon>
+                <name>SpamSchutz logo</name>
+                <alt>SpamSchutz</alt>
+                <src>/webpage/logo/postal-horn.png</src>
+                <href>/index.html</href>
+            </topBarIcon>
             <gitHub>
                 <projectId>ottlinger/spamschutz</projectId>
                 <ribbonOrientation>right</ribbonOrientation>
