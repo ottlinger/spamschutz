@@ -1,3 +1,4 @@
+![https://raw.githubusercontent.com/ottlinger/spamschutz/master/webpage/logo/postal-horn.png](https://raw.githubusercontent.com/ottlinger/spamschutz/master/webpage/logo/postal-horn.png)
 # SpamSchutz
 
 [![Github Action master branch status](https://github.com/ottlinger/spamschutz/actions/workflows/maven.yml/badge.svg?branch=master)](https://github.com/ottlinger/spamschutz/actions)
@@ -8,8 +9,6 @@
 https://github.com/users/ottlinger/projects/2
 
 # Purpose of this program
-
-![https://raw.githubusercontent.com/ottlinger/spamschutz/master/webpage/logo/postal-horn.png](https://raw.githubusercontent.com/ottlinger/spamschutz/master/webpage/logo/postal-horn.png)
 
 This application lets you easily change mail addresses or other HTML contents into ASCII-encoded values. Therefore your webpages remain human-readable and spiders are unable to detect your mail addresses and use them for unwanted purposes, when relying on regular expressions for data extraction.
 
