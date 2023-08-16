@@ -1,7 +1,7 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
 //DEPS org.projectlombok:lombok:1.18.28
 //DEPS com.google.guava:guava:32.1.2-jre
-//DEPS org.apache.logging.log4j:log4j-core:2.20.0
+//DEPS org.apache.logging.log4j:log4j-core:3.0.0-alpha1
 //SOURCES **
 
 /**
