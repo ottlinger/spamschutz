@@ -28,6 +28,6 @@ public class Version {
     /**
      * generated version constant
      */
-    public static final String VERSION = "${project.version}";
+    public static final String VERSION = "${project.version}-${git.commit.id.full}";
     
 } 
