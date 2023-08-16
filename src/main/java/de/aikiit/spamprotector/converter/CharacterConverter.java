@@ -17,11 +17,14 @@
  */
 package de.aikiit.spamprotector.converter;
 
+import lombok.Getter;
+
 /**
  * Encapsulates the character conversion logics.
  * Each changeable character is represented by an enumeration instance and
  * allows conversion from/to the encoded value.
  */
+@Getter
 public enum CharacterConverter {
 
     SPACE(" ", "&nbsp;"), //
@@ -128,20 +131,6 @@ public enum CharacterConverter {
     CharacterConverter(final String plain, final String placement) {
         this.plain = plain;
         this.replacement = placement;
-    }
-
-    /**
-     * @return the plain/not encoded value of that character.
-     */
-    public String getPlain() {
-        return plain;
-    }
-
-    /**
-     * @return the encoded value of that character.
-     */
-    public String getReplacement() {
-        return replacement;
     }
 
 }
