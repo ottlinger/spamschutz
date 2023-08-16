@@ -3,6 +3,8 @@
 //DEPS com.google.guava:guava:32.1.2-jre
 //DEPS org.apache.logging.log4j:log4j-core:3.0.0-alpha1
 //SOURCES **
+// https://github.com/jbangdev/jbang/issues/1666 - adding as file not working
+/** FILES src/main/resources/Version.java=de.aikiit.spamprotector.util.Version.java */
 
 /**
  * SpamSchutz - simple way to protect your mail addresses from naïve spammers
