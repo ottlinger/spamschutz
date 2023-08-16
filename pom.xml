@@ -334,10 +334,10 @@
       </plugins>
     </pluginManagement>
     <plugins>
-      <!-- not working with JDK8 plugin>
+      <plugin>
               <groupId>io.github.git-commit-id</groupId>
               <artifactId>git-commit-id-maven-plugin</artifactId>
-            </plugin -->
+            </plugin>
       <plugin>
         <groupId>org.pitest</groupId>
         <artifactId>pitest-maven</artifactId>
