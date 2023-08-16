@@ -29,7 +29,7 @@ This project uses [Maven](https://maven.apache.org "Official Maven website") to 
 ## Application
 If you want to run this programme as a standalone application, perform the following:
 
-  * Get your Maven up'n'running
+  * Get your Maven up'n'running, JDK version >=11
   * Download the sources of spamschutz
   * run ```mvn clean install -Plive-demo``` to launch the application
 
