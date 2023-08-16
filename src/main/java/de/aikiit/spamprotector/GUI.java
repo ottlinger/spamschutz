@@ -59,7 +59,8 @@ class GUI extends JPanel {
         help.setMnemonic(getBundleString("spamschutz.ui.help.mnemonic").charAt(0));
         help.addActionListener(e -> JOptionPane.showMessageDialog(null, getParameterizedBundleString("spamschutz.ui.help.text",
                         String.valueOf(now.getYear()),
-                        de.aikiit.spamprotector.util.Version.VERSION),
+                        // TODO remove me, once #94 is resolved
+                        "de.aikiit.spamprotector.util.Version.VERSION"),
                 getBundleString("spamschutz.ui.help.title"),
                 JOptionPane.INFORMATION_MESSAGE));
 
