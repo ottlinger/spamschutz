@@ -59,64 +59,65 @@ class GUI extends JPanel {
 <span class="nc" id="L59">        help.setMnemonic(getBundleString(&quot;spamschutz.ui.help.mnemonic&quot;).charAt(0));</span>
 <span class="nc" id="L60">        help.addActionListener(e -&gt; JOptionPane.showMessageDialog(null, getParameterizedBundleString(&quot;spamschutz.ui.help.text&quot;,</span>
 <span class="nc" id="L61">                        String.valueOf(now.getYear()),</span>
-                        de.aikiit.spamprotector.util.Version.VERSION),
-<span class="nc" id="L63">                getBundleString(&quot;spamschutz.ui.help.title&quot;),</span>
+                        // TODO remove me, once #94 is resolved
+                        &quot;de.aikiit.spamprotector.util.Version.VERSION&quot;),
+<span class="nc" id="L64">                getBundleString(&quot;spamschutz.ui.help.title&quot;),</span>
                 JOptionPane.INFORMATION_MESSAGE));
 
-<span class="nc" id="L66">        final JTextField input = new JTextField();</span>
-<span class="nc" id="L67">        input.setSize(BOX_DIMENSION);</span>
-<span class="nc" id="L68">        input.setPreferredSize(BOX_DIMENSION);</span>
-<span class="nc" id="L69">        final JTextField output = new JTextField(getBundleString(&quot;spamschutz.ui.default.output&quot;));</span>
-<span class="nc" id="L70">        output.setSize(BOX_DIMENSION);</span>
-<span class="nc" id="L71">        output.setPreferredSize(BOX_DIMENSION);</span>
+<span class="nc" id="L67">        final JTextField input = new JTextField();</span>
+<span class="nc" id="L68">        input.setSize(BOX_DIMENSION);</span>
+<span class="nc" id="L69">        input.setPreferredSize(BOX_DIMENSION);</span>
+<span class="nc" id="L70">        final JTextField output = new JTextField(getBundleString(&quot;spamschutz.ui.default.output&quot;));</span>
+<span class="nc" id="L71">        output.setSize(BOX_DIMENSION);</span>
+<span class="nc" id="L72">        output.setPreferredSize(BOX_DIMENSION);</span>
 
         // read input field
-<span class="nc" id="L74">        final JButton start = new JButton(getBundleString(&quot;spamschutz.ui.button.rtl&quot;));</span>
-<span class="nc" id="L75">        start.setMnemonic(getBundleString(&quot;spamschutz.ui.button.rtl.mnemonic&quot;).charAt(0));</span>
-<span class="nc" id="L76">        start.addActionListener(e -&gt; output.setText(SpamProtector.toEncoded(input.getText())));</span>
+<span class="nc" id="L75">        final JButton start = new JButton(getBundleString(&quot;spamschutz.ui.button.rtl&quot;));</span>
+<span class="nc" id="L76">        start.setMnemonic(getBundleString(&quot;spamschutz.ui.button.rtl.mnemonic&quot;).charAt(0));</span>
+<span class="nc" id="L77">        start.addActionListener(e -&gt; output.setText(SpamProtector.toEncoded(input.getText())));</span>
 
         // read output field
-<span class="nc" id="L79">        final JButton revert = new JButton(getBundleString(&quot;spamschutz.ui.button.ltr&quot;));</span>
-<span class="nc" id="L80">        revert.setMnemonic(getBundleString(&quot;spamschutz.ui.button.ltr.mnemonic&quot;).charAt(0));</span>
-<span class="nc" id="L81">        revert.addActionListener(e -&gt; input.setText(SpamProtector.toPlain(output.getText())));</span>
+<span class="nc" id="L80">        final JButton revert = new JButton(getBundleString(&quot;spamschutz.ui.button.ltr&quot;));</span>
+<span class="nc" id="L81">        revert.setMnemonic(getBundleString(&quot;spamschutz.ui.button.ltr.mnemonic&quot;).charAt(0));</span>
+<span class="nc" id="L82">        revert.addActionListener(e -&gt; input.setText(SpamProtector.toPlain(output.getText())));</span>
 
-<span class="nc" id="L83">        final JButton reset = new JButton(getBundleString(&quot;spamschutz.ui.reset&quot;));</span>
-<span class="nc" id="L84">        reset.setMnemonic(getBundleString(&quot;spamschutz.ui.reset.mnemonic&quot;).charAt(0));</span>
-<span class="nc" id="L85">        reset.addActionListener(e -&gt; {</span>
-<span class="nc" id="L86">            input.setText(&quot;&quot;);</span>
-<span class="nc" id="L87">            output.setText(&quot;&quot;);</span>
-<span class="nc" id="L88">        });</span>
+<span class="nc" id="L84">        final JButton reset = new JButton(getBundleString(&quot;spamschutz.ui.reset&quot;));</span>
+<span class="nc" id="L85">        reset.setMnemonic(getBundleString(&quot;spamschutz.ui.reset.mnemonic&quot;).charAt(0));</span>
+<span class="nc" id="L86">        reset.addActionListener(e -&gt; {</span>
+<span class="nc" id="L87">            input.setText(&quot;&quot;);</span>
+<span class="nc" id="L88">            output.setText(&quot;&quot;);</span>
+<span class="nc" id="L89">        });</span>
 
-<span class="nc" id="L90">        buttonArea.add(revert);</span>
-<span class="nc" id="L91">        buttonArea.add(start);</span>
-<span class="nc" id="L92">        buttonArea.add(reset);</span>
+<span class="nc" id="L91">        buttonArea.add(revert);</span>
+<span class="nc" id="L92">        buttonArea.add(start);</span>
+<span class="nc" id="L93">        buttonArea.add(reset);</span>
 
         // fields
-<span class="nc" id="L95">        final JPanel ioArea = new JPanel(new FlowLayout());</span>
+<span class="nc" id="L96">        final JPanel ioArea = new JPanel(new FlowLayout());</span>
 
-<span class="nc" id="L97">        final JLabel inputLabel = new JLabel(getBundleString(&quot;spamschutz.ui.input&quot;));</span>
-<span class="nc" id="L98">        inputLabel.setDisplayedMnemonic(getBundleString(&quot;spamschutz.ui.input.mnemonic&quot;).charAt(0));</span>
-<span class="nc" id="L99">        inputLabel.setLabelFor(input);</span>
-<span class="nc" id="L100">        ioArea.add(inputLabel);</span>
-<span class="nc" id="L101">        ioArea.add(input);</span>
+<span class="nc" id="L98">        final JLabel inputLabel = new JLabel(getBundleString(&quot;spamschutz.ui.input&quot;));</span>
+<span class="nc" id="L99">        inputLabel.setDisplayedMnemonic(getBundleString(&quot;spamschutz.ui.input.mnemonic&quot;).charAt(0));</span>
+<span class="nc" id="L100">        inputLabel.setLabelFor(input);</span>
+<span class="nc" id="L101">        ioArea.add(inputLabel);</span>
+<span class="nc" id="L102">        ioArea.add(input);</span>
 
-<span class="nc" id="L103">        final JLabel outputLabel = new JLabel(getBundleString(&quot;spamschutz.ui.output&quot;));</span>
-<span class="nc" id="L104">        outputLabel.setDisplayedMnemonic(getBundleString(&quot;spamschutz.ui.output.mnemonic&quot;).charAt(0));</span>
-<span class="nc" id="L105">        outputLabel.setLabelFor(output);</span>
-<span class="nc" id="L106">        ioArea.add(outputLabel);</span>
-<span class="nc" id="L107">        ioArea.add(output);</span>
+<span class="nc" id="L104">        final JLabel outputLabel = new JLabel(getBundleString(&quot;spamschutz.ui.output&quot;));</span>
+<span class="nc" id="L105">        outputLabel.setDisplayedMnemonic(getBundleString(&quot;spamschutz.ui.output.mnemonic&quot;).charAt(0));</span>
+<span class="nc" id="L106">        outputLabel.setLabelFor(output);</span>
+<span class="nc" id="L107">        ioArea.add(outputLabel);</span>
+<span class="nc" id="L108">        ioArea.add(output);</span>
 
         // window layout
-<span class="nc" id="L110">        this.setLayout(new BorderLayout());</span>
-<span class="nc" id="L111">        this.add(buttonArea, BorderLayout.NORTH);</span>
-<span class="nc" id="L112">        this.add(ioArea, BorderLayout.CENTER);</span>
+<span class="nc" id="L111">        this.setLayout(new BorderLayout());</span>
+<span class="nc" id="L112">        this.add(buttonArea, BorderLayout.NORTH);</span>
+<span class="nc" id="L113">        this.add(ioArea, BorderLayout.CENTER);</span>
 
-<span class="nc" id="L114">        final JButton end = new JButton(getBundleString(&quot;spamschutz.ui.end&quot;));</span>
-<span class="nc" id="L115">        end.setMnemonic(getBundleString(&quot;spamschutz.ui.end.mnemonic&quot;).charAt(0));</span>
-<span class="nc" id="L116">        end.addActionListener(e -&gt; System.exit(0));</span>
-<span class="nc" id="L117">        buttonArea.add(end);</span>
-<span class="nc" id="L118">        buttonArea.add(help);</span>
-<span class="nc" id="L119">        this.setVisible(true);</span>
-<span class="nc" id="L120">    }</span>
+<span class="nc" id="L115">        final JButton end = new JButton(getBundleString(&quot;spamschutz.ui.end&quot;));</span>
+<span class="nc" id="L116">        end.setMnemonic(getBundleString(&quot;spamschutz.ui.end.mnemonic&quot;).charAt(0));</span>
+<span class="nc" id="L117">        end.addActionListener(e -&gt; System.exit(0));</span>
+<span class="nc" id="L118">        buttonArea.add(end);</span>
+<span class="nc" id="L119">        buttonArea.add(help);</span>
+<span class="nc" id="L120">        this.setVisible(true);</span>
+<span class="nc" id="L121">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
