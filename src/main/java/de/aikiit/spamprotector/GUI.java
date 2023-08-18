@@ -60,7 +60,7 @@ class GUI extends JPanel {
         help.addActionListener(e -> JOptionPane.showMessageDialog(null, getParameterizedBundleString("spamschutz.ui.help.text",
                         String.valueOf(now.getYear()),
                         // TODO remove me, once #94 is resolved
-                        "de.aikiit.spamprotector.util.Version.VERSION"),
+                        de.aikiit.spamprotector.util.Version.VERSION),
                 getBundleString("spamschutz.ui.help.title"),
                 JOptionPane.INFORMATION_MESSAGE));
 

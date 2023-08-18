@@ -6,8 +6,11 @@
 // how to integrate properties - https://github.com/jbangdev/jbang/issues/1665
 //FILES ../../../../resources/spamprotector.properties
 //FILES ../../../../resources/spamprotector_en.properties
-// https://github.com/jbangdev/jbang/issues/1666 - adding as file not working
-//SOURCEs ../../../../resources/Version.java
+// https://github.com/jbangdev/jbang/issues/1666 - adding as file is not working
+
+// #94: including as SOURCE yields compile error as package does not seem to match
+/*SOURCEs ../../../../resources/Version.java */
+/* FILES de.aikiit.spamprotector.util.Version.java=../../../../resources/Version.java */
 
 /**
  * SpamSchutz - simple way to protect your mail addresses from naïve spammers
