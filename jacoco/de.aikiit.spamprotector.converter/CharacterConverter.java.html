@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="de"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CharacterConverter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SpamSchutz - simple way to protect your mail addresses from naïve spammers</a> &gt; <a href="index.source.html" class="el_package">de.aikiit.spamprotector.converter</a> &gt; <span class="el_source">CharacterConverter.java</span></div><h1>CharacterConverter.java</h1><pre class="source lang-java linenums">/**
- * SpamSchutz - simple way to protect your mail addresses from naïve spammers
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="de"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CharacterConverter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SpamSchutz - simple way to protect your mail adresses from naïve spammers</a> &gt; <a href="index.source.html" class="el_package">de.aikiit.spamprotector.converter</a> &gt; <span class="el_source">CharacterConverter.java</span></div><h1>CharacterConverter.java</h1><pre class="source lang-java linenums">/**
+ * SpamSchutz - simple way to protect your mail adresses from naiive spammers
  * Copyright (C) 2011, Aiki IT
  * &lt;p/&gt;
  * This program is free software: you can redistribute it and/or modify
@@ -17,15 +17,15 @@
  */
 package de.aikiit.spamprotector.converter;
 
-import lombok.Getter;
-
 /**
  * Encapsulates the character conversion logics.
  * Each changeable character is represented by an enumeration instance and
  * allows conversion from/to the encoded value.
+ *
+ * @author hirsch
+ * @version 2015-12-04, 21:34
  */
-<span class="fc" id="L27">@Getter</span>
-public enum CharacterConverter {
+<span class="fc" id="L28">public enum CharacterConverter {</span>
 
 <span class="fc" id="L30">    SPACE(&quot; &quot;, &quot;&amp;nbsp;&quot;), //</span>
 <span class="fc" id="L31">    EXCLAMATION_MARK(&quot;!&quot;, &quot;&amp;#33;&quot;), //</span>
@@ -125,13 +125,27 @@ public enum CharacterConverter {
     //
     ;
 
-<span class="fc" id="L128">    private final String plain;</span>
-<span class="fc" id="L129">    private final String replacement;</span>
+    private final String plain;
+    private final String replacement;
 
 <span class="fc" id="L131">    CharacterConverter(final String plain, final String placement) {</span>
 <span class="fc" id="L132">        this.plain = plain;</span>
 <span class="fc" id="L133">        this.replacement = placement;</span>
 <span class="fc" id="L134">    }</span>
+
+    /**
+     * @return the plain/not encoded value of that character.
+     */
+    public String getPlain() {
+<span class="fc" id="L140">        return plain;</span>
+    }
+
+    /**
+     * @return the encoded value of that character.
+     */
+    public String getReplacement() {
+<span class="fc" id="L147">        return replacement;</span>
+    }
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
