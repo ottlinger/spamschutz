@@ -110,8 +110,7 @@
     </dependency>
   </dependencies>
   <build>
-    <defaultGoal>clean versions:display-dependency-updates versions:display-plugin-updates enforcer:display-info
-            install org.pitest:pitest-maven:mutationCoverage
+    <defaultGoal>clean versions:display-dependency-updates versions:display-plugin-updates install org.pitest:pitest-maven:mutationCoverage
         </defaultGoal>
     <extensions>
       <extension>
