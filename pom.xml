@@ -256,6 +256,8 @@
               <exclude>webpage/**</exclude>
               <exclude>webpage/**/*</exclude>
               <exclude>webpage/*</exclude>
+              <!-- remove after 0.16 is used -->
+              <exclude>**/.mvn/**</exclude>
               <exclude>**/out*/**</exclude>
               <exclude>**/site*/**</exclude>
               <exclude>**/*.log</exclude>
