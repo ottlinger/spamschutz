@@ -3,7 +3,7 @@
 
 [![Github Action master branch status](https://github.com/ottlinger/spamschutz/actions/workflows/maven.yml/badge.svg?branch=master)](https://github.com/ottlinger/spamschutz/actions)
 
-[![codecov.io](http://codecov.io/github/ottlinger/spamschutz/coverage.svg?branch=master)](http://codecov.io/github/ottlinger/spamschutz?branch=master)
+[![codecov.io](https://codecov.io/github/ottlinger/spamschutz/coverage.svg?branch=master)](https://codecov.io/github/ottlinger/spamschutz?branch=master)
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/93ad105bf87d4261a5fca994c4d56af3)](https://www.codacy.com/gh/ottlinger/spamschutz/dashboard)
 https://github.com/users/ottlinger/projects/2
