@@ -205,6 +205,10 @@
           </executions>
         </plugin>
         <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>3.1.1</version>
+        </plugin>
+        <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-enforcer-plugin</artifactId>
           <version>3.4.1</version>
@@ -256,20 +260,12 @@
               <exclude>webpage/**</exclude>
               <exclude>webpage/**/*</exclude>
               <exclude>webpage/*</exclude>
-              <!-- remove after 0.16 is used -->
-              <exclude>**/.mvn/**</exclude>
               <exclude>**/out*/**</exclude>
               <exclude>**/site*/**</exclude>
               <exclude>**/*.log</exclude>
               <exclude>**/.checkstyle/**/*</exclude>
               <exclude>**/.gitignore</exclude>
             </excludes>
-            <!-- approve GPL3 license -->
-            <licenseFamilies>
-              <licenseFamily implementation="org.apache.rat.license.GPL3LicenseFamily">
-                <familyName>GNU General Public License, version 3</familyName>
-              </licenseFamily>
-            </licenseFamilies>
           </configuration>
         </plugin>
         <plugin>
