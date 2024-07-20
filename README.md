@@ -32,11 +32,11 @@ If you want to run this programme as a standalone application, perform the follo
 
   * Get your Maven up'n'running, JDK version >=11
   * Download the sources of spamschutz
-  * run ```mvn clean install -Plive-demo``` to launch the application
+  * run ```./mvnw clean install -Plive-demo``` to launch the application
 
 A different possibility is to launch the combined uberJAR:
 
-  * ```mvn clean install```
+  * ```./mvnw clean install```
   * ```java -jar target/spamschutz-1.1.0-SNAPSHOT-executable.jar``` - please adapt the version number
 
 ### Localization
@@ -45,7 +45,7 @@ Relates to [issue #22](../../issues/22)
 
   As of now the application can be localized (at the moment only German and English are supported). Use the following parameters to explicitly set language and country or trust your system defaults:
 ```bash
-mvn -Plive-demo -Duser.language=en -Duser.country=US
+./mvnw -Plive-demo -Duser.language=en -Duser.country=US
 ```
 
 ## Reports
