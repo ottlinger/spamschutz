@@ -27,15 +27,25 @@ import lombok.Getter;
 @Getter
 public enum CharacterConverter {
 
+    /** Space */
     SPACE(" ", "&nbsp;"), //
+    /** Exclamation mark */
     EXCLAMATION_MARK("!", "&#33;"), //
+    /** Quotation */
     QUOTE("\"", "&#34;"), //
+    /** Hash */
     HASH("#", "&#35;"), //
+    /** Dollar sign */
     DOLLAR("$", "&#36;"), //
+    /** Percent */
     PERCENT("%", "&#37;"), //
+    /** Ampersand */
     AMPERSAND("&", "&amp;"), //
+    /** Single quotation */
     SINGLE_QUOTE("\'", "&#39;"), //
+    /** Left bracket */
     LEFT_BRACKET("(", "&#40;"), //
+    /** Right bracket */
     RIGHT_BRACKET(")", "&#41;"), //
     ASTERISK("*", "&#42;"), //
     PLUS("+", "&#43;"), //
