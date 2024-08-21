@@ -81,11 +81,17 @@ public enum CharacterConverter {
     NINE("9", "&#57;"), //
     /** Colon */
     COLON(":", "&#58;"), //
+    /** Semicolon */
     SEMICOLON(";", "&#59;"), //
+    /** Less than */
     LT("<", "&#60;"), //
+    /** Equal sign */
     EQUAL("=", "&#61;"), //
+    /** Greater than */
     GT(">", "&#62;"), //
+    /** Question mark */
     QUESTION_MARK("?", "&#63;"), //
+    /** AT sign */
     AT("@", "&#64;"), //
     CAPITAL_A("A", "&#65;"), //
     CAPITAL_B("B", "&#66;"), //
