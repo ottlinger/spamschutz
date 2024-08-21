@@ -47,22 +47,39 @@ public enum CharacterConverter {
     LEFT_BRACKET("(", "&#40;"), //
     /** Right bracket */
     RIGHT_BRACKET(")", "&#41;"), //
+    /** Asterisk */
     ASTERISK("*", "&#42;"), //
+    /** Plus sign */
     PLUS("+", "&#43;"), //
+    /** Comma */
     COMMA(",", "&#44;"), //
+    /** Minus sign */
     MINUS("-", "&#45;"), //
+    /** Plain dot */
     DOT(".", "&#46;"), //
+    /** Single slash */
     SLASH("/", "&#47;"), //
+    /** Number 0 */
     ZERO("0", "&#48;"), //
+    /** Number 1 */
     ONE("1", "&#49;"), //
+    /** Number 2 */
     TWO("2", "&#50;"), //
+    /** Number 3 */
     THREE("3", "&#51;"), //
+    /** Number 4 */
     FOUR("4", "&#52;"), //
+    /** Number 5 */
     FIVE("5", "&#53;"), //
+    /** Number 6 */
     SIX("6", "&#54;"), //
+    /** Number 7 */
     SEVEN("7", "&#55;"), //
+    /** Number 8 */
     EIGHT("8", "&#56;"), //
+    /** Number 9 */
     NINE("9", "&#57;"), //
+    /** Colon */
     COLON(":", "&#58;"), //
     SEMICOLON(";", "&#59;"), //
     LT("<", "&#60;"), //
