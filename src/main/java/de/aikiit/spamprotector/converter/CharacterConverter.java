@@ -93,37 +93,69 @@ public enum CharacterConverter {
     QUESTION_MARK("?", "&#63;"), //
     /** AT sign */
     AT("@", "&#64;"), //
+    /** A */
     CAPITAL_A("A", "&#65;"), //
+    /** B */
     CAPITAL_B("B", "&#66;"), //
+    /** C */
     CAPITAL_C("C", "&#67;"), //
+    /** D */
     CAPITAL_D("D", "&#68;"), //
+    /** E */
     CAPITAL_E("E", "&#69;"), //
+    /** F */
     CAPITAL_F("F", "&#70;"), //
+    /** G */
     CAPITAL_G("G", "&#71;"), //
+    /** H */
     CAPITAL_H("H", "&#72;"), //
+    /** I */
     CAPITAL_I("I", "&#73;"), //
+    /** J */
     CAPITAL_J("J", "&#74;"), //
+    /** K */
     CAPITAL_K("K", "&#75;"), //
+    /** L */
     CAPITAL_L("L", "&#76;"), //
+    /** M */
     CAPITAL_M("M", "&#77;"), //
+    /** N */
     CAPITAL_N("N", "&#78;"), //
+    /** O */
     CAPITAL_O("O", "&#79;"), //
+    /** P */
     CAPITAL_P("P", "&#80;"), //
+    /** Q */
     CAPITAL_Q("Q", "&#81;"), //
+    /** R */
     CAPITAL_R("R", "&#82;"), //
+    /** S */
     CAPITAL_S("S", "&#83;"), //
+    /** T */
     CAPITAL_T("T", "&#84;"), //
+    /** U */
     CAPITAL_U("U", "&#85;"), //
+    /** V */
     CAPITAL_V("V", "&#86;"), //
+    /** W */
     CAPITAL_W("W", "&#87;"), //
+    /** X */
     CAPITAL_X("X", "&#88;"), //
+    /** Y */
     CAPITAL_Y("Y", "&#89;"), //
+    /** Z */
     CAPITAL_Z("Z", "&#90;"), //
+    /** [ */
     LEFT_SQUARE_BRACKET("[", "&#91;"), //
+    /** Backslash */
     BACKSLASH("\\", "&#92;"), //
+    /** ] */
     RIGHT_SQUARE_BRACKET("]", "&#93;"), //
+    /** Circumflex */
     CIRCUMFLEX("^", "&#94;"), //
+    /** Underscore */
     UNDERSCORE("_", "&#95;"), //
+    /** Tick */
     TICK("`", "&#96;"), //
     A("a", "&#97;"), //
     B("b", "&#98;"), //
