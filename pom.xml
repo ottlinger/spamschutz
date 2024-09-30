@@ -57,7 +57,7 @@
   <properties>
     <logger.version>3.0.0-beta2</logger.version>
     <junit.version>4.13.2</junit.version>
-    <mockito.version>5.13.0</mockito.version>
+    <mockito.version>5.14.1</mockito.version>
     <lombok.version>1.18.34</lombok.version>
     <javadoc.version>3.10.0</javadoc.version>
     <surefire.version>3.5.0</surefire.version>
