@@ -137,6 +137,24 @@
     </resources>
     <pluginManagement>
       <plugins>
+        <!-- Use ./mvnw apache-whisker:generate to generate a combined LICENSE under target locally -->
+        <!--plugin>
+          <groupId>org.apache.creadur.whisker</groupId>
+          <artifactId>apache-whisker-maven-plugin</artifactId>
+          <version>0.2-SNAPSHOT</version>
+          <executions>
+            <execution>
+              <id>generate-stuff</id>
+              <phase>package</phase>
+              <goals>
+                <goal>generate</goal>
+              </goals>
+            </execution>
+          </executions>
+          <configuration>
+            <descriptor>spamschutz-whisker-descriptor.xml</descriptor>
+          </configuration>
+        </plugin-->
         <plugin>
           <groupId>com.github.spotbugs</groupId>
           <artifactId>spotbugs-maven-plugin</artifactId>
