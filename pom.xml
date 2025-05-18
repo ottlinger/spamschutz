@@ -575,6 +575,17 @@
   </build>
   <reporting>
     <plugins>
+      <plugin>
+        <groupId>org.pitest</groupId>
+        <artifactId>pitest-maven</artifactId>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>report</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
       <!-- Licence compliance for GPL -->
       <plugin>
         <groupId>org.apache.rat</groupId>
