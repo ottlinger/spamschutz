@@ -79,6 +79,7 @@ public final class LocalizationHelper {
     }
 
     /**
+     * Return current application locale.
      * @return the currently set Locale of this application. Fallback is Locale.GERMANY.
      */
     public static Locale getLocale() {
@@ -90,6 +91,7 @@ public final class LocalizationHelper {
     }
 
     /**
+     * Return currently set language.
      * @return the currently set language
      */
     public static String getLanguage() {
