@@ -507,6 +507,8 @@
           </execution>
         </executions>
         <configuration>
+          <!-- 20250905: https://github.com/apache/maven-javadoc-plugin/issues/1258 -->
+          <detectOfflineLinks>false</detectOfflineLinks>
           <source>8</source>
           <encoding>${encoding.utf8}</encoding>
         </configuration>
