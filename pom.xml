@@ -58,8 +58,8 @@
     <logger.version>3.0.0-beta2</logger.version>
     <junit.version>4.13.2</junit.version>
     <mockito.version>5.19.0</mockito.version>
-    <lombok.version>1.18.42</lombok.version>
-    <javadoc.version>3.11.2</javadoc.version>
+    <lombok.version>1.18.38</lombok.version>
+    <javadoc.version>3.11.3</javadoc.version>
     <surefire.version>3.5.4</surefire.version>
     <rat.version>0.16.1</rat.version>
     <guava.version>33.4.8-jre</guava.version>
@@ -507,8 +507,8 @@
           </execution>
         </executions>
         <configuration>
-          <source>8</source>
-          <encoding>${encoding.utf8}</encoding>
+          <!-- 20250905: https://github.com/apache/maven-javadoc-plugin/issues/1258 -->
+          <detectOfflineLinks>false</detectOfflineLinks>
         </configuration>
       </plugin>
       <plugin>
@@ -583,19 +583,13 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>${javadoc.version}</version>
-        <configuration>
-          <encoding>${encoding.utf8}</encoding>
-          <source>8</source>
-        </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jxr-plugin</artifactId>
         <version>3.6.0</version>
         <configuration>
-          <aggregate>true</aggregate>
           <linkJavadoc>true</linkJavadoc>
-          <encoding>${encoding.utf8}</encoding>
         </configuration>
       </plugin>
       <plugin>
@@ -608,7 +602,6 @@
         <version>3.27.0</version>
         <configuration>
           <linkXRef>true</linkXRef>
-          <sourceEncoding>${encoding.utf8}</sourceEncoding>
           <minimumTokens>100</minimumTokens>
           <targetJdk>1.8</targetJdk>
           <excludes>
@@ -633,19 +626,39 @@
         <artifactId>taglist-maven-plugin</artifactId>
         <version>3.2.1</version>
         <configuration>
-          <encoding>${encoding.utf8}</encoding>
-          <tags>
-            <tag>TODO</tag>
-            <tag>todo</tag>
-            <tag>FIXME</tag>
-            <tag>fixme</tag>
-            <tag>REFACTOR</tag>
-            <tag>refactor</tag>
-            <tag>REVIEW</tag>
-            <tag>review</tag>
-            <tag>@todo</tag>
-            <tag>@deprecated</tag>
-          </tags>
+            <tagListOptions>
+                <tagClasses>
+                    <tagClass>
+                        <displayName>Known issues / Things to be done</displayName>
+                        <tags>
+                            <tag>
+                                <matchString>todo</matchString>
+                                <matchType>ignoreCase</matchType>
+                            </tag>
+                            <tag>
+                                <matchString>review</matchString>
+                                <matchType>ignoreCase</matchType>
+                            </tag>
+                            <tag>
+                                <matchString>refactor</matchString>
+                                <matchType>ignoreCase</matchType>
+                            </tag>
+                            <tag>
+                                <matchString>hackalert</matchString>
+                                <matchType>ignoreCase</matchType>
+                            </tag>
+                            <tag>
+                                <matchString>FIXME</matchString>
+                                <matchType>ignoreCase</matchType>
+                            </tag>
+                            <tag>
+                                <matchString>@deprecated</matchString>
+                                <matchType>exact</matchType>
+                            </tag>
+                        </tags>
+                    </tagClass>
+                </tagClasses>
+            </tagListOptions>
         </configuration>
       </plugin>
       <plugin>
