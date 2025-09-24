@@ -591,9 +591,7 @@
         <artifactId>maven-jxr-plugin</artifactId>
         <version>3.6.0</version>
         <configuration>
-          <aggregate>true</aggregate>
           <linkJavadoc>true</linkJavadoc>
-          <encoding>${encoding.utf8}</encoding>
         </configuration>
       </plugin>
       <plugin>
@@ -606,7 +604,6 @@
         <version>3.27.0</version>
         <configuration>
           <linkXRef>true</linkXRef>
-          <sourceEncoding>${encoding.utf8}</sourceEncoding>
           <minimumTokens>100</minimumTokens>
           <targetJdk>1.8</targetJdk>
           <excludes>
@@ -631,19 +628,39 @@
         <artifactId>taglist-maven-plugin</artifactId>
         <version>3.2.1</version>
         <configuration>
-          <encoding>${encoding.utf8}</encoding>
-          <tags>
-            <tag>TODO</tag>
-            <tag>todo</tag>
-            <tag>FIXME</tag>
-            <tag>fixme</tag>
-            <tag>REFACTOR</tag>
-            <tag>refactor</tag>
-            <tag>REVIEW</tag>
-            <tag>review</tag>
-            <tag>@todo</tag>
-            <tag>@deprecated</tag>
-          </tags>
+            <tagListOptions>
+                <tagClasses>
+                    <tagClass>
+                        <displayName>Known issues / Things to be done</displayName>
+                        <tags>
+                            <tag>
+                                <matchString>todo</matchString>
+                                <matchType>ignoreCase</matchType>
+                            </tag>
+                            <tag>
+                                <matchString>review</matchString>
+                                <matchType>ignoreCase</matchType>
+                            </tag>
+                            <tag>
+                                <matchString>refactor</matchString>
+                                <matchType>ignoreCase</matchType>
+                            </tag>
+                            <tag>
+                                <matchString>hackalert</matchString>
+                                <matchType>ignoreCase</matchType>
+                            </tag>
+                            <tag>
+                                <matchString>FIXME</matchString>
+                                <matchType>ignoreCase</matchType>
+                            </tag>
+                            <tag>
+                                <matchString>@deprecated</matchString>
+                                <matchType>exact</matchType>
+                            </tag>
+                        </tags>
+                    </tagClass>
+                </tagClasses>
+            </tagListOptions>
         </configuration>
       </plugin>
       <plugin>
