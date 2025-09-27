@@ -60,7 +60,7 @@ public final class SpamProtector {
                     String prefix = entry.getKey();
                     if (toTransform.startsWith(prefix)) {
                         result.append(entry.getValue().getPlain());
-                        toTransform = toTransform.substring(prefix.length(), toTransform.length());
+                        toTransform = toTransform.substring(prefix.length());
                     }
                 }
 

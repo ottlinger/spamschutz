@@ -93,63 +93,63 @@ public enum CharacterConverter {
     QUESTION_MARK("?", "&#63;"), //
     /** AT sign */
     AT("@", "&#64;"), //
-    /** A */
+    /** Capital A */
     CAPITAL_A("A", "&#65;"), //
-    /** B */
+    /** Capital B */
     CAPITAL_B("B", "&#66;"), //
-    /** C */
+    /** Capital C */
     CAPITAL_C("C", "&#67;"), //
-    /** D */
+    /** Capital D */
     CAPITAL_D("D", "&#68;"), //
-    /** E */
+    /** Capital E */
     CAPITAL_E("E", "&#69;"), //
-    /** F */
+    /** Capital F */
     CAPITAL_F("F", "&#70;"), //
-    /** G */
+    /** Capital G */
     CAPITAL_G("G", "&#71;"), //
-    /** H */
+    /** Capital H */
     CAPITAL_H("H", "&#72;"), //
-    /** I */
+    /** Capital I */
     CAPITAL_I("I", "&#73;"), //
-    /** J */
+    /** Capital J */
     CAPITAL_J("J", "&#74;"), //
-    /** K */
+    /** Capital K */
     CAPITAL_K("K", "&#75;"), //
-    /** L */
+    /** Capital L */
     CAPITAL_L("L", "&#76;"), //
-    /** M */
+    /** Capital M */
     CAPITAL_M("M", "&#77;"), //
-    /** N */
+    /** Capital N */
     CAPITAL_N("N", "&#78;"), //
-    /** O */
+    /** Capital O */
     CAPITAL_O("O", "&#79;"), //
-    /** P */
+    /** Capital P */
     CAPITAL_P("P", "&#80;"), //
-    /** Q */
+    /** Capital Q */
     CAPITAL_Q("Q", "&#81;"), //
-    /** R */
+    /** Capital R */
     CAPITAL_R("R", "&#82;"), //
-    /** S */
+    /** Capital S */
     CAPITAL_S("S", "&#83;"), //
-    /** T */
+    /** Capital T */
     CAPITAL_T("T", "&#84;"), //
-    /** U */
+    /** Capital U */
     CAPITAL_U("U", "&#85;"), //
-    /** V */
+    /** Capital V */
     CAPITAL_V("V", "&#86;"), //
-    /** W */
+    /** Capital W */
     CAPITAL_W("W", "&#87;"), //
-    /** X */
+    /** Capital X */
     CAPITAL_X("X", "&#88;"), //
-    /** Y */
+    /** Capital Y */
     CAPITAL_Y("Y", "&#89;"), //
-    /** Z */
+    /** Capital Z */
     CAPITAL_Z("Z", "&#90;"), //
-    /** [ */
+    /** "[" */
     LEFT_SQUARE_BRACKET("[", "&#91;"), //
     /** Backslash */
     BACKSLASH("\\", "&#92;"), //
-    /** ] */
+    /** "]" */
     RIGHT_SQUARE_BRACKET("]", "&#93;"), //
     /** Circumflex */
     CIRCUMFLEX("^", "&#94;"), //
@@ -157,63 +157,63 @@ public enum CharacterConverter {
     UNDERSCORE("_", "&#95;"), //
     /** Tick */
     TICK("`", "&#96;"), //
-    /** a */
+    /** Small a */
     A("a", "&#97;"), //
-    /** b */
+    /** Small b */
     B("b", "&#98;"), //
-    /** c */
+    /** Small c */
     C("c", "&#99;"), //
-    /** d */
+    /** Small d */
     D("d", "&#100;"), //
-    /** e */
+    /** Small e */
     E("e", "&#101;"), //
-    /** f */
+    /** Small f */
     F("f", "&#102;"), //
-    /** g */
+    /** Small g */
     G("g", "&#103;"), //
-    /** h */
+    /** Small h */
     H("h", "&#104;"), //
-    /** i */
+    /** Small i */
     I("i", "&#105;"), //
-    /** j */
+    /** Small j */
     J("j", "&#106;"), //
-    /** k */
+    /** Small k */
     K("k", "&#107;"), //
-    /** l */
+    /** Small l */
     L("l", "&#108;"), //
-    /** m */
+    /** Small m */
     M("m", "&#109;"), //
-    /** n */
+    /** Small n */
     N("n", "&#110;"), //
-    /** o */
+    /** Small o */
     O("o", "&#111;"), //
-    /** p */
+    /** Small p */
     P("p", "&#112;"), //
-    /** q */
+    /** Small q */
     Q("q", "&#113;"), //
-    /** r */
+    /** Small r */
     R("r", "&#114;"), //
-    /** s */
+    /** Small s */
     S("s", "&#115;"), //
-    /** t */
+    /** Small t */
     T("t", "&#116;"), //
-    /** u */
+    /** Small u */
     U("u", "&#117;"), //
-    /** v */
+    /** Small v */
     V("v", "&#118;"), //
-    /** w */
+    /** Small w */
     W("w", "&#119;"), //
-    /** x */
+    /** Small x */
     X("x", "&#120;"), //
-    /** y */
+    /** Small y */
     Y("y", "&#121;"), //
-    /** z */
+    /** Small z */
     Z("z", "&#122;"), //
-    /** { */
+    /** "{" */
     LEFT_CURLY_BRACKET("{", "&#123;"), //
     /** Pipe */
     PIPE("|", "&#124;"), //
-    /** } */
+    /** "}" */
     RIGHT_CURLY_BRACKET("}", "&#125;"), //
     /** Tilde */
     TILDE("~", "&#126;"), //
