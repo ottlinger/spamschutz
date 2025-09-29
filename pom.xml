@@ -16,7 +16,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.aikiit</groupId>
   <artifactId>spamschutz</artifactId>
@@ -55,19 +55,30 @@
     <url>https://github.com/ottlinger/spamschutz</url>
   </scm>
   <properties>
-    <logger.version>3.0.0-beta2</logger.version>
+    <logger.version>3.0.0-beta3</logger.version>
     <junit.version>4.13.2</junit.version>
-    <mockito.version>5.19.0</mockito.version>
+    <mockito.version>5.20.0</mockito.version>
     <lombok.version>1.18.42</lombok.version>
-    <javadoc.version>3.11.2</javadoc.version>
+    <javadoc.version>3.12.0</javadoc.version>
     <surefire.version>3.5.4</surefire.version>
     <rat.version>0.16.1</rat.version>
-    <guava.version>33.4.8-jre</guava.version>
+    <guava.version>33.5.0-jre</guava.version>
     <encoding.utf8>UTF-8</encoding.utf8>
-    <shade.version>3.6.0</shade.version>
+    <shade.version>3.6.1</shade.version>
     <project.reporting.outputEncoding>${encoding.utf8}</project.reporting.outputEncoding>
     <project.build.sourceEncoding>${encoding.utf8}</project.build.sourceEncoding>
   </properties>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-bom</artifactId>
+        <version>${logger.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>org.apache.maven.skins</groupId>
@@ -101,18 +112,26 @@
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-core</artifactId>
-      <version>${logger.version}</version>
     </dependency>
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-1.2-api</artifactId>
-      <version>${logger.version}</version>
-    </dependency>
+      <dependency>
+          <groupId>org.apache.logging.log4j</groupId>
+          <artifactId>log4j-layout-template-json</artifactId>
+          <scope>runtime</scope>
+      </dependency>
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-api</artifactId>
-      <version>${logger.version}</version>
     </dependency>
+      <dependency>
+          <groupId>org.apache.logging.log4j</groupId>
+          <artifactId>log4j-slf4j2-impl</artifactId>
+          <scope>runtime</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+          <version>2.1.0-alpha1</version>
+      </dependency>
   </dependencies>
   <build>
     <defaultGoal>clean versions:display-dependency-updates versions:display-plugin-updates install org.pitest:pitest-maven:mutationCoverage
@@ -611,9 +630,7 @@
         <artifactId>maven-jxr-plugin</artifactId>
         <version>3.6.0</version>
         <configuration>
-          <aggregate>true</aggregate>
           <linkJavadoc>true</linkJavadoc>
-          <encoding>${encoding.utf8}</encoding>
         </configuration>
       </plugin>
       <plugin>
@@ -626,16 +643,14 @@
         <version>3.27.0</version>
         <configuration>
           <linkXRef>true</linkXRef>
-          <sourceEncoding>${encoding.utf8}</sourceEncoding>
           <minimumTokens>100</minimumTokens>
-          <targetJdk>1.8</targetJdk>
+          <targetJdk>11</targetJdk>
           <excludes>
             <exclude>**/generated/**/*.java</exclude>
             <exclude>**/target/clover/**/*.java</exclude>
           </excludes>
         </configuration>
       </plugin>
-      <!-- jdepend plugin -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>jdepend-maven-plugin</artifactId>
@@ -650,7 +665,6 @@
           </providerImplementations>
         </configuration>
       </plugin>
-      <!-- catch code tags -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>taglist-maven-plugin</artifactId>
