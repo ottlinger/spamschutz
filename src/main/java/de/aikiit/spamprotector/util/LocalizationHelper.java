@@ -63,14 +63,14 @@ public final class LocalizationHelper {
         String userLanguage = System.getProperty("user.language");
         String userCountry = System.getProperty("user.country");
 
-        LOG.info(String.format("Your system emits the following l10n-properties: language=%s, country=%s", userLanguage, userCountry));
+        LOG.info("Your system emits the following l10n-properties: language={}, country={}", userLanguage, userCountry);
 
         if (Strings.isNullOrEmpty(userLanguage) || Strings.isNullOrEmpty(userCountry)) {
             LOCALE = FALLBACK_LOCALE;
-            LOG.info("Falling back to locale " + LOCALE);
+            LOG.info("Falling back to locale {}", LOCALE);
         } else {
             LOCALE = new Locale(userLanguage, userCountry);
-            LOG.info("Setting locale to " + LOCALE);
+            LOG.info("Setting locale to {}", LOCALE);
         }
 
         BUNDLE = ResourceBundle.getBundle(BASE_NAME, LOCALE);
@@ -107,11 +107,11 @@ public final class LocalizationHelper {
      * @return Returns the value from the bundle.
      */
     public static String getBundleString(final String key) {
-        LOG.debug("Retrieving key " + key);
+        LOG.debug("Retrieving key {}", key);
         try {
             return BUNDLE.getString(key);
         } catch (MissingResourceException mre) {
-            LOG.error("Retrieving unknown key " + key + ". Please fix your property files.");
+            LOG.error("Retrieving unknown key {}. Please fix your property files.", key);
             return key;
         }
     }
@@ -130,7 +130,7 @@ public final class LocalizationHelper {
      * I18N-tutorial</a>
      */
     public static String getParameterizedBundleString(final String key, final Object... parameters) {
-        LOG.debug("Applying " + ((parameters == null) ? null : Arrays.toString(parameters)) + " parameters to " + key);
+        LOG.debug("Applying {} parameters to {}", (parameters == null) ? null : Arrays.toString(parameters), key);
         FORMAT.applyPattern(getBundleString(key));
         return FORMAT.format(parameters);
     }

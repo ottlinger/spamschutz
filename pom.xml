@@ -59,7 +59,7 @@
     <junit.version>4.13.2</junit.version>
     <mockito.version>5.20.0</mockito.version>
     <lombok.version>1.18.42</lombok.version>
-    <javadoc.version>3.12.0</javadoc.version>
+    <javadoc.version>3.11.3</javadoc.version>
     <surefire.version>3.5.4</surefire.version>
     <rat.version>0.16.1</rat.version>
     <guava.version>33.5.0-jre</guava.version>
@@ -537,8 +537,8 @@
           </execution>
         </executions>
         <configuration>
-          <source>8</source>
-          <encoding>${encoding.utf8}</encoding>
+          <!-- 20250905: https://github.com/apache/maven-javadoc-plugin/issues/1258 -->
+          <detectOfflineLinks>false</detectOfflineLinks>
         </configuration>
       </plugin>
       <plugin>
@@ -620,10 +620,6 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>${javadoc.version}</version>
-        <configuration>
-          <encoding>${encoding.utf8}</encoding>
-          <source>8</source>
-        </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -670,35 +666,39 @@
         <artifactId>taglist-maven-plugin</artifactId>
         <version>3.2.1</version>
         <configuration>
-          <tagListOptions>
-            <tagClasses>
-              <tagClass>
-                <displayName>Code Work</displayName>
-                <tags>
-                  <tag>
-                    <matchString>TODO</matchString>
-                    <matchType>ignoreCase</matchType>
-                  </tag>
-                  <tag>
-                    <matchString>FIXME</matchString>
-                    <matchType>ignoreCase</matchType>
-                  </tag>
-                  <tag>
-                    <matchString>REFACTOR</matchString>
-                    <matchType>ignoreCase</matchType>
-                  </tag>
-                  <tag>
-                    <matchString>REVIEW</matchString>
-                    <matchType>ignoreCase</matchType>
-                  </tag>
-                  <tag>
-                    <matchString>deprecated</matchString>
-                    <matchType>ignoreCase</matchType>
-                  </tag>
-                </tags>
-              </tagClass>
-            </tagClasses>
-          </tagListOptions>
+            <tagListOptions>
+                <tagClasses>
+                    <tagClass>
+                        <displayName>Known issues / Things to be done</displayName>
+                        <tags>
+                            <tag>
+                                <matchString>todo</matchString>
+                                <matchType>ignoreCase</matchType>
+                            </tag>
+                            <tag>
+                                <matchString>review</matchString>
+                                <matchType>ignoreCase</matchType>
+                            </tag>
+                            <tag>
+                                <matchString>refactor</matchString>
+                                <matchType>ignoreCase</matchType>
+                            </tag>
+                            <tag>
+                                <matchString>hackalert</matchString>
+                                <matchType>ignoreCase</matchType>
+                            </tag>
+                            <tag>
+                                <matchString>FIXME</matchString>
+                                <matchType>ignoreCase</matchType>
+                            </tag>
+                            <tag>
+                                <matchString>@deprecated</matchString>
+                                <matchType>exact</matchType>
+                            </tag>
+                        </tags>
+                    </tagClass>
+                </tagClasses>
+            </tagListOptions>
         </configuration>
       </plugin>
       <plugin>

@@ -1,17 +1,3 @@
-///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS org.projectlombok:lombok:1.18.28
-//DEPS com.google.guava:guava:32.1.2-jre
-//DEPS org.apache.logging.log4j:log4j-core:3.0.0-alpha1
-//SOURCES **
-// how to integrate properties - https://github.com/jbangdev/jbang/issues/1665
-//FILES ../../../../resources/spamprotector.properties
-//FILES ../../../../resources/spamprotector_en.properties
-// https://github.com/jbangdev/jbang/issues/1666 - adding as file is not working
-
-// #94: including as SOURCE yields compile error as package does not seem to match
-/*SOURCEs ../../../../resources/Version.java */
-/* FILES de.aikiit.spamprotector.util.Version.java=../../../../resources/Version.java */
-
 /**
  * SpamSchutz - simple way to protect your mail addresses from naïve spammers
  * Copyright (C) 2011, Aiki IT
@@ -29,7 +15,19 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+///usr/bin/env jbang "$0" "$@" ; exit $?
+//DEPS org.projectlombok:lombok:1.18.28
+//DEPS com.google.guava:guava:32.1.2-jre
+//DEPS org.apache.logging.log4j:log4j-core:3.0.0-alpha1
+//SOURCES **
+// how to integrate properties - https://github.com/jbangdev/jbang/issues/1665
+//FILES ../../../../resources/spamprotector.properties
+//FILES ../../../../resources/spamprotector_en.properties
+// https://github.com/jbangdev/jbang/issues/1666 - adding as file is not working
 
+// #94: including as SOURCE yields compile error as package does not seem to match
+/*SOURCEs ../../../../resources/Version.java */
+/* FILES de.aikiit.spamprotector.util.Version.java=../../../../resources/Version.java */
 
 package de.aikiit.spamprotector;
 
