@@ -18,43 +18,41 @@ specific language governing permissions and limitations
 under the License.
 -->
 <site xmlns="http://maven.apache.org/SITE/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SITE/2.0.0 https://maven.apache.org/xsd/site-2.0.0.xsd" name="SpamSchutz">
-    <skin>
-        <groupId>org.apache.maven.skins</groupId>
-        <artifactId>maven-fluido-skin</artifactId>
-        <!-- version is managed in pom.xml in order to be grabbed by dependabot -->
-    </skin>
-    <custom>
-        <fluidoSkin>
-            <topBarEnabled>true</topBarEnabled>
-            <topBarIcon>
-                <name>SpamSchutz logo</name>
-                <alt>SpamSchutz logo</alt>
-                <src>img/postal-horn-small.png</src>
-                <href>/index.html</href>
-            </topBarIcon>
-            <gitHub>
-                <projectId>ottlinger/spamschutz</projectId>
-                <ribbonOrientation>right</ribbonOrientation>
-                <ribbonColor>green</ribbonColor>
-            </gitHub>
-        </fluidoSkin>
-    </custom>
-    <!-- Position of publishing date and version information -->
-    <publishDate position="bottom" format="yyyy-MM-dd"/>
-
-    <!-- https://maven.apache.org/plugins/maven-site-plugin/examples/sitedescriptor.html -->
-    <version position="left"/>
-
-    <poweredBy>
-        <logo name="Maven" href="https://maven.apache.org/">
-            <image src="https://maven.apache.org/images/logos/maven-feather.png"/>
-        </logo>
-    </poweredBy>    <body>
-        <menu ref="parent" inherit="top"/>
-        <menu ref="reports" inherit="bottom"/>
-        <menu ref="modules" inherit="bottom"/>
-
-        <menu name="Reports" ref="reports">
+  <skin>
+    <groupId>org.apache.maven.skins</groupId>
+    <artifactId>maven-fluido-skin</artifactId>
+    <!-- version is managed in pom.xml in order to be grabbed by dependabot -->
+  </skin>
+  <custom>
+    <fluidoSkin>
+      <topBarEnabled>true</topBarEnabled>
+      <topBarIcon>
+        <name>SpamSchutz logo</name>
+        <alt>SpamSchutz logo</alt>
+        <src>img/postal-horn-small.png</src>
+        <href>/index.html</href>
+      </topBarIcon>
+      <gitHub>
+        <projectId>ottlinger/spamschutz</projectId>
+        <ribbonOrientation>right</ribbonOrientation>
+        <ribbonColor>green</ribbonColor>
+      </gitHub>
+    </fluidoSkin>
+  </custom>
+  <!-- Position of publishing date and version information -->
+  <publishDate position="bottom" format="yyyy-MM-dd"/>
+  <!-- https://maven.apache.org/plugins/maven-site-plugin/examples/sitedescriptor.html -->
+  <version position="left"/>
+  <poweredBy>
+    <logo name="Maven" href="https://maven.apache.org/">
+      <image src="https://maven.apache.org/images/logos/maven-feather.png"/>
+    </logo>
+  </poweredBy>
+  <body>
+    <menu ref="parent" inherit="top"/>
+    <menu ref="reports" inherit="bottom"/>
+    <menu ref="modules" inherit="bottom"/>
+    <menu name="Reports" ref="reports">
         </menu>
-    </body>
+  </body>
 </site>
