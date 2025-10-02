@@ -424,7 +424,7 @@
         <version>3.3.1</version>
         <configuration>
           <encoding>${encoding.utf8}</encoding>
-          <propertiesEncoding>${encoding.utf8}</propertiesEncoding>
+          <propertiesEncoding>ISO-8859-1</propertiesEncoding>
         </configuration>
         <executions>
           <execution>
