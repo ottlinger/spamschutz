@@ -26,6 +26,7 @@ under the License.
   <custom>
     <fluidoSkin>
       <topBarEnabled>true</topBarEnabled>
+      <navBarStyle>navbar-inverse</navBarStyle>
       <topBarIcon>
         <name>SpamSchutz logo</name>
         <alt>SpamSchutz logo</alt>
