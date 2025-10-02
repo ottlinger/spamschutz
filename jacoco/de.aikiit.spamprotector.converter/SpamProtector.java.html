@@ -60,7 +60,7 @@ public final class SpamProtector {
 <span class="fc" id="L60">                    String prefix = entry.getKey();</span>
 <span class="fc bfc" id="L61" title="All 2 branches covered.">                    if (toTransform.startsWith(prefix)) {</span>
 <span class="fc" id="L62">                        result.append(entry.getValue().getPlain());</span>
-<span class="fc" id="L63">                        toTransform = toTransform.substring(prefix.length(), toTransform.length());</span>
+<span class="fc" id="L63">                        toTransform = toTransform.substring(prefix.length());</span>
                     }
 <span class="fc" id="L65">                }</span>
 

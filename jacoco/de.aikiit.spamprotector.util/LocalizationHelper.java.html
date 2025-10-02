@@ -63,14 +63,14 @@ public final class LocalizationHelper {
 <span class="fc" id="L63">        String userLanguage = System.getProperty(&quot;user.language&quot;);</span>
 <span class="fc" id="L64">        String userCountry = System.getProperty(&quot;user.country&quot;);</span>
 
-<span class="fc" id="L66">        LOG.info(String.format(&quot;Your system emits the following l10n-properties: language=%s, country=%s&quot;, userLanguage, userCountry));</span>
+<span class="fc" id="L66">        LOG.info(&quot;Your system emits the following l10n-properties: language={}, country={}&quot;, userLanguage, userCountry);</span>
 
 <span class="pc bpc" id="L68" title="1 of 4 branches missed.">        if (Strings.isNullOrEmpty(userLanguage) || Strings.isNullOrEmpty(userCountry)) {</span>
 <span class="fc" id="L69">            LOCALE = FALLBACK_LOCALE;</span>
-<span class="fc" id="L70">            LOG.info(&quot;Falling back to locale &quot; + LOCALE);</span>
+<span class="fc" id="L70">            LOG.info(&quot;Falling back to locale {}&quot;, LOCALE);</span>
         } else {
 <span class="fc" id="L72">            LOCALE = new Locale(userLanguage, userCountry);</span>
-<span class="fc" id="L73">            LOG.info(&quot;Setting locale to &quot; + LOCALE);</span>
+<span class="fc" id="L73">            LOG.info(&quot;Setting locale to {}&quot;, LOCALE);</span>
         }
 
 <span class="fc" id="L76">        BUNDLE = ResourceBundle.getBundle(BASE_NAME, LOCALE);</span>
@@ -79,21 +79,23 @@ public final class LocalizationHelper {
 <span class="fc" id="L79">    }</span>
 
     /**
+     * Return current application locale.
      * @return the currently set Locale of this application. Fallback is Locale.GERMANY.
      */
     public static Locale getLocale() {
-<span class="pc bpc" id="L85" title="1 of 2 branches missed.">        if (LOCALE == null) {</span>
-<span class="nc" id="L86">            LOG.warn(&quot;Returning fallback Locale for Germany - please make sure you've configured your environment correctly via system properties 'user.country'/'user.language'.&quot;);</span>
-<span class="nc" id="L87">            return FALLBACK_LOCALE;</span>
+<span class="pc bpc" id="L86" title="1 of 2 branches missed.">        if (LOCALE == null) {</span>
+<span class="nc" id="L87">            LOG.warn(&quot;Returning fallback Locale for Germany - please make sure you've configured your environment correctly via system properties 'user.country'/'user.language'.&quot;);</span>
+<span class="nc" id="L88">            return FALLBACK_LOCALE;</span>
         }
-<span class="fc" id="L89">        return LOCALE;</span>
+<span class="fc" id="L90">        return LOCALE;</span>
     }
 
     /**
+     * Return currently set language.
      * @return the currently set language
      */
     public static String getLanguage() {
-<span class="fc" id="L96">        return getLocale().getLanguage();</span>
+<span class="fc" id="L98">        return getLocale().getLanguage();</span>
     }
 
     /**
@@ -105,12 +107,12 @@ public final class LocalizationHelper {
      * @return Returns the value from the bundle.
      */
     public static String getBundleString(final String key) {
-<span class="fc" id="L108">        LOG.debug(&quot;Retrieving key &quot; + key);</span>
+<span class="fc" id="L110">        LOG.debug(&quot;Retrieving key {}&quot;, key);</span>
         try {
-<span class="fc" id="L110">            return BUNDLE.getString(key);</span>
-<span class="fc" id="L111">        } catch (MissingResourceException mre) {</span>
-<span class="fc" id="L112">            LOG.error(&quot;Retrieving unknown key &quot; + key + &quot;. Please fix your property files.&quot;);</span>
-<span class="fc" id="L113">            return key;</span>
+<span class="fc" id="L112">            return BUNDLE.getString(key);</span>
+<span class="fc" id="L113">        } catch (MissingResourceException mre) {</span>
+<span class="fc" id="L114">            LOG.error(&quot;Retrieving unknown key {}. Please fix your property files.&quot;, key);</span>
+<span class="fc" id="L115">            return key;</span>
         }
     }
 
@@ -128,9 +130,9 @@ public final class LocalizationHelper {
      * I18N-tutorial&lt;/a&gt;
      */
     public static String getParameterizedBundleString(final String key, final Object... parameters) {
-<span class="pc bpc" id="L131" title="1 of 2 branches missed.">        LOG.debug(&quot;Applying &quot; + ((parameters == null) ? null : Arrays.toString(parameters)) + &quot; parameters to &quot; + key);</span>
-<span class="fc" id="L132">        FORMAT.applyPattern(getBundleString(key));</span>
-<span class="fc" id="L133">        return FORMAT.format(parameters);</span>
+<span class="pc bpc" id="L133" title="1 of 2 branches missed.">        LOG.debug(&quot;Applying {} parameters to {}&quot;, (parameters == null) ? null : Arrays.toString(parameters), key);</span>
+<span class="fc" id="L134">        FORMAT.applyPattern(getBundleString(key));</span>
+<span class="fc" id="L135">        return FORMAT.format(parameters);</span>
     }
 
 }
