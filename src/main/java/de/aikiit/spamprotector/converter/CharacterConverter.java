@@ -42,7 +42,7 @@ public enum CharacterConverter {
     /** Ampersand */
     AMPERSAND("&", "&amp;"), //
     /** Single quotation */
-    SINGLE_QUOTE("\'", "&#39;"), //
+    SINGLE_QUOTE("'", "&#39;"), //
     /** Left bracket */
     LEFT_BRACKET("(", "&#40;"), //
     /** Right bracket */
