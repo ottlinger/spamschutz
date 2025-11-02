@@ -271,10 +271,7 @@
             <consoleOutput>true</consoleOutput>
             <ignoreErrors>false</ignoreErrors>
             <inputExcludeStds>
-              <exclude>STANDARD_PATTERNS</exclude>
-              <exclude>STANDARD_SCMS</exclude>
-              <exclude>MAVEN</exclude>
-              <exclude>IDEA</exclude>
+              <exclude>ALL</exclude>
             </inputExcludeStds>
             <inputExcludeParsedScm>GIT</inputExcludeParsedScm>
             <inputExcludes>
@@ -284,14 +281,7 @@
               <exclude>*.md</exclude>
               <exclude>src/main/resources/**/*</exclude>
               <exclude>src/test/resources/**/*</exclude>
-              <exclude>**/webpage/**/*</exclude>
-              <exclude>**/webpage/**</exclude>
-              <exclude>**/webpage/*</exclude>
               <exclude>webpage/**</exclude>
-              <exclude>webpage/**/*</exclude>
-              <exclude>webpage/*</exclude>
-              <exclude>**/out*/**</exclude>
-              <exclude>**/site*/**</exclude>
               <exclude>**/*.log</exclude>
               <exclude>**/.checkstyle/**/*</exclude>
               <exclude>**/.gitignore</exclude>
