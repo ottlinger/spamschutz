@@ -415,7 +415,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-resources-plugin</artifactId>
-        <version>3.3.1</version>
+        <version>3.4.0</version>
         <configuration>
           <encoding>ISO-8859-1</encoding>
           <propertiesEncoding>ISO-8859-1</propertiesEncoding>
