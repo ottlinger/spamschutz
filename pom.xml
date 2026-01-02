@@ -58,7 +58,7 @@
     <maven-scm.version>2.2.1</maven-scm.version>
     <logger.version>3.0.0-beta3</logger.version>
     <junit.version>4.13.2</junit.version>
-    <mockito.version>5.20.0</mockito.version>
+    <mockito.version>5.21.0</mockito.version>
     <lombok.version>1.18.42</lombok.version>
     <javadoc.version>3.12.0</javadoc.version>
     <surefire.version>3.5.4</surefire.version>
