@@ -534,6 +534,9 @@
         <configuration>
           <!-- 20250905: https://github.com/apache/maven-javadoc-plugin/issues/1258 -->
           <detectOfflineLinks>false</detectOfflineLinks>
+          <encoding>UTF-8</encoding>
+          <docencoding>UTF-8</docencoding>
+          <charset>UTF-8</charset>
         </configuration>
       </plugin>
       <plugin>
