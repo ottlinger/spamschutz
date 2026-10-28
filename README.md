@@ -13,8 +13,6 @@ This application lets you easily change mail addresses or other HTML contents in
 
 This app can be launched as a standalone version.
 
-:smile:
-
 # Version history
 
 Details about the current versions can be found in the [changelog](CHANGES.md)
