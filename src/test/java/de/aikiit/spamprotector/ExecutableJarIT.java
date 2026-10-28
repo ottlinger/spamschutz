@@ -24,6 +24,7 @@ import org.junit.Test;
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 import java.util.jar.JarFile;
 
@@ -78,6 +79,9 @@ public class ExecutableJarIT {
                 throw new IllegalStateException("Missing Maven-filtered version: " + version);
             }
             for (String language : new String[]{"de", "en"}) {
+                // Match a JVM started in this locale; ResourceBundle also uses the JVM default
+                // when falling back to the German root bundle on English CI hosts.
+                Locale.setDefault("de".equals(language) ? Locale.GERMANY : Locale.US);
                 System.setProperty("user.language", language);
                 System.setProperty("user.country", "de".equals(language) ? "DE" : "US");
                 // Initializes Log4j as well as the packaged localization resources.
