@@ -37,6 +37,17 @@ A different possibility is to launch the combined uberJAR:
   * ```./mvnw clean install```
   * ```java -jar target/spamschutz-1.1.0-SNAPSHOT-executable.jar``` - please adapt the version number
 
+### Launch with the convenience script
+
+As an alternative to jBang, start the application from the repository root with:
+
+```bash
+./run.sh
+```
+
+The Bash script runs `./mvnw -Plive-demo` to build and launch the application using Maven.
+It requires a JDK and a graphical desktop, but no jBang installation.
+
 ### Launch with jBang
 
 Related to [issue #94](https://github.com/ottlinger/spamschutz/issues/94).
