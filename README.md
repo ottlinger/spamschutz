@@ -37,6 +37,34 @@ A different possibility is to launch the combined uberJAR:
   * ```./mvnw clean install```
   * ```java -jar target/spamschutz-1.1.0-SNAPSHOT-executable.jar``` - please adapt the version number
 
+### Launch with jBang
+
+Related to [issue #94](https://github.com/ottlinger/spamschutz/issues/94).
+Install [jBang](https://www.jbang.dev/download/) and run these commands from the repository root:
+
+```bash
+./mvnw clean verify
+jbang run spamschutz
+```
+
+The local `jbang-catalog.json` resolves `spamschutz` to the Maven-built executable JAR.
+You can also launch the JAR directly:
+
+```bash
+jbang run target/spamschutz-1.1.0-SNAPSHOT-executable.jar
+```
+
+Adapt the JAR version in the command and catalog when the project version changes.
+Rebuild after changing the application; jBang launches the packaged JAR, not the Java sources.
+The JAR includes all runtime dependencies, language resources, and the Maven-generated version class.
+Its service-provider files are merged so Log4j can initialize correctly.
+A graphical desktop is required to run the Swing application. This does not create a native
+OS-specific installer (`jpackage` is a separate topic in issue #94).
+
+`./mvnw verify` also runs a headless integration test against the packaged JAR in a separate JVM,
+checking Log4j initialization, German and English resources, the generated version, and conversion.
+CI additionally checks the jBang catalog using the same smoke-test probe.
+
 ### Localization
 
 Relates to [issue #22](https://github.com/ottlinger/spamschutz/issues/22)

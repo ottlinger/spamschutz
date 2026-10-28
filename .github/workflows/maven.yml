@@ -37,7 +37,20 @@ jobs:
           cache: 'maven'
 
       - name: Build with Maven
-        run: ./mvnw -X -e -B -V -ntp clean package
+        run: ./mvnw -X -e -B -V -ntp clean verify
+
+      - name: Set up jBang
+        if: runner.os == 'Linux' && matrix.java == 21
+        uses: jbangdev/setup-jbang@v0.1.1
+
+      - name: Smoke-test the jBang catalog (issue 94)
+        if: runner.os == 'Linux' && matrix.java == 21
+        shell: bash
+        run: >-
+          jbang run --java-options=-Djava.awt.headless=true
+          --cp target/test-classes
+          --main 'de.aikiit.spamprotector.ExecutableJarIT$Probe'
+          spamschutz
 
       - name: Code coverage with codecov
         uses: codecov/codecov-action@v7

@@ -1,0 +1,8 @@
+{
+  "aliases": {
+    "spamschutz": {
+      "script-ref": "target/spamschutz-1.1.0-SNAPSHOT-executable.jar",
+      "description": "Launch the Maven-built SpamSchutz executable JAR (issue #94)."
+    }
+  }
+}

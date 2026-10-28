@@ -229,6 +229,12 @@
           <groupId>org.pitest</groupId>
           <artifactId>pitest-maven</artifactId>
           <version>1.30.0</version>
+          <configuration>
+            <!-- This Failsafe test checks the packaged JAR, not PIT's mutated classes. -->
+            <excludedTestClasses>
+              <param>de.aikiit.spamprotector.ExecutableJarIT*</param>
+            </excludedTestClasses>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
@@ -279,6 +285,8 @@
               <exclude>.travis.yml</exclude>
               <exclude>LICENSE.txt</exclude>
               <exclude>*.md</exclude>
+              <!-- JSON catalogs cannot contain license comments. -->
+              <exclude>jbang-catalog.json</exclude>
               <exclude>src/main/resources/**/*</exclude>
               <exclude>src/test/resources/**/*</exclude>
               <exclude>webpage/**</exclude>
@@ -332,6 +340,8 @@
                 <shadedArtifactAttached>true</shadedArtifactAttached>
                 <shadedClassifierName>executable</shadedClassifierName>
                 <transformers>
+                  <!-- Preserve Log4j service providers in the executable JAR (#94). -->
+                  <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                   <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                     <manifestEntries>
                       <Main-Class>de.aikiit.spamprotector.AntiSpamApplication</Main-Class>
@@ -379,6 +389,26 @@
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${surefire.version}</version>
+      </plugin>
+      <!-- Test the packaged executable JAR in a separate JVM. -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <version>${surefire.version}</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>integration-test</goal>
+              <goal>verify</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <systemPropertyVariables>
+            <executableJar>${project.build.directory}/${project.build.finalName}-executable.jar</executableJar>
+            <testClasses>${project.build.testOutputDirectory}</testClasses>
+          </systemPropertyVariables>
+        </configuration>
       </plugin>
       <!-- Build an executable JAR -->
       <plugin>
