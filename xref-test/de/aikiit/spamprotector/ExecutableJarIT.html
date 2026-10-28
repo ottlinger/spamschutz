@@ -36,78 +36,79 @@
 <a class="jxr_linenumber" name="L28" href="#L28">28</a>  <strong class="jxr_keyword">import</strong> java.util.concurrent.TimeUnit;
 <a class="jxr_linenumber" name="L29" href="#L29">29</a>  <strong class="jxr_keyword">import</strong> java.util.jar.JarFile;
 <a class="jxr_linenumber" name="L30" href="#L30">30</a>  
-<a class="jxr_linenumber" name="L31" href="#L31">31</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertEquals;
-<a class="jxr_linenumber" name="L32" href="#L32">32</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertTrue;
-<a class="jxr_linenumber" name="L33" href="#L33">33</a>  
-<a class="jxr_linenumber" name="L34" href="#L34">34</a>  <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L35" href="#L35">35</a>  <em class="jxr_javadoccomment"> * Regression coverage for the executable JAR used by Java and jBang (#94).</em>
-<a class="jxr_linenumber" name="L36" href="#L36">36</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="L37" href="#L37">37</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a name="ExecutableJarIT" href="../../../de/aikiit/spamprotector/ExecutableJarIT.html#ExecutableJarIT">ExecutableJarIT</a> {
-<a class="jxr_linenumber" name="L38" href="#L38">38</a>  
-<a class="jxr_linenumber" name="L39" href="#L39">39</a>      @Test
-<a class="jxr_linenumber" name="L40" href="#L40">40</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> packagedApplicationIncludesServicesAndResources() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="L41" href="#L41">41</a>          Path jar = Path.of(System.getProperty(<span class="jxr_string">"executableJar"</span>)).toAbsolutePath();
-<a class="jxr_linenumber" name="L42" href="#L42">42</a>          <strong class="jxr_keyword">try</strong> (JarFile archive = <strong class="jxr_keyword">new</strong> JarFile(jar.toFile())) {
-<a class="jxr_linenumber" name="L43" href="#L43">43</a>              assertEquals(AntiSpamApplication.<strong class="jxr_keyword">class</strong>.getName(),
-<a class="jxr_linenumber" name="L44" href="#L44">44</a>                      archive.getManifest().getMainAttributes().getValue(<span class="jxr_string">"Main-Class"</span>));
-<a class="jxr_linenumber" name="L45" href="#L45">45</a>          }
-<a class="jxr_linenumber" name="L46" href="#L46">46</a>  
-<a class="jxr_linenumber" name="L47" href="#L47">47</a>          String java = Path.of(System.getProperty(<span class="jxr_string">"java.home"</span>), <span class="jxr_string">"bin"</span>,
-<a class="jxr_linenumber" name="L48" href="#L48">48</a>                  System.getProperty(<span class="jxr_string">"os.name"</span>).startsWith(<span class="jxr_string">"Windows"</span>) ? <span class="jxr_string">"java.exe"</span> : <span class="jxr_string">"java"</span>).toString();
-<a class="jxr_linenumber" name="L49" href="#L49">49</a>          String classpath = jar + File.pathSeparator + System.getProperty(<span class="jxr_string">"testClasses"</span>);
-<a class="jxr_linenumber" name="L50" href="#L50">50</a>          Path log = Files.createTempFile(<span class="jxr_string">"spamschutz-executable-"</span>, <span class="jxr_string">".log"</span>);
-<a class="jxr_linenumber" name="L51" href="#L51">51</a>          Process process = <strong class="jxr_keyword">null</strong>;
-<a class="jxr_linenumber" name="L52" href="#L52">52</a>          <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="L53" href="#L53">53</a>              <em class="jxr_comment">// Deliberately exclude Maven's dependency classpath: everything must come from the JAR.</em>
-<a class="jxr_linenumber" name="L54" href="#L54">54</a>              process = <strong class="jxr_keyword">new</strong> ProcessBuilder(java, <span class="jxr_string">"-Djava.awt.headless=true"</span>, <span class="jxr_string">"-cp"</span>, classpath,
-<a class="jxr_linenumber" name="L55" href="#L55">55</a>                      Probe.<strong class="jxr_keyword">class</strong>.getName()).redirectErrorStream(<strong class="jxr_keyword">true</strong>).redirectOutput(log.toFile()).start();
-<a class="jxr_linenumber" name="L56" href="#L56">56</a>              assertTrue(<span class="jxr_string">"Executable JAR smoke test timed out"</span>, process.waitFor(30, TimeUnit.SECONDS));
-<a class="jxr_linenumber" name="L57" href="#L57">57</a>              String output = Files.readString(log);
-<a class="jxr_linenumber" name="L58" href="#L58">58</a>              assertEquals(output, 0, process.exitValue());
-<a class="jxr_linenumber" name="L59" href="#L59">59</a>              assertTrue(output, output.contains(<span class="jxr_string">"Executable JAR smoke test passed"</span>));
-<a class="jxr_linenumber" name="L60" href="#L60">60</a>          } <strong class="jxr_keyword">finally</strong> {
-<a class="jxr_linenumber" name="L61" href="#L61">61</a>              <strong class="jxr_keyword">if</strong> (process != <strong class="jxr_keyword">null</strong> &amp;&amp; process.isAlive()) {
-<a class="jxr_linenumber" name="L62" href="#L62">62</a>                  process.destroyForcibly().waitFor();
-<a class="jxr_linenumber" name="L63" href="#L63">63</a>              }
-<a class="jxr_linenumber" name="L64" href="#L64">64</a>              Files.deleteIfExists(log);
-<a class="jxr_linenumber" name="L65" href="#L65">65</a>          }
-<a class="jxr_linenumber" name="L66" href="#L66">66</a>      }
-<a class="jxr_linenumber" name="L67" href="#L67">67</a>  
-<a class="jxr_linenumber" name="L68" href="#L68">68</a>      <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L69" href="#L69">69</a>  <em class="jxr_javadoccomment">     * Standalone probe, also runnable through the jBang catalog without opening a GUI.</em>
-<a class="jxr_linenumber" name="L70" href="#L70">70</a>  <em class="jxr_javadoccomment">     * Does not use JUnit, which is intentionally absent from the child JVM's classpath.</em>
-<a class="jxr_linenumber" name="L71" href="#L71">71</a>  <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="L72" href="#L72">72</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> Probe {
-<a class="jxr_linenumber" name="L73" href="#L73">73</a>  
-<a class="jxr_linenumber" name="L74" href="#L74">74</a>          <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> main(String[] args) <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="L75" href="#L75">75</a>              <em class="jxr_comment">// Reflection avoids inlining the generated constant and verifies the class is packaged.</em>
-<a class="jxr_linenumber" name="L76" href="#L76">76</a>              String version = (String) Class.forName(<span class="jxr_string">"de.aikiit.spamprotector.util.Version"</span>)
-<a class="jxr_linenumber" name="L77" href="#L77">77</a>                      .getField(<span class="jxr_string">"VERSION"</span>).get(<strong class="jxr_keyword">null</strong>);
-<a class="jxr_linenumber" name="L78" href="#L78">78</a>              <strong class="jxr_keyword">if</strong> (version.isEmpty() || version.contains(<span class="jxr_string">"${"</span>)) {
-<a class="jxr_linenumber" name="L79" href="#L79">79</a>                  <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalStateException(<span class="jxr_string">"Missing Maven-filtered version: "</span> + version);
-<a class="jxr_linenumber" name="L80" href="#L80">80</a>              }
-<a class="jxr_linenumber" name="L81" href="#L81">81</a>              <strong class="jxr_keyword">for</strong> (String language : <strong class="jxr_keyword">new</strong> String[]{<span class="jxr_string">"de"</span>, <span class="jxr_string">"en"</span>}) {
-<a class="jxr_linenumber" name="L82" href="#L82">82</a>                  <em class="jxr_comment">// Match a JVM started in this locale; ResourceBundle also uses the JVM default</em>
-<a class="jxr_linenumber" name="L83" href="#L83">83</a>                  <em class="jxr_comment">// when falling back to the German root bundle on English CI hosts.</em>
-<a class="jxr_linenumber" name="L84" href="#L84">84</a>                  Locale.setDefault(<span class="jxr_string">"de"</span>.equals(language) ? Locale.GERMANY : Locale.US);
-<a class="jxr_linenumber" name="L85" href="#L85">85</a>                  System.setProperty(<span class="jxr_string">"user.language"</span>, language);
-<a class="jxr_linenumber" name="L86" href="#L86">86</a>                  System.setProperty(<span class="jxr_string">"user.country"</span>, <span class="jxr_string">"de"</span>.equals(language) ? <span class="jxr_string">"DE"</span> : <span class="jxr_string">"US"</span>);
-<a class="jxr_linenumber" name="L87" href="#L87">87</a>                  <em class="jxr_comment">// Initializes Log4j as well as the packaged localization resources.</em>
-<a class="jxr_linenumber" name="L88" href="#L88">88</a>                  LocalizationHelper.setLocale();
-<a class="jxr_linenumber" name="L89" href="#L89">89</a>                  String title = LocalizationHelper.getBundleString(<span class="jxr_string">"spamschutz.main.title"</span>);
-<a class="jxr_linenumber" name="L90" href="#L90">90</a>                  String expected = <span class="jxr_string">"de"</span>.equals(language) ? <span class="jxr_string">"SpamSchutz"</span> : <span class="jxr_string">"SpamProtector"</span>;
-<a class="jxr_linenumber" name="L91" href="#L91">91</a>                  <strong class="jxr_keyword">if</strong> (!title.startsWith(expected)) {
-<a class="jxr_linenumber" name="L92" href="#L92">92</a>                      <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalStateException(<span class="jxr_string">"Missing localization for "</span> + language + <span class="jxr_string">": "</span> + title);
-<a class="jxr_linenumber" name="L93" href="#L93">93</a>                  }
-<a class="jxr_linenumber" name="L94" href="#L94">94</a>              }
-<a class="jxr_linenumber" name="L95" href="#L95">95</a>              String input = <span class="jxr_string">"hello@example.org"</span>;
-<a class="jxr_linenumber" name="L96" href="#L96">96</a>              <strong class="jxr_keyword">if</strong> (!input.equals(SpamProtector.toPlain(SpamProtector.toEncoded(input)))) {
-<a class="jxr_linenumber" name="L97" href="#L97">97</a>                  <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalStateException(<span class="jxr_string">"Conversion roundtrip failed"</span>);
-<a class="jxr_linenumber" name="L98" href="#L98">98</a>              }
-<a class="jxr_linenumber" name="L99" href="#L99">99</a>              System.out.println(<span class="jxr_string">"Executable JAR smoke test passed: "</span> + version);
-<a class="jxr_linenumber" name="L100" href="#L100">100</a>         }
-<a class="jxr_linenumber" name="L101" href="#L101">101</a>     }
-<a class="jxr_linenumber" name="L102" href="#L102">102</a> }
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.assertj.core.api.Assertions.assertThat;
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>  
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>  <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>  <em class="jxr_javadoccomment"> * Regression coverage for the executable JAR used by Java and jBang (#94).</em>
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a name="ExecutableJarIT" href="../../../de/aikiit/spamprotector/ExecutableJarIT.html#ExecutableJarIT">ExecutableJarIT</a> {
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>  
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>      @Test
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> packagedApplicationIncludesServicesAndResources() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>          Path jar = Path.of(System.getProperty(<span class="jxr_string">"executableJar"</span>)).toAbsolutePath();
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>          <strong class="jxr_keyword">try</strong> (JarFile archive = <strong class="jxr_keyword">new</strong> JarFile(jar.toFile())) {
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>              assertThat(archive.getManifest().getMainAttributes().getValue(<span class="jxr_string">"Main-Class"</span>))
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>                      .isEqualTo(AntiSpamApplication.<strong class="jxr_keyword">class</strong>.getName());
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>          }
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>  
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>          String java = Path.of(System.getProperty(<span class="jxr_string">"java.home"</span>), <span class="jxr_string">"bin"</span>,
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>                  System.getProperty(<span class="jxr_string">"os.name"</span>).startsWith(<span class="jxr_string">"Windows"</span>) ? <span class="jxr_string">"java.exe"</span> : <span class="jxr_string">"java"</span>).toString();
+<a class="jxr_linenumber" name="L48" href="#L48">48</a>          String classpath = jar + File.pathSeparator + System.getProperty(<span class="jxr_string">"testClasses"</span>);
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>          Path log = Files.createTempFile(<span class="jxr_string">"spamschutz-executable-"</span>, <span class="jxr_string">".log"</span>);
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>          Process process = <strong class="jxr_keyword">null</strong>;
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>          <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>              <em class="jxr_comment">// Deliberately exclude Maven's dependency classpath: everything must come from the JAR.</em>
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>              process = <strong class="jxr_keyword">new</strong> ProcessBuilder(java, <span class="jxr_string">"-Djava.awt.headless=true"</span>, <span class="jxr_string">"-cp"</span>, classpath,
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>                      Probe.<strong class="jxr_keyword">class</strong>.getName()).redirectErrorStream(<strong class="jxr_keyword">true</strong>).redirectOutput(log.toFile()).start();
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>              assertThat(process.waitFor(30, TimeUnit.SECONDS))
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>                      .as(<span class="jxr_string">"Executable JAR smoke test completed within 30 seconds"</span>)
+<a class="jxr_linenumber" name="L57" href="#L57">57</a>                      .isTrue();
+<a class="jxr_linenumber" name="L58" href="#L58">58</a>              String output = Files.readString(log);
+<a class="jxr_linenumber" name="L59" href="#L59">59</a>              assertThat(process.exitValue()).as(<span class="jxr_string">"Process output: %s"</span>, output).isZero();
+<a class="jxr_linenumber" name="L60" href="#L60">60</a>              assertThat(output).contains(<span class="jxr_string">"Executable JAR smoke test passed"</span>);
+<a class="jxr_linenumber" name="L61" href="#L61">61</a>          } <strong class="jxr_keyword">finally</strong> {
+<a class="jxr_linenumber" name="L62" href="#L62">62</a>              <strong class="jxr_keyword">if</strong> (process != <strong class="jxr_keyword">null</strong> &amp;&amp; process.isAlive()) {
+<a class="jxr_linenumber" name="L63" href="#L63">63</a>                  process.destroyForcibly().waitFor();
+<a class="jxr_linenumber" name="L64" href="#L64">64</a>              }
+<a class="jxr_linenumber" name="L65" href="#L65">65</a>              Files.deleteIfExists(log);
+<a class="jxr_linenumber" name="L66" href="#L66">66</a>          }
+<a class="jxr_linenumber" name="L67" href="#L67">67</a>      }
+<a class="jxr_linenumber" name="L68" href="#L68">68</a>  
+<a class="jxr_linenumber" name="L69" href="#L69">69</a>      <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L70" href="#L70">70</a>  <em class="jxr_javadoccomment">     * Standalone probe, also runnable through the jBang catalog without opening a GUI.</em>
+<a class="jxr_linenumber" name="L71" href="#L71">71</a>  <em class="jxr_javadoccomment">     * Does not use JUnit or AssertJ, which are intentionally absent from the child JVM's classpath.</em>
+<a class="jxr_linenumber" name="L72" href="#L72">72</a>  <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L73" href="#L73">73</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> Probe {
+<a class="jxr_linenumber" name="L74" href="#L74">74</a>  
+<a class="jxr_linenumber" name="L75" href="#L75">75</a>          <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> main(String[] args) <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="L76" href="#L76">76</a>              <em class="jxr_comment">// Reflection avoids inlining the generated constant and verifies the class is packaged.</em>
+<a class="jxr_linenumber" name="L77" href="#L77">77</a>              String version = (String) Class.forName(<span class="jxr_string">"de.aikiit.spamprotector.util.Version"</span>)
+<a class="jxr_linenumber" name="L78" href="#L78">78</a>                      .getField(<span class="jxr_string">"VERSION"</span>).get(<strong class="jxr_keyword">null</strong>);
+<a class="jxr_linenumber" name="L79" href="#L79">79</a>              <strong class="jxr_keyword">if</strong> (version.isEmpty() || version.contains(<span class="jxr_string">"${"</span>)) {
+<a class="jxr_linenumber" name="L80" href="#L80">80</a>                  <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalStateException(<span class="jxr_string">"Missing Maven-filtered version: "</span> + version);
+<a class="jxr_linenumber" name="L81" href="#L81">81</a>              }
+<a class="jxr_linenumber" name="L82" href="#L82">82</a>              <strong class="jxr_keyword">for</strong> (String language : <strong class="jxr_keyword">new</strong> String[]{<span class="jxr_string">"de"</span>, <span class="jxr_string">"en"</span>}) {
+<a class="jxr_linenumber" name="L83" href="#L83">83</a>                  <em class="jxr_comment">// Match a JVM started in this locale; ResourceBundle also uses the JVM default</em>
+<a class="jxr_linenumber" name="L84" href="#L84">84</a>                  <em class="jxr_comment">// when falling back to the German root bundle on English CI hosts.</em>
+<a class="jxr_linenumber" name="L85" href="#L85">85</a>                  Locale.setDefault(<span class="jxr_string">"de"</span>.equals(language) ? Locale.GERMANY : Locale.US);
+<a class="jxr_linenumber" name="L86" href="#L86">86</a>                  System.setProperty(<span class="jxr_string">"user.language"</span>, language);
+<a class="jxr_linenumber" name="L87" href="#L87">87</a>                  System.setProperty(<span class="jxr_string">"user.country"</span>, <span class="jxr_string">"de"</span>.equals(language) ? <span class="jxr_string">"DE"</span> : <span class="jxr_string">"US"</span>);
+<a class="jxr_linenumber" name="L88" href="#L88">88</a>                  <em class="jxr_comment">// Initializes Log4j as well as the packaged localization resources.</em>
+<a class="jxr_linenumber" name="L89" href="#L89">89</a>                  LocalizationHelper.setLocale();
+<a class="jxr_linenumber" name="L90" href="#L90">90</a>                  String title = LocalizationHelper.getBundleString(<span class="jxr_string">"spamschutz.main.title"</span>);
+<a class="jxr_linenumber" name="L91" href="#L91">91</a>                  String expected = <span class="jxr_string">"de"</span>.equals(language) ? <span class="jxr_string">"SpamSchutz"</span> : <span class="jxr_string">"SpamProtector"</span>;
+<a class="jxr_linenumber" name="L92" href="#L92">92</a>                  <strong class="jxr_keyword">if</strong> (!title.startsWith(expected)) {
+<a class="jxr_linenumber" name="L93" href="#L93">93</a>                      <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalStateException(<span class="jxr_string">"Missing localization for "</span> + language + <span class="jxr_string">": "</span> + title);
+<a class="jxr_linenumber" name="L94" href="#L94">94</a>                  }
+<a class="jxr_linenumber" name="L95" href="#L95">95</a>              }
+<a class="jxr_linenumber" name="L96" href="#L96">96</a>              String input = <span class="jxr_string">"hello@example.org"</span>;
+<a class="jxr_linenumber" name="L97" href="#L97">97</a>              <strong class="jxr_keyword">if</strong> (!input.equals(SpamProtector.toPlain(SpamProtector.toEncoded(input)))) {
+<a class="jxr_linenumber" name="L98" href="#L98">98</a>                  <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalStateException(<span class="jxr_string">"Conversion roundtrip failed"</span>);
+<a class="jxr_linenumber" name="L99" href="#L99">99</a>              }
+<a class="jxr_linenumber" name="L100" href="#L100">100</a>             System.out.println(<span class="jxr_string">"Executable JAR smoke test passed: "</span> + version);
+<a class="jxr_linenumber" name="L101" href="#L101">101</a>         }
+<a class="jxr_linenumber" name="L102" href="#L102">102</a>     }
+<a class="jxr_linenumber" name="L103" href="#L103">103</a> }
 </pre>
 <hr/>
 <div id="footer">© 2026 <a href="https://www.aiki-it.de">Aiki IT</a></div>

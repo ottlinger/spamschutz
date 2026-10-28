@@ -160,7 +160,13 @@
 
 <li><code>./mvnw clean install</code></li>
 <li><code>java -jar target/spamschutz-1.1.0-SNAPSHOT-executable.jar</code> - please adapt the version number</li>
-</ul><section><a id="Launch_with_jBang"></a>
+</ul><section><a id="Launch_with_the_convenience_script"></a>
+<h3>Launch with the convenience script</h3>
+<p>As an alternative to jBang, start the application from the repository root with:</p>
+
+<pre class="prettyprint"><code class="language-bash">./run.sh
+</code></pre>
+<p>The Bash script runs <code>./mvnw -Plive-demo</code> to build and launch the application using Maven. It requires a JDK and a graphical desktop, but no jBang installation.</p></section><section><a id="Launch_with_jBang"></a>
 <h3>Launch with jBang</h3>
 <p>Related to <a href="https://github.com/ottlinger/spamschutz/issues/94" class="externalLink">issue #94</a>. Install <a href="https://www.jbang.dev/download/" class="externalLink">jBang</a> and run these commands from the repository root:</p>
 

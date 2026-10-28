@@ -124,6 +124,9 @@
 <h2>1.1.0-SNAPSHOT - currently in development</h2>
 <ul>
 
+<li>Add the <code>run.sh</code> convenience script to build and launch the application via Maven's <code>live-demo</code> profile as an alternative to jBang; document it on the site home page.</li>
+<li>Manage AssertJ with its BOM and migrate all unit, GUI, and integration test assertions to AssertJ, retaining JUnit as the test runner and the standalone FatJAR/jBang probe without test-library dependencies.</li>
+<li>Replace wildcard imports with explicit imports and share IntelliJ project code-style settings to prevent automatic wildcard imports for classes and static members.</li>
 <li>Fix Log4j initialization in the executable FatJAR by merging service-provider files (<a href="https://github.com/ottlinger/spamschutz/issues/94" class="externalLink">#94</a>).</li>
 <li>Add a local jBang catalog to launch the Maven-built executable JAR, replacing the experimental source-file directives; document usage and add packaged-JAR regression coverage independent of the host locale (<a href="https://github.com/ottlinger/spamschutz/issues/94" class="externalLink">#94</a>).</li>
 <li>Remove applet</li>
