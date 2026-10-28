@@ -21,8 +21,11 @@ import org.junit.Test;
 
 import java.util.Locale;
 
-import static de.aikiit.spamprotector.util.LocalizationHelper.*;
-
+import static de.aikiit.spamprotector.util.LocalizationHelper.getBundleString;
+import static de.aikiit.spamprotector.util.LocalizationHelper.getLanguage;
+import static de.aikiit.spamprotector.util.LocalizationHelper.getLocale;
+import static de.aikiit.spamprotector.util.LocalizationHelper.getParameterizedBundleString;
+import static de.aikiit.spamprotector.util.LocalizationHelper.setLocale;
 import static org.junit.Assert.assertEquals;
 
 /**

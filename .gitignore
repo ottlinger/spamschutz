@@ -18,5 +18,10 @@ spamschutz.iws
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-.idea
+# Share only IntelliJ project code-style settings, not local IDE state.
+.idea/*
+!.idea/codeStyles/
+.idea/codeStyles/*
+!.idea/codeStyles/Project.xml
+!.idea/codeStyles/codeStyleConfig.xml
 dependency-reduced-pom.xml

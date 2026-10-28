@@ -20,8 +20,10 @@ package de.aikiit.spamprotector;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+import javax.swing.WindowConstants;
+import java.awt.Dimension;
 
 import static de.aikiit.spamprotector.util.LocalizationHelper.getBundleString;
 

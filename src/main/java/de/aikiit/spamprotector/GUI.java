@@ -20,8 +20,15 @@ package de.aikiit.spamprotector;
 import com.google.common.annotations.VisibleForTesting;
 import de.aikiit.spamprotector.converter.SpamProtector;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.time.LocalDate;
 
 import static de.aikiit.spamprotector.util.LocalizationHelper.getBundleString;
