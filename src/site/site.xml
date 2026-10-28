@@ -50,6 +50,10 @@ under the License.
     </logo>
   </poweredBy>
   <body>
+    <menu name="SpamSchutz">
+      <item name="Home" href="index.html"/>
+      <item name="Version history" href="CHANGES.html"/>
+    </menu>
     <menu ref="parent" inherit="top"/>
     <menu ref="reports" inherit="bottom"/>
     <menu ref="modules" inherit="bottom"/>
