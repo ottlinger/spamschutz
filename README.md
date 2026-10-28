@@ -7,8 +7,6 @@
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/93ad105bf87d4261a5fca994c4d56af3)](https://app.codacy.com/gh/ottlinger/spamschutz/dashboard)
 
-https://github.com/users/ottlinger/projects/2
-
 # Purpose of this program
 
 This application lets you easily change mail addresses or other HTML contents into ASCII-encoded values. Therefore your webpages remain human-readable and spiders are unable to detect your mail addresses and use them for unwanted purposes, when relying on regular expressions for data extraction.
