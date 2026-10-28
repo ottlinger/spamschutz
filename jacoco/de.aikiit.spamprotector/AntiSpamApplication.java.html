@@ -15,20 +15,6 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
  */
-///usr/bin/env jbang &quot;$0&quot; &quot;$@&quot; ; exit $?
-//DEPS org.projectlombok:lombok:1.18.28
-//DEPS com.google.guava:guava:32.1.2-jre
-//DEPS org.apache.logging.log4j:log4j-core:3.0.0-alpha1
-//SOURCES **
-// how to integrate properties - https://github.com/jbangdev/jbang/issues/1665
-//FILES ../../../../resources/spamprotector.properties
-//FILES ../../../../resources/spamprotector_en.properties
-// https://github.com/jbangdev/jbang/issues/1666 - adding as file is not working
-
-// #94: including as SOURCE yields compile error as package does not seem to match
-/*SOURCEs ../../../../resources/Version.java */
-/* FILES de.aikiit.spamprotector.util.Version.java=../../../../resources/Version.java */
-
 package de.aikiit.spamprotector;
 
 import lombok.AccessLevel;
@@ -49,18 +35,18 @@ public final class AntiSpamApplication {
      * Helper that starts and initializes the application itself.
      */
     private static void initApplication() {
-<span class="nc" id="L52">        SwingUtilities.invokeLater(</span>
+<span class="nc" id="L38">        SwingUtilities.invokeLater(</span>
                 () -&gt; {
-<span class="nc" id="L54">                    JFrame frame = new JFrame();</span>
-<span class="nc" id="L55">                    GUI g = new GUI();</span>
-<span class="nc" id="L56">                    frame.setTitle(getBundleString(&quot;spamschutz.main.title&quot;));</span>
-<span class="nc" id="L57">                    frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);</span>
-<span class="nc" id="L58">                    frame.setSize(new Dimension(800, 300));</span>
-<span class="nc" id="L59">                    frame.add(g);</span>
-<span class="nc" id="L60">                    frame.setVisible(true);</span>
-<span class="nc" id="L61">                }</span>
+<span class="nc" id="L40">                    JFrame frame = new JFrame();</span>
+<span class="nc" id="L41">                    GUI g = new GUI();</span>
+<span class="nc" id="L42">                    frame.setTitle(getBundleString(&quot;spamschutz.main.title&quot;));</span>
+<span class="nc" id="L43">                    frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L44">                    frame.setSize(new Dimension(800, 300));</span>
+<span class="nc" id="L45">                    frame.add(g);</span>
+<span class="nc" id="L46">                    frame.setVisible(true);</span>
+<span class="nc" id="L47">                }</span>
         );
-<span class="nc" id="L63">    }</span>
+<span class="nc" id="L49">    }</span>
 
     /**
      * Main method that loads the application in a proper size.
@@ -68,7 +54,7 @@ public final class AntiSpamApplication {
      * @param args Arguments from console.
      */
     public static void main(final String[] args) {
-<span class="nc" id="L71">        initApplication();</span>
-<span class="nc" id="L72">    }</span>
+<span class="nc" id="L57">        initApplication();</span>
+<span class="nc" id="L58">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.15.202606040825</span></div></body></html>

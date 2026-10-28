@@ -160,7 +160,19 @@
 
 <li><code>./mvnw clean install</code></li>
 <li><code>java -jar target/spamschutz-1.1.0-SNAPSHOT-executable.jar</code> - please adapt the version number</li>
-</ul><section><a id="Localization"></a>
+</ul><section><a id="Launch_with_jBang"></a>
+<h3>Launch with jBang</h3>
+<p>Related to <a href="https://github.com/ottlinger/spamschutz/issues/94" class="externalLink">issue #94</a>. Install <a href="https://www.jbang.dev/download/" class="externalLink">jBang</a> and run these commands from the repository root:</p>
+
+<pre class="prettyprint"><code class="language-bash">./mvnw clean verify
+jbang run spamschutz
+</code></pre>
+<p>The local <code>jbang-catalog.json</code> resolves <code>spamschutz</code> to the Maven-built executable JAR. You can also launch the JAR directly:</p>
+
+<pre class="prettyprint"><code class="language-bash">jbang run target/spamschutz-1.1.0-SNAPSHOT-executable.jar
+</code></pre>
+<p>Adapt the JAR version in the command and catalog when the project version changes. Rebuild after changing the application; jBang launches the packaged JAR, not the Java sources. The JAR includes all runtime dependencies, language resources, and the Maven-generated version class. Its service-provider files are merged so Log4j can initialize correctly. A graphical desktop is required to run the Swing application. This does not create a native OS-specific installer (<code>jpackage</code> is a separate topic in issue #94).</p>
+<p><code>./mvnw verify</code> also runs a headless integration test against the packaged JAR in a separate JVM, checking Log4j initialization, German and English resources, the generated version, and conversion. CI additionally checks the jBang catalog using the same smoke-test probe.</p></section><section><a id="Localization"></a>
 <h3>Localization</h3>
 <p>Relates to <a href="https://github.com/ottlinger/spamschutz/issues/22" class="externalLink">issue #22</a></p>
 <p>As of now the application can be localized (at the moment only German and English are supported). Use the following parameters to explicitly set language and country or trust your system defaults:</p>
