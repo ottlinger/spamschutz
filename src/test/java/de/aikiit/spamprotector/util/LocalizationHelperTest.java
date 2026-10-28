@@ -26,7 +26,7 @@ import static de.aikiit.spamprotector.util.LocalizationHelper.getLanguage;
 import static de.aikiit.spamprotector.util.LocalizationHelper.getLocale;
 import static de.aikiit.spamprotector.util.LocalizationHelper.getParameterizedBundleString;
 import static de.aikiit.spamprotector.util.LocalizationHelper.setLocale;
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Testing resource bundling and i18n handling.
@@ -38,11 +38,11 @@ public class LocalizationHelperTest {
      */
     @Test
     public final void checkParametrizedValueExtraction() {
-        assertEquals("Erfolg und dann folgt noch die 7", getParameterizedBundleString("spamschutz.test.param",
-                "Erfolg", 7));
+        assertThat(getParameterizedBundleString("spamschutz.test.param", "Erfolg", 7))
+                .isEqualTo("Erfolg und dann folgt noch die 7");
         // ignore warning, we want to test what happens here! An empty String or null changes the output.
-        assertEquals("{0} und dann folgt noch die {1}", getParameterizedBundleString("spamschutz.test.param",
-                new Object[]{}));
+        assertThat(getParameterizedBundleString("spamschutz.test.param", new Object[]{}))
+                .isEqualTo("{0} und dann folgt noch die {1}");
     }
 
     @Test
@@ -52,8 +52,8 @@ public class LocalizationHelperTest {
         System.setProperty("user.country", "");
         setLocale();
 
-        assertEquals(Locale.GERMANY, getLocale());
-        assertEquals("de", getLanguage());
+        assertThat(getLocale()).isEqualTo(Locale.GERMANY);
+        assertThat(getLanguage()).isEqualTo("de");
     }
 
     @Test
@@ -64,18 +64,18 @@ public class LocalizationHelperTest {
         System.setProperty("user.country", "CA");
         setLocale();
 
-        assertEquals(Locale.CANADA_FRENCH, getLocale());
-        assertEquals(french, getLanguage());
+        assertThat(getLocale()).isEqualTo(Locale.CANADA_FRENCH);
+        assertThat(getLanguage()).isEqualTo(french);
     }
 
     @Test
     public final void umlautEncodingWorksCorrectly() {
-        assertEquals("ßäü", getBundleString("spamschutz.test.umlauts"));
+        assertThat(getBundleString("spamschutz.test.umlauts")).isEqualTo("ßäü");
     }
 
     @Test
     public final void unknownKey() {
         String unknown = "abcde.unknown";
-        assertEquals(unknown, getBundleString(unknown));
+        assertThat(getBundleString(unknown)).isEqualTo(unknown);
     }
 }

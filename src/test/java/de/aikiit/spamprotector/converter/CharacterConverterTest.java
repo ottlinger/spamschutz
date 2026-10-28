@@ -19,7 +19,7 @@ package de.aikiit.spamprotector.converter;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Verifies conversion works.
@@ -28,13 +28,13 @@ public class CharacterConverterTest {
 
     @Test
     public void numberOfConvertibleCharacters() {
-        assertEquals(95, CharacterConverter.values().length);
+        assertThat(CharacterConverter.values()).hasSize(95);
     }
 
     @Test
     public void getPlainAndEncodedValue() {
-        assertEquals(" ", CharacterConverter.SPACE.getPlain());
-        assertEquals("&nbsp;", CharacterConverter.SPACE.getReplacement());
+        assertThat(CharacterConverter.SPACE.getPlain()).isEqualTo(" ");
+        assertThat(CharacterConverter.SPACE.getReplacement()).isEqualTo("&nbsp;");
     }
 
 }

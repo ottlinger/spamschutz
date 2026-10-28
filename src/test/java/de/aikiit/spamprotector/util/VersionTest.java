@@ -19,7 +19,7 @@ package de.aikiit.spamprotector.util;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertNotNull;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Verify (Maven-filter)-included class is available.
@@ -27,6 +27,6 @@ import static org.junit.Assert.assertNotNull;
 public class VersionTest {
     @Test
     public final void checkContents() {
-        assertNotNull(de.aikiit.spamprotector.util.Version.VERSION);
+        assertThat(de.aikiit.spamprotector.util.Version.VERSION).isNotNull();
     }
 }

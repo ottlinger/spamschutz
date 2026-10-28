@@ -20,7 +20,7 @@ package de.aikiit.spamprotector;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
-import static org.junit.Assert.assertNotNull;
+import static org.assertj.core.api.Assertions.assertThatCode;
 
 /**
  * Launches the application itself.
@@ -29,7 +29,6 @@ import static org.junit.Assert.assertNotNull;
 public class AntiSpamApplicationTest {
     @Test
     public final void instantiationDone() {
-        AntiSpamApplication.main(null);
-        assertNotNull("This is just to please the compiler.");
+        assertThatCode(() -> AntiSpamApplication.main(null)).doesNotThrowAnyException();
     }
 }

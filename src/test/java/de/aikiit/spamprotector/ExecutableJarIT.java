@@ -28,8 +28,7 @@ import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 import java.util.jar.JarFile;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Regression coverage for the executable JAR used by Java and jBang (#94).
@@ -40,8 +39,8 @@ public class ExecutableJarIT {
     public void packagedApplicationIncludesServicesAndResources() throws Exception {
         Path jar = Path.of(System.getProperty("executableJar")).toAbsolutePath();
         try (JarFile archive = new JarFile(jar.toFile())) {
-            assertEquals(AntiSpamApplication.class.getName(),
-                    archive.getManifest().getMainAttributes().getValue("Main-Class"));
+            assertThat(archive.getManifest().getMainAttributes().getValue("Main-Class"))
+                    .isEqualTo(AntiSpamApplication.class.getName());
         }
 
         String java = Path.of(System.getProperty("java.home"), "bin",
@@ -53,10 +52,12 @@ public class ExecutableJarIT {
             // Deliberately exclude Maven's dependency classpath: everything must come from the JAR.
             process = new ProcessBuilder(java, "-Djava.awt.headless=true", "-cp", classpath,
                     Probe.class.getName()).redirectErrorStream(true).redirectOutput(log.toFile()).start();
-            assertTrue("Executable JAR smoke test timed out", process.waitFor(30, TimeUnit.SECONDS));
+            assertThat(process.waitFor(30, TimeUnit.SECONDS))
+                    .as("Executable JAR smoke test completed within 30 seconds")
+                    .isTrue();
             String output = Files.readString(log);
-            assertEquals(output, 0, process.exitValue());
-            assertTrue(output, output.contains("Executable JAR smoke test passed"));
+            assertThat(process.exitValue()).as("Process output: %s", output).isZero();
+            assertThat(output).contains("Executable JAR smoke test passed");
         } finally {
             if (process != null && process.isAlive()) {
                 process.destroyForcibly().waitFor();
@@ -67,7 +68,7 @@ public class ExecutableJarIT {
 
     /**
      * Standalone probe, also runnable through the jBang catalog without opening a GUI.
-     * Does not use JUnit, which is intentionally absent from the child JVM's classpath.
+     * Does not use JUnit or AssertJ, which are intentionally absent from the child JVM's classpath.
      */
     public static final class Probe {
 

@@ -23,9 +23,7 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
 import static de.aikiit.spamprotector.util.LocalizationHelper.getParameterizedBundleString;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Verifies the UI components work properly.
@@ -42,13 +40,13 @@ public class GUITest {
     @Test
     public final void startGui() {
         GUI gui = new GUI();
-        assertNotNull(gui);
+        assertThat(gui).isNotNull();
     }
 
     @Test
     public final void ensureYearIs4digits() {
         String year = String.valueOf(GUI.now.getYear());
-        assertEquals(4, year.length());
+        assertThat(year).hasSize(4);
 
         String msg = getParameterizedBundleString("spamschutz.ui.help.text",
                 year,
@@ -56,6 +54,6 @@ public class GUITest {
 
         LOG.debug(msg);
 
-        assertFalse(msg.contains(year.charAt(0) + "."));
+        assertThat(msg).doesNotContain(year.charAt(0) + ".");
     }
 }
